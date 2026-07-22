@@ -1,0 +1,13 @@
+# Long-cache the immutable assets (fonts + vendored GSAP never change by name)
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/js/vendor/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Revalidate app shell + data every load (SW owns the real caching)
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+/data/*
+  Cache-Control: public, max-age=0, must-revalidate
+/*
+  Cache-Control: public, max-age=0, must-revalidate

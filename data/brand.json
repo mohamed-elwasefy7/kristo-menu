@@ -1,0 +1,8 @@
+{
+  "name": { "en": "KRISTO", "ar": "كريستو" },
+  "tagline": { "en": "Lebanese Cuisine", "ar": "مطبخ لبناني أصيل" },
+  "subtitle": { "en": "Lebanese Family Restaurant", "ar": "مطعم لبناني عائلي" },
+  "location": { "en": "Al Masif, Riyadh, Saudi Arabia", "ar": "حي المصيف، الرياض" },
+  "mapsUrl": "https://maps.app.goo.gl/REPLACE_ME",
+  "hours": []
+}

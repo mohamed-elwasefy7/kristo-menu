@@ -1,0 +1,90 @@
+[
+  {
+    "id": "manakish",
+    "order": 1,
+    "label": { "en": "Manakish & Pizza", "ar": "المناقيش والبيتزا" },
+    "mood": "turquoise",
+    "ornament": "pita-disc",
+    "intro": {
+      "title": { "ar": "المناقيش والبيتزا", "en": "Manakish & Pizza" },
+      "subtitle": { "en": "Baked to order, straight from the oven", "ar": "تُخبز عند الطلب — من الفرن مباشرة" }
+    }
+  },
+  {
+    "id": "appetizers",
+    "order": 2,
+    "label": { "en": "Mezza & Appetizers", "ar": "المقبلات والمازة" },
+    "mood": "mist",
+    "ornament": "olive-branch",
+    "intro": {
+      "title": { "ar": "المقبلات والمازة", "en": "Mezza & Appetizers" },
+      "subtitle": { "en": "Small plates, generous spirit", "ar": "أطباق صغيرة بروح سخيّة" }
+    }
+  },
+  {
+    "id": "salads",
+    "order": 3,
+    "label": { "en": "Salads", "ar": "السلطات" },
+    "mood": "mist",
+    "ornament": "mint",
+    "intro": {
+      "title": { "ar": "السلطات", "en": "Salads" },
+      "subtitle": { "en": "Cut fresh, dressed at the last moment", "ar": "تُقطّع طازجة وتُتبّل في لحظتها" }
+    }
+  },
+  {
+    "id": "sandwiches",
+    "order": 4,
+    "label": { "en": "Cold Sandwiches", "ar": "الساندويتشات الباردة" },
+    "mood": "turquoise",
+    "ornament": "sesame",
+    "intro": {
+      "title": { "ar": "الساندويتشات الباردة", "en": "Cold Sandwiches" },
+      "subtitle": { "en": "Light, cool, and ready to travel", "ar": "خفيفة وباردة وجاهزة ترافقك" }
+    }
+  },
+  {
+    "id": "bbq",
+    "order": 5,
+    "label": { "en": "BBQ Sandwiches", "ar": "ساندويتشات المشاوي" },
+    "mood": "ember",
+    "ornament": "fork-knife",
+    "intro": {
+      "title": { "ar": "ساندويتشات المشاوي", "en": "BBQ Sandwiches" },
+      "subtitle": { "en": "Off the charcoal, into warm bread", "ar": "من على الفحم إلى خبز دافئ" }
+    }
+  },
+  {
+    "id": "burgers",
+    "order": 6,
+    "label": { "en": "Burgers", "ar": "البرغر" },
+    "mood": "ember",
+    "ornament": "fork-knife",
+    "intro": {
+      "title": { "ar": "البرغر", "en": "Burgers" },
+      "subtitle": { "en": "Flame-grilled, with a Lebanese accent", "ar": "على اللهب — وبلكنة لبنانية" }
+    }
+  },
+  {
+    "id": "platters",
+    "order": 7,
+    "label": { "en": "Grills & Platters", "ar": "المشاوي والوجبات" },
+    "mood": "teal-deep",
+    "ornament": "cedar",
+    "intro": {
+      "title": { "ar": "المشاوي والوجبات", "en": "Grills & Platters" },
+      "subtitle": { "en": "The table is yours — sahtein", "ar": "السفرة سفرتك — صحتين" }
+    }
+  },
+  {
+    "id": "desserts",
+    "order": 8,
+    "label": { "en": "Desserts", "ar": "الحلويات" },
+    "mood": "ink",
+    "ornament": "flourish",
+    "intro": {
+      "title": { "ar": "الحلويات", "en": "Desserts" },
+      "subtitle": { "en": "A sweet ending, the Beiruti way", "ar": "ختام حلو على الطريقة البيروتية" }
+    }
+  }
+]

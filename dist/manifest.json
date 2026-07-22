@@ -1,0 +1,17 @@
+{
+  "name": "كريستو — مطبخ لبناني أصيل",
+  "short_name": "كريستو",
+  "description": "منيو كريستو — مأكولات لبنانية أصيلة في المصيف، الرياض",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F4EFE6",
+  "theme_color": "#F4EFE6",
+  "icons": [
+    { "src": "assets/logo/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/logo/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/logo/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

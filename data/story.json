@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "welcome": {
+    "kicker": { "ar": "أهلاً وسهلاً", "en": "Welcome" },
+    "title": { "ar": "نكهات لبنانية أصيلة", "en": "True Lebanese Flavor" },
+    "paragraphs": [
+      {
+        "ar": "في كريستو، تُحضّر كل وصفة يومياً بشغف — من عجينة المناقيش الطازجة إلى جمر المشاوي.",
+        "en": "At Kristo, every recipe is made fresh each day — from hand-rolled manakish dough to glowing charcoal grills."
+      },
+      {
+        "ar": "أجود المكونات الطازجة، وأيادٍ تعرف أصول المطبخ اللبناني، وسفرة تجمع العائلة كلها.",
+        "en": "The finest fresh ingredients, hands that know Lebanese cooking by heart, and a table that gathers the whole family."
+      }
+    ],
+    "texture": "BEIRUT",
+    "image": "welcome",
+    "mood": "mist"
+  },
+  "order": {
+    "kicker": { "ar": "اطلب", "en": "Order" },
+    "title": { "ar": "اطلب كريستو لبيتك", "en": "Kristo, Delivered to You" },
+    "body": {
+      "ar": "اطلب في دقائق من تطبيقك المفضل — أو راسلنا على واتساب.",
+      "en": "Order in minutes on your favorite app — or message us on WhatsApp."
+    }
+  },
+  "closing": {
+    "thanks": { "ar": "صحتين وعافية", "en": "Sahtein — To Your Health" },
+    "sub": {
+      "ar": "شكراً لزيارتكم. نراكم على سفرة كريستو.",
+      "en": "Thank you for stopping by. See you at Kristo's table."
+    }
+  }
+}

@@ -1,0 +1,8 @@
+# Netlify — rebuild dist from source with the correct deploy URL.
+# Python + the vendored minifiers mean no extra dependencies to configure.
+[build]
+  command = "pip install rcssmin rjsmin && python tools/build.py --base-url $URL"
+  publish = "dist"
+
+# If you'd rather serve the committed dist/ with zero build, delete [build]
+# above and replace it with:  [build]  publish = "dist"

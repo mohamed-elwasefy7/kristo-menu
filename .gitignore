@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+
+# Local agent/workspace metadata
+.agents/
+.codex/
+
+# Local environment and diagnostics
+.env
+.env.*
+!.env.example
+*.log
+screenshots/
+lighthouse/
+
+# Node (only if you ever add local tooling)
+node_modules/
+
+# NOTE: dist/ IS committed on purpose — it is the deploy-ready artifact for
+# zero-build static hosting. Rebuild it with `python tools/build.py`.
