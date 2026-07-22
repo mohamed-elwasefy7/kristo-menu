@@ -116,9 +116,13 @@ def minify_html(html: str) -> str:
 
 def build_html(base_url: str, production_css: str) -> int:
     html = (ROOT / "index.html").read_text(encoding="utf-8")
+    # fonts.css is authored for css/bundle.min.css, where ../assets is correct.
+    # Once that CSS is inlined into index.html, URLs resolve from the document
+    # instead, so remove only the single parent segment from font asset paths.
+    inline_css = production_css.replace("../assets/fonts/", "assets/fonts/")
     html = html.replace(
         '  <link rel="stylesheet" href="css/bundle.min.css">',
-        f"  <style>{production_css}</style>",
+        f"  <style>{inline_css}</style>",
     )
     # premium.css is folded into the production CSS bundle.
     html = html.replace('  <link rel="stylesheet" href="css/premium.css">\n', "")
