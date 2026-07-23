@@ -304,10 +304,9 @@ function buildDish(dish, tpl, catLabel, favs) {
     ul.append(li);
   });
 
-  // no price yet (prices.json still null) → drop the whole price line
+  // Prices stay optional: unmatched and unconfirmed products omit the line.
   if (dish.price != null) {
-    $(".dish__price-num", node).textContent = dish.price;
-    $(".dish__price-cur", node).textContent = t("sar");
+    $(".dish__price-value", node).textContent = formatPrice(dish.price);
   } else {
     $(".dish__price", node).remove();
   }
@@ -382,7 +381,7 @@ function renderDrinks() {
     card.innerHTML = `
       <img alt="${t(drink.name)}" loading="lazy" decoding="async">
       <p class="drink-card__name">${t(drink.name)}</p>
-      ${drink.price != null ? `<p class="drink-card__price">${drink.price} ${t("sar")}</p>` : ""}`;
+      ${drink.price != null ? `<p class="drink-card__price">${formatPrice(drink.price)}</p>` : ""}`;
     const img = $("img", card);
     img.dataset.image = drink.image;
     img.dataset.dir = "assets/images/drinks/";
@@ -390,6 +389,10 @@ function renderDrinks() {
     strip.append(card);
   });
   return s;
+}
+
+function formatPrice(price) {
+  return getLang() === "ar" ? `${price} ${t("sar")}` : `${t("sar")} ${price}`;
 }
 
 /* ---------- favorites ---------- */

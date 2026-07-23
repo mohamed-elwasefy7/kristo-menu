@@ -419,11 +419,10 @@ html[lang="en"] .dish__subtitle { font-style: normal; letter-spacing: 0; }  /* A
 .dish__price {
   /* numerals live in Tajawal — ruqaa digits are not a price voice */
   font-family: var(--font-body);
-  font-size: clamp(1.5rem, 5.6vw, 1.8rem);
+  font-size: clamp(1.05rem, 3.8vw, 1.25rem);
   font-weight: 700;
-  color: var(--ink);
+  color: var(--red);
 }
-.dish__price-cur { font-size: .9rem; font-family: var(--font-body); font-weight: 500; color: var(--ink-soft); }
 .dish__metaitem {
   display: inline-flex; align-items: center; gap: .35rem;
   font-size: .8rem; color: var(--ink-soft);
@@ -533,7 +532,7 @@ body[data-mood="ink"] .dish__fav[aria-pressed="true"] { color: var(--mist); bord
   border-radius: 0;
 }
 .drink-card__name { font-size: .78rem; font-weight: 700; line-height: 1.3; }
-.drink-card__price { font-size: .78rem; color: var(--ink-soft); }
+.drink-card__price { font-size: .86rem; font-weight: 700; color: var(--red); }
 
 /* ---------- Finale ---------- */
 .finale { text-align: center; gap: var(--s4); }

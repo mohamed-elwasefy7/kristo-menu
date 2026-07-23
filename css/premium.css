@@ -669,3 +669,226 @@ html.motion-reduce *::after {
   .narrative,
   .drinks { padding-inline-end: max(var(--s5), 4rem); }
 }
+
+/* ---------- visual correction: hero lockup + fully visible food ---------- */
+.wordmark--hero-v2 {
+  line-height: 0;
+}
+.wordmark--hero-v2 .hero__line {
+  display: block;
+}
+.hero__logo-frame {
+  display: block;
+  inline-size: clamp(11rem, 50vw, 14rem);
+  aspect-ratio: 1.45;
+  overflow: hidden;
+  border-radius: .35rem;
+  background: var(--turquoise);
+  box-shadow: 0 18px 42px -30px rgba(16, 24, 22, .55);
+}
+.hero__primary-logo {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  filter: saturate(1.02) contrast(1.025);
+}
+
+.dish__figure,
+.dish[data-m-size="large"] .dish__figure,
+.dish[data-presentation="card"] .dish__figure {
+  inline-size: min(78vw, 36dvh);
+  max-inline-size: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: visible;
+  border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  border-radius: clamp(1.15rem, 4vw, 1.85rem);
+  background:
+    linear-gradient(145deg,
+      color-mix(in srgb, var(--surface) 96%, white),
+      color-mix(in srgb, var(--paper-warm) 92%, var(--turquoise) 8%));
+  box-shadow:
+    0 18px 38px -24px rgba(16, 24, 22, .52),
+    0 38px 78px -42px rgba(16, 24, 22, .5),
+    inset 0 1px 0 rgba(255, 255, 255, .72);
+}
+.dish__figure::before {
+  inset: .62rem -.5rem -.58rem .72rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  border-radius: inherit;
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  transform: rotate(-1deg);
+}
+.dish__picture,
+.dish__figure .dish__breathe,
+.dish:not([data-presentation="card"]):nth-of-type(4n + 1) .dish__figure .dish__breathe,
+.dish:not([data-presentation="card"]):nth-of-type(4n + 3) .dish__figure .dish__breathe,
+.dish[data-presentation="card"] .dish__figure .dish__breathe {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  inline-size: 100%;
+  block-size: 100%;
+  overflow: hidden;
+  padding: clamp(.5rem, 1.6vw, .85rem);
+  border-radius: calc(clamp(1.15rem, 4vw, 1.85rem) - 1px);
+  background: color-mix(in srgb, var(--surface) 88%, var(--paper-warm));
+  box-shadow: none;
+}
+.dish__figure .responsive-picture {
+  display: grid;
+  place-items: center;
+  min-inline-size: 0;
+  min-block-size: 0;
+}
+.dish__img,
+.dish[data-presentation="card"] .dish__img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  max-inline-size: 100%;
+  max-block-size: 100%;
+  object-fit: contain;
+  object-position: 50% 50%;
+  overflow: visible;
+  border-radius: clamp(.72rem, 2.6vw, 1.25rem);
+  background: transparent;
+  filter: saturate(1.1) contrast(1.045) brightness(1.01);
+}
+
+@media (max-height: 700px) and (orientation: portrait) {
+  .dish__figure,
+  .dish[data-m-size="large"] .dish__figure,
+  .dish[data-presentation="card"] .dish__figure {
+    inline-size: min(62vw, 31dvh);
+  }
+  .hero__logo-frame { inline-size: clamp(9.75rem, 45vw, 11.75rem); }
+}
+
+@media (min-width: 1024px) {
+  .hero__logo-frame { inline-size: clamp(14rem, 19vw, 17rem); }
+  .dish__figure,
+  .dish[data-m-size="large"] .dish__figure,
+  .dish[data-presentation="card"] .dish__figure {
+    inline-size: min(41vw, 62dvh, 38rem);
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero__logo-frame { inline-size: min(18vw, 8.75rem); }
+  .dish__figure,
+  .dish[data-m-size="large"] .dish__figure,
+  .dish[data-presentation="card"] .dish__figure {
+    inline-size: min(34vw, 64dvh);
+  }
+  .dish__picture,
+  .dish__figure .dish__breathe,
+  .dish[data-presentation="card"] .dish__figure .dish__breathe {
+    padding: .48rem;
+  }
+}
+
+/* ---------- hero correction: pure, centered brand introduction ---------- */
+.hero--v2 {
+  --hero-fig: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding:
+    calc(var(--nav-h) + env(safe-area-inset-top) + var(--s4))
+    clamp(var(--s4), 6vw, var(--s7))
+    calc(var(--s6) + env(safe-area-inset-bottom));
+}
+.hero--v2 .hero__content {
+  grid-column: auto;
+  grid-row: auto;
+  inline-size: min(100%, 44rem);
+  max-inline-size: 44rem;
+  padding-block-start: 0;
+  justify-items: center;
+  align-content: center;
+  gap: clamp(.55rem, 1.7vh, .9rem);
+  text-align: center;
+  transform: translateY(-5.2dvh);
+}
+.hero--v2 .wordmark--hero-v2 {
+  justify-items: center;
+  margin: 0;
+}
+.hero--v2 .hero__logo-frame {
+  inline-size: clamp(17rem, 74vw, 23rem);
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.hero--v2 .hero__primary-logo {
+  object-fit: contain;
+  filter: none;
+}
+.hero--v2 .hero__eyebrow,
+.hero--v2 .hero__tagline,
+.hero--v2 .hero__intro {
+  text-align: center;
+}
+.hero--v2 .hero__intro {
+  max-inline-size: 34rem;
+}
+.hero--v2 .hero__tagline {
+  font-size: clamp(1.31rem, 2.1vw, 1.63rem);
+}
+.hero--v2 .hero__ctas {
+  justify-items: center;
+}
+.hero--v2 .hero__cats {
+  inline-size: min(100%, 36rem);
+  max-inline-size: 36rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 1024px) {
+  .hero--v2 {
+    padding-block-start: calc(var(--nav-h) + var(--s5));
+    padding-block-end: var(--s7);
+  }
+  .hero--v2 .hero__logo-frame {
+    inline-size: clamp(22rem, 34vw, 30.5rem);
+  }
+  .hero--v2 .hero__content {
+    gap: clamp(.65rem, 1.5vh, 1rem);
+    transform: translateY(-3.7dvh);
+  }
+}
+
+@media (max-height: 700px) and (orientation: portrait) {
+  .hero--v2 {
+    padding-block-start: calc(var(--nav-h) + var(--s2));
+    padding-block-end: var(--s4);
+  }
+  .hero--v2 .hero__logo-frame {
+    inline-size: clamp(14rem, 61vw, 18rem);
+  }
+  .hero--v2 .hero__content { gap: .38rem; transform: translateY(-3dvh); }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero--v2 {
+    display: flex;
+    padding: calc(var(--nav-h) + .3rem) var(--s5) .5rem;
+  }
+  .hero--v2 .hero__content {
+    grid-column: auto;
+    grid-row: auto;
+    justify-items: center;
+    text-align: center;
+    gap: .18rem;
+    transform: translateY(-1dvh);
+  }
+  .hero--v2 .hero__logo-frame { inline-size: min(25vw, 11.5rem); }
+  .hero--v2 .hero__intro { max-inline-size: 32rem; }
+  .hero--v2 .hero__ctas,
+  .hero--v2 .hero__cats { margin-block-start: .1rem; }
+}

@@ -66,12 +66,7 @@
   }
   </script>
 
-  <!-- hero food photo is the LCP element — preload it FIRST so it wins the
-       pipe ahead of the fonts. One photo for every device; srcset picks the
-       right size -->
-  <link rel="preload" as="image" href="assets/hero/hero-sm.avif" fetchpriority="high"
-        imagesrcset="assets/hero/hero-sm.avif 768w, assets/hero/hero.avif 1280w"
-        imagesizes="(min-width:1024px) 48vw, 86vw">
+  <!-- The Kristo lockup is the hero focal point and is eager-loaded in markup. -->
 
   <!-- self-hosted fonts: no third-party blocking request. Preload only the two
        above-the-fold Arabic faces (ruqaa wordmark + Tajawal body); everything
@@ -150,28 +145,18 @@
     <section class="screen hero hero--v2" id="top" data-mood="paper" data-rail="hero" aria-label="كريستو">
       <div class="hero__particles" aria-hidden="true"></div>
       <div class="hero__light" aria-hidden="true"></div>
-      <figure class="hero__figure" aria-hidden="true">
-        <div class="hero__breathe">
-          <picture>
-            <source type="image/avif"
-                    srcset="assets/hero/hero-sm.avif 768w, assets/hero/hero.avif 1280w"
-                    sizes="(min-width:1024px) 48vw, 86vw">
-            <source type="image/webp"
-                    srcset="assets/hero/hero-sm.webp 768w, assets/hero/hero.webp 1280w"
-                    sizes="(min-width:1024px) 48vw, 86vw">
-            <img id="hero-img" class="hero__img" alt="" loading="eager" decoding="async" fetchpriority="high"
-                 src="assets/hero/hero.jpg" width="1280" height="853"
-                 onerror="this.style.visibility='hidden'">
-          </picture>
-        </div>
-      </figure>
       <div class="hero__content">
         <p class="hero__eyebrow" data-i18n="heroEyebrow">من بيروت إلى الرياض</p>
         <h1 class="wordmark--hero-v2">
-          <span class="reveal"><span class="reveal__inner hero__line">كريستو</span></span>
+          <span class="hero__line">
+            <span class="hero__logo-frame" aria-hidden="true">
+              <img class="hero__primary-logo" src="assets/logo/logo-transparent.png" alt="" width="905" height="622" loading="eager" decoding="async">
+            </span>
+            <span class="visually-hidden">كريستو</span>
+          </span>
         </h1>
         <span class="hero__divider" aria-hidden="true"></span>
-        <p class="hero__tagline" dir="ltr" lang="en"><span class="reveal"><span class="reveal__inner">Lebanese Cuisine</span></span></p>
+        <p class="hero__tagline" dir="ltr" lang="en">Lebanese Cuisine</p>
         <!-- default-language text baked in: i18n swaps it without a layout jump -->
         <p class="hero__intro" data-i18n="heroIntro">أهلاً بكم في كريستو — نكهات لبنانية أصيلة تُحضّر يومياً بشغف، من قلب المصيف.</p>
         <div class="hero__ctas">
@@ -221,13 +206,13 @@
       <div class="dish__content">
         <p class="dish__kicker"></p>
         <h2 class="dish__name"><span class="reveal"><span class="reveal__inner"></span></span></h2>
+        <p class="dish__price"><span class="reveal"><span class="reveal__inner dish__price-value"></span></span><span class="dish__price-rule" aria-hidden="true"></span></p>
         <p class="dish__subtitle"><span dir="ltr"></span></p>
         <p class="dish__inspiration"></p>
         <p class="dish__desc"></p>
         <ul class="dish__ingredients" role="list"></ul>
         <div class="dish__foot">
           <div class="dish__meta">
-            <p class="dish__price"><span class="reveal"><span class="reveal__inner"><span class="dish__price-num"></span> <span class="dish__price-cur"></span></span></span><span class="dish__price-rule" aria-hidden="true"></span></p>
             <span class="dish__metaitem dish__cal"></span>
             <span class="dish__metaitem dish__time"></span>
           </div>

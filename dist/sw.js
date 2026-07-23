@@ -1,7 +1,7 @@
 /* كريستو — reliable offline shell and update-safe runtime cache */
 
 const CACHE_PREFIX = "kristo-menu::";
-const CACHE_REVISION = "99f8f0968d";
+const CACHE_REVISION = "3a7eae67c3";
 const CACHE = `${CACHE_PREFIX}${CACHE_REVISION}`;
 
 /* Everything required for the first two screens and both languages.
