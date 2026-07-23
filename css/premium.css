@@ -892,3 +892,252 @@ html.motion-reduce *::after {
   .hero--v2 .hero__ctas,
   .hero--v2 .hero__cats { margin-block-start: .1rem; }
 }
+
+/* ---------- approval pass: clean editorial frames and narrative screens ---------- */
+.dish__figure,
+.dish[data-m-size="large"] .dish__figure,
+.dish[data-presentation="card"] .dish__figure {
+  --frame-pad: clamp(.72rem, 2.2vw, 1rem);
+  box-sizing: border-box;
+  position: relative;
+  inline-size: min(78vw, 36dvh);
+  max-inline-size: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  isolation: isolate;
+  border: .8px solid color-mix(in srgb, var(--ink) 16%, transparent);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--surface) 86%, var(--paper-warm));
+  box-shadow:
+    0 16px 36px -24px rgba(16, 24, 22, .48),
+    0 28px 60px -42px rgba(16, 24, 22, .42);
+}
+.dish__figure::before {
+  content: none;
+  display: none;
+}
+.dish__picture,
+.dish__figure .dish__breathe,
+.dish:not([data-presentation="card"]):nth-of-type(4n + 1) .dish__figure .dish__breathe,
+.dish:not([data-presentation="card"]):nth-of-type(4n + 3) .dish__figure .dish__breathe,
+.dish[data-presentation="card"] .dish__figure .dish__breathe {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  inline-size: 100%;
+  block-size: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  border: 0;
+  border-radius: 19px;
+  background: color-mix(in srgb, var(--surface) 78%, var(--paper-warm));
+  box-shadow: none;
+}
+.dish__figure .responsive-picture {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  inset: var(--frame-pad);
+  inline-size: auto;
+  block-size: auto;
+  min-inline-size: 0;
+  min-block-size: 0;
+}
+.dish__img,
+.dish[data-presentation="card"] .dish__img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  max-inline-size: 100%;
+  max-block-size: 100%;
+  min-inline-size: 0;
+  min-block-size: 0;
+  object-fit: contain;
+  object-position: 50% 50%;
+  overflow: visible;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Photography stays clear of decorative art and the progress rail. */
+.dish__floats,
+.dish__texture {
+  display: none;
+}
+.dish__bg::after {
+  opacity: .035;
+  -webkit-mask-image: linear-gradient(to bottom, #000, transparent 42%);
+  mask-image: linear-gradient(to bottom, #000, transparent 42%);
+}
+
+/* Welcome uses the same single-frame system and a tighter shared grid. */
+.welcome {
+  align-items: center;
+  gap: clamp(1.1rem, 2.8vh, 1.65rem);
+}
+.welcome .section-texture {
+  display: none;
+}
+.welcome__figure {
+  --frame-pad: clamp(.72rem, 2.2vw, 1rem);
+  box-sizing: border-box;
+  inline-size: min(78vw, 36dvh);
+  max-inline-size: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  isolation: isolate;
+  border: .8px solid color-mix(in srgb, var(--ink) 16%, transparent);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--surface) 86%, var(--paper-warm));
+  box-shadow:
+    0 16px 36px -24px rgba(16, 24, 22, .48),
+    0 28px 60px -42px rgba(16, 24, 22, .42);
+}
+.welcome__figure::before {
+  content: none;
+  display: none;
+}
+.welcome__figure .dish__breathe {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  inline-size: 100%;
+  block-size: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  border: 0;
+  border-radius: 19px;
+  background: color-mix(in srgb, var(--surface) 78%, var(--paper-warm));
+  box-shadow: none;
+}
+.welcome__figure .responsive-picture {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  inset: var(--frame-pad);
+  inline-size: auto;
+  block-size: auto;
+  min-inline-size: 0;
+  min-block-size: 0;
+}
+.welcome__img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  max-inline-size: 100%;
+  max-block-size: 100%;
+  min-inline-size: 0;
+  min-block-size: 0;
+  object-fit: contain;
+  object-position: 50% 50%;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+}
+.welcome__content {
+  inline-size: min(100%, 34rem);
+  gap: .68rem;
+}
+
+/* Category posters become a quiet centered editorial sequence. */
+.cat-intro::before,
+.cat-intro::after {
+  content: none;
+  display: none;
+}
+.cat-intro__floats {
+  display: none;
+}
+.cat-intro .narrative__content {
+  max-inline-size: 34rem;
+  gap: clamp(.62rem, 1.8vh, .9rem);
+  padding: clamp(1rem, 3vw, 1.75rem);
+}
+.cat-intro .section-kicker {
+  order: 1;
+}
+.cat-intro .section-kicker::before,
+.cat-intro .section-kicker::after {
+  content: none;
+  display: none;
+}
+.cat-intro .section-title--poster {
+  order: 2;
+  max-inline-size: 32rem;
+  font-size: clamp(2.7rem, 10vw, 5rem);
+  line-height: 1.3;
+}
+.cat-intro__subtitle {
+  order: 3;
+  max-inline-size: 28rem;
+  font-size: clamp(1.02rem, 3vw, 1.22rem);
+  line-height: 1.65;
+}
+.cat-intro__divider {
+  order: 4;
+  inline-size: clamp(5.25rem, 18vw, 6.5rem);
+  margin-block: .2rem 0;
+  color: var(--line);
+}
+
+.drink-card {
+  border-radius: 20px;
+}
+.drink-card > .responsive-picture {
+  box-sizing: border-box;
+  padding: .45rem;
+}
+
+@media (max-height: 700px) and (orientation: portrait) {
+  .dish__figure,
+  .dish[data-m-size="large"] .dish__figure,
+  .dish[data-presentation="card"] .dish__figure,
+  .welcome__figure {
+    inline-size: min(62vw, 30dvh);
+  }
+}
+
+@media (min-width: 1024px) {
+  .dish__figure,
+  .dish[data-m-size="large"] .dish__figure,
+  .dish[data-presentation="card"] .dish__figure {
+    inline-size: min(41vw, 62dvh, 38rem);
+  }
+  .welcome {
+    display: grid;
+    grid-template-columns: minmax(22rem, 32rem) minmax(22rem, 34rem);
+    justify-content: center;
+    align-items: center;
+    gap: clamp(3rem, 6vw, 6rem);
+    padding-inline: clamp(4rem, 8vw, 8rem);
+  }
+  .welcome__figure {
+    inline-size: 100%;
+    max-inline-size: 32rem;
+  }
+  .welcome__content {
+    inline-size: 100%;
+    max-inline-size: 34rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .dish__figure,
+  .dish[data-m-size="large"] .dish__figure,
+  .dish[data-presentation="card"] .dish__figure,
+  .welcome__figure {
+    inline-size: min(34vw, 64dvh);
+    --frame-pad: .55rem;
+  }
+  .welcome {
+    display: flex;
+    gap: var(--s4);
+  }
+  .welcome__content {
+    max-inline-size: 28rem;
+    gap: .3rem;
+  }
+}
