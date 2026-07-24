@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "pip install rcssmin rjsmin && python3 tools/build.py --base-url https://$VERCEL_PROJECT_PRODUCTION_URL",
+  "outputDirectory": "dist",
+  "cleanUrls": true
+}

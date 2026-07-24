@@ -1,0 +1,78 @@
+/* ============================================================
+   كريستو — animations.css
+   Keyframes · transitions · reduced-motion overrides
+   GSAP drives entrances/atmosphere; CSS owns ambient loops.
+   ============================================================ */
+
+/* Swipe indicator bob — keep the 45° chevron rotation inside the keyframes,
+   otherwise the animation's transform replaces it */
+@keyframes hint-bob {
+  0%, 100% { transform: translateY(0) rotate(45deg); opacity: .8; }
+  50%      { transform: translateY(8px) rotate(45deg); opacity: .4; }
+}
+.swipe-hint__chevron { animation: hint-bob 1.8s ease-in-out infinite; }
+
+/* Hero particles drift (per-span duration/delay randomized by JS) */
+@keyframes particle-drift {
+  0%   { transform: translate3d(0, 0, 0); }
+  50%  { transform: translate3d(var(--dx, 8px), -18px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+.hero__particles span {
+  animation: particle-drift var(--dur, 12s) ease-in-out var(--delay, 0s) infinite;
+}
+
+/* GSAP-managed entrance targets start hidden (set by JS adding .anim-ready) */
+.anim-ready .dish__kicker,
+.anim-ready .dish__name .reveal__inner,
+.anim-ready .dish__subtitle,
+.anim-ready .dish__inspiration,
+.anim-ready .dish__desc,
+.anim-ready .dish__ingredients li,
+.anim-ready .dish__price .reveal__inner,
+.anim-ready .dish__price-rule,
+.anim-ready .dish__cal,
+.anim-ready .dish__time,
+.anim-ready .dish__badges .badge,
+.anim-ready .dish__actions > *,
+.anim-ready .dish__floats .float,
+.anim-ready [data-enter] {
+  opacity: 0;
+}
+
+/* Toast show state (GSAP tweens it, class is the fallback) */
+.toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition: opacity .25s var(--ease-out), transform .25s var(--ease-out);
+}
+html[dir="rtl"] .toast.is-visible { transform: translate(50%, 0); }
+
+/* ---------- Reduced motion: kill all decoration ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .swipe-hint__chevron, .hero__particles span { animation: none !important; }
+  .anim-ready .dish__kicker,
+  .anim-ready .dish__name .reveal__inner,
+  .anim-ready .dish__subtitle,
+  .anim-ready .dish__inspiration,
+  .anim-ready .dish__desc,
+  .anim-ready .dish__ingredients li,
+  .anim-ready .dish__price .reveal__inner,
+  .anim-ready .dish__price-rule,
+  .anim-ready .dish__cal,
+  .anim-ready .dish__time,
+  .anim-ready .dish__badges .badge,
+  .anim-ready .dish__actions > *,
+  .anim-ready .dish__floats .float,
+  .anim-ready [data-enter] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hero__light, .dish__texture, .section-texture { display: none !important; }
+  .snap-container { scroll-behavior: auto; }
+}

@@ -1,0 +1,155 @@
+/* ============================================================
+   كريستو — responsive.css
+   Base = 360–430px portrait phones. Scale up + landscape.
+   ============================================================ */
+
+/* ============================================================
+   Adaptive per-dish mobile composition (menu.json "mobile" block
+   → data-m-* attributes). Mobile/tablet only — desktop never
+   reads these.
+   ============================================================ */
+@media (max-width: 1023.98px) {
+  /* NOTE: the image-below variant (data-m-img="bottom") was removed on
+     purpose — on mobile the food image ALWAYS comes before the text, for
+     every current and future dish. Do not reintroduce order flipping here. */
+
+  /* centered poster composition */
+  .dish[data-m-align="center"] .dish__content {
+    text-align: center;
+    justify-items: center;
+  }
+  .dish[data-m-align="center"] .dish__ingredients,
+  .dish[data-m-align="center"] .dish__badges,
+  .dish[data-m-align="center"] .dish__actions,
+  .dish[data-m-align="center"] .dish__meta { justify-content: center; }
+
+  /* oversized signature photography */
+  .dish[data-m-size="large"] .dish__figure { inline-size: min(80vw, 42dvh); }
+
+  /* thumb-friendly primary action */
+  .dish__order { min-block-size: 52px; }
+}
+
+/* Small phones (<= 360px) — tighten */
+@media (max-width: 360px) {
+  .dish__figure { inline-size: min(64vw, 32dvh); }
+  .dish__name { font-size: 1.7rem; }
+}
+
+/* Short viewports (phones with toolbars, iPhone SE) — compress, never overlap */
+@media (max-height: 700px) and (orientation: portrait) {
+  .dish { gap: var(--s2); padding-block-start: calc(var(--nav-h) + var(--s1)); }
+  .dish__figure { inline-size: min(56vw, 30dvh); }
+  .dish__content { gap: .45rem; }
+  .dish__desc { -webkit-line-clamp: 2; }
+  .dish__ingredients { max-block-size: 2.2rem; }   /* single chip row */
+  .dish__inspiration { display: none; }
+  .dish__floats { block-size: 38dvh; }
+
+  .hero__logo { inline-size: min(44vw, 21dvh); }
+  .hero__cat { min-block-size: 44px; font-size: .82rem; }
+  .hero--v2 .hero__content { gap: var(--s3); }
+  .hero .swipe-hint { display: none; }   /* tiles already signal interaction */
+
+  .welcome__figure { inline-size: min(46vw, 24dvh); }
+  .section-title--poster { font-size: clamp(2.2rem, 10vw, 3.2rem); }
+}
+
+/* Tablet portrait */
+@media (min-width: 768px) {
+  .dish__content { max-inline-size: 34rem; gap: var(--s3); }
+  .dish__figure { inline-size: min(52vw, 46dvh); }
+  .hero__intro { font-size: 1.05rem; }
+  .drink-card { inline-size: 10rem; }
+  .order__cards { max-inline-size: 34rem; grid-template-columns: 1fr 1fr; }
+}
+
+/* Short viewports: hide the dot rail (redundant affordance) */
+@media (max-height: 700px) {
+  .rail { display: none; }
+}
+
+/* Desktop / tablet landscape: split layout — image inline-start, content inline-end */
+@media (min-width: 1024px) {
+  /* hero: bigger logo, three-column tiles */
+  .hero__logo { inline-size: min(24vw, 34dvh); }
+  .hero--v2 .hero__content { max-inline-size: 40rem; }
+  .hero__cats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  /* restore the approved desktop dish presentation exactly */
+  .dish { padding-block-start: 0; }
+  .dish__desc {
+    display: block;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
+  .dish__ingredients { max-block-size: none; overflow: visible; }
+  .dish__floats { inset-inline-end: 48%; block-size: 100%; }
+
+  .narrative__content { max-inline-size: 38rem; }
+
+  .dish {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s8);
+    padding-block-end: 0;
+    padding-inline: var(--s7);
+  }
+  .dish__figure {
+    position: static;
+    transform: none !important;
+    inline-size: min(38vw, 62dvh);
+    flex: 0 0 auto;
+  }
+  .dish[data-presentation="card"] .dish__figure { inline-size: min(44vw, 70dvh); }
+  .dish__content {
+    max-inline-size: 26rem;
+    align-content: center;
+  }
+  .hero__figure { inline-size: min(30vw, 40dvh); }
+  .rail { inset-inline-end: var(--s4); }
+  .drinks__strip { justify-content: center; flex-wrap: wrap; overflow-x: visible; max-inline-size: 56rem; }
+
+  /* welcome: editorial side-by-side */
+  .welcome {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--s8);
+  }
+  .welcome__figure { inline-size: min(28vw, 44dvh); }
+  .welcome__content { max-inline-size: 30rem; }
+}
+
+@media (min-width: 1440px) {
+  .dish { gap: var(--s9); }
+  .dish__content { max-inline-size: 28rem; }
+}
+
+/* Phone landscape (short + wide): compact row */
+@media (orientation: landscape) and (max-height: 500px) {
+  .dish {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s5);
+    padding-block: var(--s3);
+  }
+  .dish__figure {
+    position: static;
+    transform: none !important;
+    inline-size: min(34vh, 30vw);
+  }
+  .dish__content { gap: .3rem; max-inline-size: 24rem; }
+  .dish__name { font-size: 1.5rem; }
+  .dish__desc { display: none; }
+  .dish__ingredients { display: none; }
+  .dish__inspiration { display: none; }
+  .dish__floats, .dish__texture, .section-texture { display: none; }
+  .hero__logo { inline-size: min(28vh, 20vw); }
+  .hero--v2 .hero__content { grid-template-columns: auto 1fr; align-items: center; gap: var(--s5); max-inline-size: 44rem; }
+  .swipe-hint { display: none; }
+  .rail { display: none; }
+  .welcome { flex-direction: row; gap: var(--s5); }
+  .welcome__figure { inline-size: min(30vh, 24vw); }
+}

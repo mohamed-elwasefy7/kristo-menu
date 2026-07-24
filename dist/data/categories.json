@@ -1,0 +1,128 @@
+[
+  {
+    "id": "daily",
+    "order": 0,
+    "label": { "en": "Daily Dishes", "ar": "الأطباق اليومية" },
+    "mood": "paper",
+    "ornament": "fork-knife",
+    "intro": {
+      "title": { "ar": "الأطباق اليومية", "en": "Daily Dishes" },
+      "subtitle": { "en": "New week, new plates from the kitchen", "ar": "أسبوع جديد، وأطباق جديدة من المطبخ" }
+    },
+    "alwaysShow": true,
+    "note": {
+      "ar": "قائمة تتجدد كل أسبوع — اسأل فريقنا عن أطباق هذا الأسبوع",
+      "en": "A rotating weekly selection — ask our team about this week's dishes"
+    }
+  },
+  {
+    "id": "manakish",
+    "order": 1,
+    "label": { "en": "Manakish", "ar": "المناقيش" },
+    "mood": "turquoise",
+    "ornament": "pita-disc",
+    "intro": {
+      "title": { "ar": "المناقيش", "en": "Manakish" },
+      "subtitle": { "en": "Dough, fire and a Lebanese morning", "ar": "عجين ونار وصباح لبناني" }
+    }
+  },
+  {
+    "id": "sandwiches",
+    "order": 2,
+    "label": { "en": "Cold Sandwiches", "ar": "الساندويتشات الباردة" },
+    "mood": "mist",
+    "ornament": "sesame",
+    "intro": {
+      "title": { "ar": "الساندويتشات الباردة", "en": "Cold Sandwiches" },
+      "subtitle": { "en": "Cool, wrapped and ready to travel", "ar": "باردة وملفوفة وجاهزة للطريق" }
+    }
+  },
+  {
+    "id": "salads",
+    "order": 3,
+    "label": { "en": "Salads", "ar": "السلطات" },
+    "mood": "mist",
+    "ornament": "mint",
+    "intro": {
+      "title": { "ar": "السلطات", "en": "Salads" },
+      "subtitle": { "en": "Green, bright and cut this morning", "ar": "خضراء ومنعشة ومقطّعة صباح اليوم" }
+    }
+  },
+  {
+    "id": "appetizers",
+    "order": 4,
+    "label": { "en": "Cold Mezza", "ar": "المقبلات الباردة" },
+    "mood": "paper",
+    "ornament": "olive-branch",
+    "intro": {
+      "title": { "ar": "المقبلات الباردة", "en": "Cold Mezza" },
+      "subtitle": { "en": "The table starts here", "ar": "من هنا تبدأ السفرة" }
+    }
+  },
+  {
+    "id": "bbq",
+    "order": 5,
+    "label": { "en": "BBQ Sandwiches", "ar": "ساندويتشات المشاوي" },
+    "mood": "ember",
+    "ornament": "fork-knife",
+    "intro": {
+      "title": { "ar": "ساندويتشات المشاوي", "en": "BBQ Sandwiches" },
+      "subtitle": { "en": "Off the charcoal, into warm bread", "ar": "من على الفحم إلى خبز دافئ" }
+    }
+  },
+  {
+    "id": "platters",
+    "order": 6,
+    "label": { "en": "BBQ Platters", "ar": "صحون المشاوي" },
+    "mood": "teal-deep",
+    "ornament": "cedar",
+    "intro": {
+      "title": { "ar": "صحون المشاوي", "en": "BBQ Platters" },
+      "subtitle": { "en": "Charcoal feasts, built for sharing", "ar": "ولائم على الفحم، معمولة للمشاركة" }
+    }
+  },
+  {
+    "id": "burgers",
+    "order": 7,
+    "label": { "en": "Burgers", "ar": "البرغر" },
+    "mood": "ember",
+    "ornament": "tomato",
+    "intro": {
+      "title": { "ar": "البرغر", "en": "Burgers" },
+      "subtitle": { "en": "Flame first, everything else after", "ar": "اللهب أولاً وكل شيء بعده" }
+    }
+  },
+  {
+    "id": "pizza",
+    "order": 8,
+    "label": { "en": "Pizza", "ar": "البيتزا" },
+    "mood": "turquoise",
+    "ornament": "tomato",
+    "intro": {
+      "title": { "ar": "البيتزا", "en": "Pizza" },
+      "subtitle": { "en": "Lebanese dough meets the Italian oven", "ar": "عجينة لبنانية تقابل الفرن الإيطالي" }
+    }
+  },
+  {
+    "id": "hot",
+    "order": 9,
+    "label": { "en": "Hot Appetizers", "ar": "المقبلات الساخنة" },
+    "mood": "mist",
+    "ornament": "chili",
+    "intro": {
+      "title": { "ar": "المقبلات الساخنة", "en": "Hot Appetizers" },
+      "subtitle": { "en": "Golden, crisp and straight from the fire", "ar": "ذهبية ومقرمشة من على النار مباشرة" }
+    }
+  },
+  {
+    "id": "desserts",
+    "order": 10,
+    "label": { "en": "Desserts", "ar": "الحلويات" },
+    "mood": "ink",
+    "ornament": "flourish",
+    "intro": {
+      "title": { "ar": "الحلويات", "en": "Desserts" },
+      "subtitle": { "en": "Syrup, cream and a soft landing", "ar": "قطر وقشطة وختام ناعم" }
+    }
+  }
+]

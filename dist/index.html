@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#6FA29F"><script>
+    // resolve language + direction BEFORE first paint — a post-paint dir flip
+    // would shift every painted box (same logic as utils.initI18n, kept in sync)
+    (function () {
+      var lang = new URLSearchParams(location.search).get("lang");
+      if (lang !== "ar" && lang !== "en") {
+        lang = null;
+        try { lang = JSON.parse(localStorage.getItem("kristo:lang")); } catch (e) {}
+      }
+      if (lang !== "ar" && lang !== "en") {
+        lang = (navigator.language || "ar").indexOf("ar") === 0 ? "ar" : "en";
+      }
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      // gate hero pre-entrance hiding on "JS + motion allowed"
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches &&
+          !location.search.includes("motion=reduce")) {
+        document.documentElement.classList.add("js-motion");
+      }
+    })();
+  </script><title>كريستو — مطبخ لبناني أصيل | KRISTO Lebanese Cuisine</title><meta name="description" content="كريستو — مأكولات لبنانية أصيلة في المصيف، الرياض. مناقيش على الصاج، مشاوي على الفحم، ومازة تُحضّر يومياً. KRISTO — authentic Lebanese cuisine in Riyadh."><link rel="canonical" href="https://USERNAME.github.io/kristo-menu/"><link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png"><link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="كريستو"><meta property="og:type" content="restaurant.restaurant"><meta property="og:title" content="كريستو — مطبخ لبناني أصيل"><meta property="og:description" content="مأكولات لبنانية أصيلة في المصيف، الرياض — مناقيش على الصاج، مشاوي على الفحم، ومازة تُحضّر يومياً."><meta property="og:image" content="https://USERNAME.github.io/kristo-menu/assets/logo/og-image.jpg"><meta property="og:url" content="https://USERNAME.github.io/kristo-menu/"><meta property="og:locale" content="ar_SA"><meta property="og:locale:alternate" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="كريستو — مطبخ لبناني أصيل"><meta name="twitter:description" content="مأكولات لبنانية أصيلة في المصيف، الرياض."><meta name="twitter:image" content="https://USERNAME.github.io/kristo-menu/assets/logo/og-image.jpg"><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "كريستو",
+    "alternateName": "KRISTO",
+    "servesCuisine": "Lebanese",
+    "slogan": "مطبخ لبناني أصيل",
+    "telephone": "+966540015875",
+    "address": { "@type": "PostalAddress", "streetAddress": "Al Masif", "addressLocality": "Riyadh", "addressCountry": "SA" },
+    "acceptsReservations": false,
+    "sameAs": [
+      "https://url.mykeeta.com/Utilj9zz",
+      "https://hungerstation.go.link/?c=SA&s=c&v=95247&so=mls&adj_t=1sdhhuza_1spi9ypp&adj_og_title=Kristo"
+    ]
+  }
+  </script><link rel="preload" as="image" href="assets/logo/logo-emblem.webp" fetchpriority="high"><link rel="preload" as="font" type="font/woff2" href="assets/fonts/ArefRuqaa-700-arabic.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="assets/fonts/Tajawal-400-arabic.woff2" crossorigin><link rel="stylesheet" href="css/bundle.min.css"><script defer src="js/vendor/gsap-bundle.min.js"></script><link rel="modulepreload" href="js/utils.js"><link rel="modulepreload" href="js/menu.js"><link rel="modulepreload" href="js/story.js"><link rel="modulepreload" href="js/ingredients.js"><link rel="modulepreload" href="js/swipe.js"><link rel="modulepreload" href="js/animations.js"><link rel="modulepreload" href="js/parallax.js"><link rel="modulepreload" href="js/loader.js"><script type="module" src="js/app.js"></script></head><body data-mood="paper"><div id="loader" aria-hidden="true"><div class="loader__inner"><div class="loader__mark wordmark" aria-hidden="true"><img src="assets/logo/logo-emblem.webp" alt="" decoding="async"width="480" height="480" onerror="this.style.display='none'"></div><div class="loader__bar"><span id="loader-line"></span></div></div></div><div class="atmosphere" aria-hidden="true"><div class="atmo-layer atmo--paper" data-slot="a" style="opacity:1"></div><div class="atmo-layer" data-slot="b" style="opacity:0"></div></div><div class="grain" aria-hidden="true"></div><header id="nav" class="nav"><div class="nav__pill"><a class="nav__logo" href="#top" data-goto="0" aria-label="كريستو"><span class="wordmark wordmark--sm"><span class="wordmark__name">كريستو</span></span></a><div class="nav__actions"><button id="lang-toggle" class="nav__lang" type="button" aria-label="Switch language">EN</button></div></div></header><main id="snap" class="snap-container" tabindex="-1"><section class="screen hero hero--v2" id="top" data-mood="paper" data-rail="hero" aria-label="كريستو"><div class="hero__particles" aria-hidden="true"></div><div class="hero__light" aria-hidden="true"></div><h1 class="visually-hidden">كريستو — مطبخ لبناني أصيل | KRISTO Lebanese Cuisine</h1><div class="hero__content"><div class="hero__logo" aria-hidden="true"><div class="hero__breathe"><img id="hero-logo" alt="" decoding="async" fetchpriority="high"src="assets/logo/logo-emblem.webp" width="480" height="480"onerror="this.style.visibility='hidden'"></div></div><nav class="hero__cats" aria-label="أقسام المنيو"></nav></div><div class="swipe-hint" aria-hidden="true"><span class="swipe-hint__label" data-i18n="swipeUp">اسحب لأعلى</span><span class="swipe-hint__chevron"></span></div></section></main><nav class="rail" id="rail" aria-label="Menu progress"></nav><dialog id="order-sheet" class="sheet" aria-labelledby="sheet-title"><div class="sheet__handle" aria-hidden="true"></div><h3 class="sheet__title" id="sheet-title"></h3><p class="sheet__sub" data-i18n="orderVia"></p><div class="sheet__links" id="sheet-links"></div><button class="sheet__close" type="button" data-i18n="close"></button></dialog><div id="toast" class="toast" role="status"></div><div id="sr-announcer" class="visually-hidden" aria-live="polite"></div><template id="dish-template">
+    <section class="screen dish" data-animate aria-label="">
+      <div class="dish__bg" aria-hidden="true"></div>
+      <div class="dish__texture" aria-hidden="true" dir="ltr"></div>
+      <div class="dish__floats" aria-hidden="true">
+        <div class="dish__floats-far"></div>
+        <div class="dish__floats-near"></div>
+      </div>
+      <figure class="dish__figure">
+        <div class="dish__breathe">
+          <img class="dish__img" alt="" loading="lazy" decoding="async">
+        </div>
+      </figure>
+      <div class="dish__content">
+        <p class="dish__kicker"></p>
+        <h2 class="dish__name"><span class="reveal"><span class="reveal__inner"></span></span></h2>
+        <p class="dish__subtitle"><span dir="ltr"></span></p>
+        <p class="dish__inspiration"></p>
+        <p class="dish__desc"></p>
+        <ul class="dish__ingredients" role="list"></ul>
+        <div class="dish__foot">
+          <div class="dish__meta">
+            <p class="dish__price"><span class="reveal"><span class="reveal__inner"><span class="dish__price-num"></span> <span class="dish__price-cur"></span></span></span><span class="dish__price-rule" aria-hidden="true"></span></p>
+            <span class="dish__metaitem dish__cal"></span>
+            <span class="dish__metaitem dish__time"></span>
+          </div>
+          <div class="dish__badges"></div>
+          <div class="dish__actions">
+            <button class="btn btn--primary dish__order" type="button"></button>
+            <button class="iconbtn dish__fav" type="button" aria-pressed="false"></button>
+            <button class="iconbtn dish__share" type="button"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </template></body></html>

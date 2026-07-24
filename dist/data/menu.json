@@ -1,0 +1,2853 @@
+{
+  "version": 2,
+  "dishes": [
+    {
+      "id": "manakish-zaatar",
+      "category": "manakish",
+      "name": {
+        "en": "Zaatar",
+        "ar": "زعتر"
+      },
+      "subtitle": {
+        "en": "The unhurried morning classic",
+        "ar": "كلاسيكية الصباح الهادئة"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with zaatar and olive oil",
+        "ar": "زعتر وزيت بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Zaatar",
+          "Olive oil",
+          "Lebanese dough"
+        ],
+        "ar": [
+          "زعتر",
+          "زيت زيتون",
+          "عجينة لبنانية"
+        ]
+      },
+      "calories": 320,
+      "image": "manakish-zaatar",
+      "background": "turquoise",
+      "vegetarian": true
+    },
+    {
+      "id": "manakish-old-school-zaatar",
+      "category": "manakish",
+      "name": {
+        "en": "Old School Zaatar",
+        "ar": "زعتر ايام زمان"
+      },
+      "subtitle": {
+        "en": "Zaatar the grandparents' way",
+        "ar": "زعتر على طريقة الأجداد"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with zaatar mixed with tomato, onions and olive oil",
+        "ar": "زعتر وزيت ممزوج مع الطماطم والبصل بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Zaatar",
+          "Tomato",
+          "Onions",
+          "Olive oil"
+        ],
+        "ar": [
+          "زعتر",
+          "طماطم",
+          "بصل",
+          "زيت زيتون"
+        ]
+      },
+      "calories": 290,
+      "image": "manakish-old-school-zaatar",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "manakish-cocktail",
+      "category": "manakish",
+      "name": {
+        "en": "Cocktail",
+        "ar": "كوكتيل"
+      },
+      "subtitle": {
+        "en": "Half zaatar, half indulgence",
+        "ar": "نص زعتر ونص دلال"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with cheese mix and zaatar with olive oil",
+        "ar": "نصف جبنة نصف زعتر بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Cheese mix",
+          "Zaatar",
+          "Olive oil",
+          "Lebanese dough"
+        ],
+        "ar": [
+          "خلطة أجبان",
+          "زعتر",
+          "زيت زيتون",
+          "عجينة لبنانية"
+        ]
+      },
+      "calories": 340,
+      "image": "manakish-cocktail",
+      "background": "mist",
+      "vegetarian": true
+    },
+    {
+      "id": "manakish-labneh",
+      "category": "manakish",
+      "name": {
+        "en": "Labneh",
+        "ar": "منقوشة لبنة"
+      },
+      "subtitle": {
+        "en": "Countryside labneh, garden-fresh",
+        "ar": "لبنة بلدية بنفَس البستان"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with labne and olive oil with mix vegetables",
+        "ar": "لبنة بلدية مع الخضار بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Labneh",
+          "Mixed vegetables",
+          "Olive oil",
+          "Lebanese dough"
+        ],
+        "ar": [
+          "لبنة بلدية",
+          "خضار مشكلة",
+          "زيت زيتون",
+          "عجينة لبنانية"
+        ]
+      },
+      "calories": 320,
+      "image": "manakish-labneh",
+      "background": "turquoise",
+      "vegetarian": true
+    },
+    {
+      "id": "manakish-akawi",
+      "category": "manakish",
+      "name": {
+        "en": "Akawi Cheese",
+        "ar": "جبنة عكاوي"
+      },
+      "subtitle": {
+        "en": "Melting, milky, irresistible",
+        "ar": "ذايبة وحليبية ولا تُقاوم"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with akawi cheese",
+        "ar": "جبنة عكاوي بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Akawi cheese",
+          "Lebanese dough",
+          "Olive oil"
+        ],
+        "ar": [
+          "جبنة عكاوي",
+          "عجينة لبنانية",
+          "زيت زيتون"
+        ]
+      },
+      "calories": 320,
+      "image": "manakish-akawi",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "manakish-kristo",
+      "category": "manakish",
+      "name": {
+        "en": "Manouchet Kristo",
+        "ar": "منقوشة كريستو"
+      },
+      "subtitle": {
+        "en": "The house's signature round",
+        "ar": "قرص البيت بتوقيعه الخاص"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with feta cheese mix, tomato, onions and olive oil",
+        "ar": "جبنة فيتا ممزوجة مع الطماطم والبصل وزيت الزيتون بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Feta cheese",
+          "Tomato",
+          "Onions",
+          "Olive oil"
+        ],
+        "ar": [
+          "جبنة فيتا",
+          "طماطم",
+          "بصل",
+          "زيت زيتون"
+        ]
+      },
+      "calories": 330,
+      "image": "manakish-kristo",
+      "background": "mist",
+      "vegetarian": true,
+      "chefChoice": true
+    },
+    {
+      "id": "manakish-halloum-pesto",
+      "category": "manakish",
+      "name": {
+        "en": "Halloum Pesto",
+        "ar": "منقوشة حلوم بيستو"
+      },
+      "subtitle": {
+        "en": "Halloumi under basil perfume",
+        "ar": "حلوم بعطر الريحان"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with home made pesto sauce, halloumi cheese, tomato cherry and rocca",
+        "ar": "جبنة حلوم مع صلصة البيستو بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Halloumi cheese",
+          "Pesto sauce",
+          "Cherry tomato",
+          "Rocca"
+        ],
+        "ar": [
+          "جبنة حلوم",
+          "صلصة بيستو",
+          "طماطم كرزية",
+          "روكا"
+        ]
+      },
+      "calories": 340,
+      "image": "manakish-halloum-pesto",
+      "background": "turquoise",
+      "vegetarian": true
+    },
+    {
+      "id": "manakish-spinach",
+      "category": "manakish",
+      "name": {
+        "en": "Spinach",
+        "ar": "سبانخ"
+      },
+      "subtitle": {
+        "en": "Lemony greens, folded quietly",
+        "ar": "خضرة بالسماق بطيّة هادية"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough stuffed with spinach mixed with onions and sumac",
+        "ar": "سبانخ مع البصل والسماق بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Spinach",
+          "Onions",
+          "Sumac",
+          "Lebanese dough"
+        ],
+        "ar": [
+          "سبانخ",
+          "بصل",
+          "سماق",
+          "عجينة لبنانية"
+        ]
+      },
+      "calories": 300,
+      "image": "manakish-spinach",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "manakish-lahme-b-ajin",
+      "category": "manakish",
+      "name": {
+        "en": "Lahme B Ajin",
+        "ar": "لحم بالعجين"
+      },
+      "subtitle": {
+        "en": "Thin, savory, unmistakable",
+        "ar": "رقيقة وشهية وما تنعوّض"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with meat, tomato and onions",
+        "ar": "لحم بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Minced meat",
+          "Tomato",
+          "Onions",
+          "Lebanese dough"
+        ],
+        "ar": [
+          "لحم مفروم",
+          "طماطم",
+          "بصل",
+          "عجينة لبنانية"
+        ]
+      },
+      "calories": 310,
+      "image": "manakish-lahme-b-ajin",
+      "background": "mist"
+    },
+    {
+      "id": "manakish-kafta",
+      "category": "manakish",
+      "name": {
+        "en": "Kafta",
+        "ar": "كفتة"
+      },
+      "subtitle": {
+        "en": "Kafta seared into dough",
+        "ar": "كفتة محمّرة على العجين"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with meat, parsley and onions",
+        "ar": "كفتة بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Kafta meat",
+          "Parsley",
+          "Onions",
+          "Lebanese dough"
+        ],
+        "ar": [
+          "كفتة لحم",
+          "بقدونس",
+          "بصل",
+          "عجينة لبنانية"
+        ]
+      },
+      "calories": 320,
+      "image": "manakish-kafta",
+      "background": "turquoise"
+    },
+    {
+      "id": "pizza-marguerita",
+      "category": "pizza",
+      "name": {
+        "en": "Marguerita",
+        "ar": "بيتزا مارغيريتا"
+      },
+      "subtitle": {
+        "en": "Simplicity, done properly",
+        "ar": "البساطة على أصولها"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with pizza sauce and mozzarella cheese",
+        "ar": "صلصة البيتزا مع جبنة الموزاريلا بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Pizza sauce",
+          "Mozzarella",
+          "Lebanese dough"
+        ],
+        "ar": [
+          "صلصة بيتزا",
+          "موزاريلا",
+          "عجينة لبنانية"
+        ]
+      },
+      "calories": 430,
+      "image": "pizza-marguerita",
+      "background": "turquoise",
+      "vegetarian": true
+    },
+    {
+      "id": "pizza-peperoni",
+      "category": "pizza",
+      "name": {
+        "en": "Peperoni",
+        "ar": "بيتزا بيبيروني"
+      },
+      "subtitle": {
+        "en": "Bold slices, bubbling cheese",
+        "ar": "شرحات جريئة وجبنة تغلي"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with pizza sauce, peperoni slices and mozzarella cheese",
+        "ar": "صلصة البيتزا مع جبنة الموزاريلا وشرحات البيبيروني بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Peperoni slices",
+          "Mozzarella",
+          "Pizza sauce"
+        ],
+        "ar": [
+          "شرحات بيبيروني",
+          "موزاريلا",
+          "صلصة بيتزا"
+        ]
+      },
+      "calories": 440,
+      "image": "pizza-peperoni",
+      "background": "paper"
+    },
+    {
+      "id": "pizza-vegetarian",
+      "category": "pizza",
+      "name": {
+        "en": "Vegetarian",
+        "ar": "بيتزا خضار"
+      },
+      "subtitle": {
+        "en": "A garden over mozzarella",
+        "ar": "بستان فوق الموزاريلا"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with pizza sauce, mix color pepper, olives, eggplant, zucchini and mozzarella cheese",
+        "ar": "صلصة البيتزا مع جبنة الموزاريلا مع فلفل مشكل، زيتون، بذنجان، كوسى بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Mix color pepper",
+          "Olives",
+          "Eggplant",
+          "Zucchini",
+          "Mozzarella"
+        ],
+        "ar": [
+          "فلفل مشكل",
+          "زيتون",
+          "باذنجان",
+          "كوسى",
+          "موزاريلا"
+        ]
+      },
+      "calories": 450,
+      "image": "pizza-vegetarian",
+      "background": "mist",
+      "vegetarian": true
+    },
+    {
+      "id": "pizza-classic",
+      "category": "pizza",
+      "name": {
+        "en": "Classic",
+        "ar": "بيتزا كلاسيكية"
+      },
+      "subtitle": {
+        "en": "Turkey, corn and comfort",
+        "ar": "حبش وذرة وراحة بال"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with pizza sauce, turkey slices, corn, olives and mozzarella cheese",
+        "ar": "صلصة البيتزا مع جبنة الموزاريلا وشرحات الديك الرومي، زيتون، ذرة بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Turkey slices",
+          "Corn",
+          "Olives",
+          "Mozzarella"
+        ],
+        "ar": [
+          "شرحات ديك رومي",
+          "ذرة",
+          "زيتون",
+          "موزاريلا"
+        ]
+      },
+      "calories": 440,
+      "image": "pizza-classic",
+      "background": "turquoise"
+    },
+    {
+      "id": "pizza-kristo",
+      "category": "pizza",
+      "name": {
+        "en": "Kristo",
+        "ar": "بيتزا كريستو"
+      },
+      "subtitle": {
+        "en": "Four flavors, one masterpiece",
+        "ar": "أربع نكهات بتحفة واحدة"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with four kinds of pizza flavors, marguerita, peperoni, vegetarian and classic",
+        "ar": "أربعة أنواع بيتزا بعجينتنا اللبنانية (مارغريتا، بيبيروني، كلاسيك، خضار)"
+      },
+      "ingredients": {
+        "en": [
+          "Marguerita",
+          "Peperoni",
+          "Vegetarian",
+          "Classic"
+        ],
+        "ar": [
+          "مارغريتا",
+          "بيبيروني",
+          "خضار",
+          "كلاسيك"
+        ]
+      },
+      "calories": 450,
+      "image": "pizza-kristo",
+      "background": "paper",
+      "chefChoice": true
+    },
+    {
+      "id": "pizza-chicken",
+      "category": "pizza",
+      "name": {
+        "en": "Chicken",
+        "ar": "بيتزا دجاج"
+      },
+      "subtitle": {
+        "en": "Chicken over molten mozzarella",
+        "ar": "دجاج فوق موزاريلا ذايبة"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with pizza sauce, chicken slices, mix color pepper, corn and mozzarella cheese",
+        "ar": "صلصة البيتزا مع جبنة الموزاريلا وشرحات من الدجاج بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Chicken slices",
+          "Mix color pepper",
+          "Corn",
+          "Mozzarella"
+        ],
+        "ar": [
+          "شرحات دجاج",
+          "فلفل مشكل",
+          "ذرة",
+          "موزاريلا"
+        ]
+      },
+      "calories": 450,
+      "image": "pizza-chicken",
+      "background": "mist"
+    },
+    {
+      "id": "pizza-ranch",
+      "category": "pizza",
+      "name": {
+        "en": "Chicken Ranch Sauce",
+        "ar": "بيتزا بصلصة الرانش"
+      },
+      "subtitle": {
+        "en": "Creamy ranch, crowd-pleaser",
+        "ar": "رانش كريمي يكسب الكل"
+      },
+      "description": {
+        "en": "Traditional Lebanese dough topped with ranch sauce, chicken slices and mozzarella cheese",
+        "ar": "صلصة الرانش مع جبنة الموزاريلا وشرحات من الدجاج بعجينتنا اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Ranch sauce",
+          "Chicken slices",
+          "Mozzarella"
+        ],
+        "ar": [
+          "صلصة رانش",
+          "شرحات دجاج",
+          "موزاريلا"
+        ]
+      },
+      "calories": 450,
+      "image": "pizza-ranch",
+      "background": "turquoise"
+    },
+    {
+      "id": "sandwich-halloum",
+      "category": "sandwiches",
+      "name": {
+        "en": "Haloum",
+        "ar": "ساندويش حلوم"
+      },
+      "subtitle": {
+        "en": "Squeaky halloumi, sesame bread",
+        "ar": "حلوم طازج بخبزة السمسم"
+      },
+      "description": {
+        "en": "halloumi cheese, tomato, cucumber, olives",
+        "ar": "حلوم، طماطم، خيار، زيتون بخبزة السمسم"
+      },
+      "ingredients": {
+        "en": [
+          "Halloumi cheese",
+          "Tomato",
+          "Cucumber",
+          "Olives"
+        ],
+        "ar": [
+          "جبنة حلوم",
+          "طماطم",
+          "خيار",
+          "زيتون"
+        ]
+      },
+      "calories": 285,
+      "image": "sandwich-halloum",
+      "background": "mist",
+      "vegetarian": true
+    },
+    {
+      "id": "sandwich-halloum-pesto",
+      "category": "sandwiches",
+      "name": {
+        "en": "Haloum Pesto",
+        "ar": "ساندويش حلوم بيستو"
+      },
+      "subtitle": {
+        "en": "Halloumi, basil-perfumed",
+        "ar": "حلوم بعبير الريحان"
+      },
+      "description": {
+        "en": "pesto sauce, halloumi cheese, tomato cubes, rocca leaves",
+        "ar": "حلوم، صلصة البيستو، طماطم مكعبات، روكا بخبزة السمسم"
+      },
+      "ingredients": {
+        "en": [
+          "Halloumi cheese",
+          "Pesto sauce",
+          "Tomato cubes",
+          "Rocca leaves"
+        ],
+        "ar": [
+          "جبنة حلوم",
+          "صلصة بيستو",
+          "طماطم",
+          "روكا"
+        ]
+      },
+      "calories": 295,
+      "image": "sandwich-halloum-pesto",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "sandwich-labneh",
+      "category": "sandwiches",
+      "name": {
+        "en": "Labneh",
+        "ar": "ساندويش لبنة"
+      },
+      "subtitle": {
+        "en": "A Beirut morning, wrapped",
+        "ar": "صباح بيروتي ملفوف"
+      },
+      "description": {
+        "en": "traditional Lebanese labna, tomato, cucumber, olives, mint, olive oil",
+        "ar": "لبنة، طماطم، خيار، زيتون، نعنع، زيت زيتون بخبزة السمسم"
+      },
+      "ingredients": {
+        "en": [
+          "Labneh",
+          "Tomato",
+          "Cucumber",
+          "Olives",
+          "Mint"
+        ],
+        "ar": [
+          "لبنة",
+          "طماطم",
+          "خيار",
+          "زيتون",
+          "نعنع"
+        ]
+      },
+      "calories": 290,
+      "image": "sandwich-labneh",
+      "background": "mist",
+      "vegetarian": true
+    },
+    {
+      "id": "sandwich-labneh-makdous",
+      "category": "sandwiches",
+      "name": {
+        "en": "Labneh W Makdous",
+        "ar": "ساندويش لبنة ومكدوس"
+      },
+      "subtitle": {
+        "en": "Labneh meets cured makdous",
+        "ar": "اللبنة تقابل المكدوس المعتّق"
+      },
+      "description": {
+        "en": "traditional Lebanese labna mixed with makdous, tomato, cucumber, olives, mint, olive oil",
+        "ar": "لبنة ومكدوس، طماطم، خيار، زيتون، نعنع، زيت زيتون بخبزة السمسم"
+      },
+      "ingredients": {
+        "en": [
+          "Labneh",
+          "Makdous",
+          "Tomato",
+          "Olives",
+          "Mint"
+        ],
+        "ar": [
+          "لبنة",
+          "مكدوس",
+          "طماطم",
+          "زيتون",
+          "نعنع"
+        ]
+      },
+      "calories": 290,
+      "image": "sandwich-labneh-makdous",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "sandwich-cheese-kristo",
+      "category": "sandwiches",
+      "name": {
+        "en": "Sandwich Cheese Kristo",
+        "ar": "ساندويش جبنة كريستو"
+      },
+      "subtitle": {
+        "en": "The house blend, unmistakable",
+        "ar": "خلطة البيت التي لا تُشبه غيرها"
+      },
+      "description": {
+        "en": "traditional Lebanese feta cheese mixed with tomato and green onions, rocca leaves",
+        "ar": "جبنة فيتا، طماطم، بصل اخضر ممزوجة بزيت الزيتون بخبزة السمسم"
+      },
+      "ingredients": {
+        "en": [
+          "Feta cheese",
+          "Tomato",
+          "Green onions",
+          "Rocca leaves"
+        ],
+        "ar": [
+          "جبنة فيتا",
+          "طماطم",
+          "بصل أخضر",
+          "روكا"
+        ]
+      },
+      "calories": 290,
+      "image": "sandwich-cheese-kristo",
+      "background": "mist",
+      "vegetarian": true
+    },
+    {
+      "id": "sandwich-chicken-caesar",
+      "category": "sandwiches",
+      "name": {
+        "en": "Chicken Caesar",
+        "ar": "ساندويش دجاج بالسيزر"
+      },
+      "subtitle": {
+        "en": "The famous salad, travelling",
+        "ar": "السلطة الشهيرة في رحلة"
+      },
+      "description": {
+        "en": "grilled chicken, parmesan cheese, lettuce, served with caesar sauce",
+        "ar": "شرائح من الدجاج المشوي، جبنة البرمزان، خس مع صلصة السيزر بخبزة السمسم"
+      },
+      "ingredients": {
+        "en": [
+          "Grilled chicken",
+          "Parmesan cheese",
+          "Lettuce",
+          "Caesar sauce"
+        ],
+        "ar": [
+          "دجاج مشوي",
+          "جبنة برمزان",
+          "خس",
+          "صلصة سيزر"
+        ]
+      },
+      "calories": 320,
+      "image": "sandwich-chicken-caesar",
+      "background": "paper"
+    },
+    {
+      "id": "sandwich-chicken-kristo",
+      "category": "sandwiches",
+      "name": {
+        "en": "Chicken Kristo",
+        "ar": "ساندويش دجاج كريستو"
+      },
+      "subtitle": {
+        "en": "Grilled chicken, signature sauce",
+        "ar": "دجاج مشوي بصوص التوقيع"
+      },
+      "description": {
+        "en": "grilled chicken, kristo sauce, corn, rocca leaves",
+        "ar": "شرائح من الدجاج المشوي، روكا مع صلصة كريستو بخبزة السمسم"
+      },
+      "ingredients": {
+        "en": [
+          "Grilled chicken",
+          "Kristo sauce",
+          "Corn",
+          "Rocca leaves"
+        ],
+        "ar": [
+          "دجاج مشوي",
+          "صلصة كريستو",
+          "ذرة",
+          "روكا"
+        ]
+      },
+      "calories": 320,
+      "image": "sandwich-chicken-kristo",
+      "background": "mist"
+    },
+    {
+      "id": "sandwich-turkey",
+      "category": "sandwiches",
+      "name": {
+        "en": "Turkey Cheese",
+        "ar": "ساندويش حبش وجبنة"
+      },
+      "subtitle": {
+        "en": "Smoked turkey, mustard-brightened",
+        "ar": "حبش مدخّن بلمعة الخردل"
+      },
+      "description": {
+        "en": "turkey slices, iceberg, tomato, corn, pickles served with lemon mustard sauce",
+        "ar": "ديك رومي، خس، طماطم، ذرة، مخلل خيار مع صلصة الخردل بخبزة السمسم"
+      },
+      "ingredients": {
+        "en": [
+          "Turkey slices",
+          "Iceberg",
+          "Corn",
+          "Pickles",
+          "Lemon mustard"
+        ],
+        "ar": [
+          "ديك رومي",
+          "خس",
+          "ذرة",
+          "مخلل",
+          "صلصة الخردل"
+        ]
+      },
+      "calories": 290,
+      "image": "sandwich-turkey",
+      "background": "paper"
+    },
+    {
+      "id": "sandwich-tuna",
+      "category": "sandwiches",
+      "name": {
+        "en": "Tuna",
+        "ar": "ساندويش تونا"
+      },
+      "subtitle": {
+        "en": "Briny, bright, dependable",
+        "ar": "منعشة وصادقة وتعتمد عليها"
+      },
+      "description": {
+        "en": "mix tuna, iceberg, corn, olives served with lemon mustard sauce",
+        "ar": "تونا، خس، ذرة، زيتون مع صلصة الخردل بخبزة السمسم"
+      },
+      "ingredients": {
+        "en": [
+          "Tuna",
+          "Iceberg",
+          "Corn",
+          "Olives",
+          "Lemon mustard"
+        ],
+        "ar": [
+          "تونا",
+          "خس",
+          "ذرة",
+          "زيتون",
+          "صلصة الخردل"
+        ]
+      },
+      "calories": 300,
+      "image": "sandwich-tuna",
+      "background": "mist"
+    },
+    {
+      "id": "sandwich-crab",
+      "category": "sandwiches",
+      "name": {
+        "en": "Crab",
+        "ar": "ساندويش كراب"
+      },
+      "subtitle": {
+        "en": "Coastal, creamy, colorful",
+        "ar": "ساحلية وكريمية وملوّنة"
+      },
+      "description": {
+        "en": "crab sticks, iceberg, avocado, mango, cucumber, corn, carrots, served with lemon mustard sauce",
+        "ar": "كراب اصابع، خس، افوكا، مانغا، خيار، ذرة، جزر مع صلصة الخردل بخبزة السمسم"
+      },
+      "ingredients": {
+        "en": [
+          "Crab sticks",
+          "Avocado",
+          "Mango",
+          "Corn",
+          "Lemon mustard"
+        ],
+        "ar": [
+          "كراب",
+          "أفوكادو",
+          "مانغا",
+          "ذرة",
+          "صلصة الخردل"
+        ]
+      },
+      "calories": 280,
+      "image": "sandwich-crab",
+      "background": "paper"
+    },
+    {
+      "id": "hot-cheese-rolls",
+      "category": "hot",
+      "name": {
+        "en": "Cheese Rolls",
+        "ar": "رقاقات بالجبن"
+      },
+      "subtitle": {
+        "en": "Crisp cigars, molten centers",
+        "ar": "أصابع مقرمشة وقلب ذايب"
+      },
+      "description": {
+        "en": "four pieces roll stuffed with mix cheese mixed with onions and parsley",
+        "ar": "اربع حبات رقاقات محشية بالجبن مع البصل والبقدونس"
+      },
+      "ingredients": {
+        "en": [
+          "Mix cheese",
+          "Onions",
+          "Parsley",
+          "Thin pastry"
+        ],
+        "ar": [
+          "خلطة أجبان",
+          "بصل",
+          "بقدونس",
+          "رقاقات"
+        ]
+      },
+      "calories": 335,
+      "image": "hot-cheese-rolls",
+      "background": "mist",
+      "vegetarian": true
+    },
+    {
+      "id": "hot-vegetables-rolls",
+      "category": "hot",
+      "name": {
+        "en": "Vegetables Rolls",
+        "ar": "رقاقات بالخضار"
+      },
+      "subtitle": {
+        "en": "Garden-stuffed, golden-fried",
+        "ar": "محشية خضار ومقلية ذهبية"
+      },
+      "description": {
+        "en": "four pieces roll stuffed with mix vegetables",
+        "ar": "اربع حبات رقاقات محشية بالخضار"
+      },
+      "ingredients": {
+        "en": [
+          "Mix vegetables",
+          "Thin pastry",
+          "Herbs"
+        ],
+        "ar": [
+          "خضار مشكلة",
+          "رقاقات",
+          "أعشاب"
+        ]
+      },
+      "calories": 345,
+      "image": "hot-vegetables-rolls",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "hot-kebbe-orass",
+      "category": "hot",
+      "name": {
+        "en": "Kebbe Orass",
+        "ar": "كبة اقراص"
+      },
+      "subtitle": {
+        "en": "Crackling shells, spiced hearts",
+        "ar": "قشرة مقرمشة وقلب متبّل"
+      },
+      "description": {
+        "en": "four pieces kebbe meat stuffed with meat and onions",
+        "ar": "اربع حبات كبة اقراص محشية باللحم"
+      },
+      "ingredients": {
+        "en": [
+          "Kebbe meat",
+          "Minced meat",
+          "Onions"
+        ],
+        "ar": [
+          "كبة لحم",
+          "لحم مفروم",
+          "بصل"
+        ]
+      },
+      "calories": 365,
+      "image": "hot-kebbe-orass",
+      "background": "mist"
+    },
+    {
+      "id": "hot-sambousik-cheese",
+      "category": "hot",
+      "name": {
+        "en": "Sambousik Cheese",
+        "ar": "سمبوسك جبنة"
+      },
+      "subtitle": {
+        "en": "Golden crescents of cheese",
+        "ar": "أهلّة ذهبية محشية جبنة"
+      },
+      "description": {
+        "en": "four pieces sambousik dough stuffed with mix cheese",
+        "ar": "اربع حبات سمبوسك محشية بالجبن"
+      },
+      "ingredients": {
+        "en": [
+          "Mix cheese",
+          "Sambousik dough",
+          "Parsley"
+        ],
+        "ar": [
+          "خلطة أجبان",
+          "عجينة سمبوسك",
+          "بقدونس"
+        ]
+      },
+      "calories": 375,
+      "image": "hot-sambousik-cheese",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "hot-sambousik-lahme",
+      "category": "hot",
+      "name": {
+        "en": "Sambousik Lahme",
+        "ar": "سمبوسك لحمة"
+      },
+      "subtitle": {
+        "en": "Golden crescents, savory meat",
+        "ar": "أهلّة ذهبية بحشوة اللحم"
+      },
+      "description": {
+        "en": "four pieces sambousik dough stuffed with minced meat and onions",
+        "ar": "اربع حبات سمبوسك محشية باللحم"
+      },
+      "ingredients": {
+        "en": [
+          "Minced meat",
+          "Onions",
+          "Sambousik dough"
+        ],
+        "ar": [
+          "لحم مفروم",
+          "بصل",
+          "عجينة سمبوسك"
+        ]
+      },
+      "calories": 375,
+      "image": "hot-sambousik-lahme",
+      "background": "mist"
+    },
+    {
+      "id": "hot-batata-harra",
+      "category": "hot",
+      "name": {
+        "en": "Batata Harra",
+        "ar": "بطاطا حارة"
+      },
+      "subtitle": {
+        "en": "Chili, garlic, coriander trouble",
+        "ar": "فليفلة وثوم وكزبرة وشقاوة"
+      },
+      "description": {
+        "en": "crispy potato cubes, mixed with pepper paste, coriander and garlic",
+        "ar": "مكعبات بطاطا مقلية مع صلصة الحارة بالكزبرة والثوم"
+      },
+      "ingredients": {
+        "en": [
+          "Potato cubes",
+          "Pepper paste",
+          "Coriander",
+          "Garlic"
+        ],
+        "ar": [
+          "بطاطا",
+          "صلصة حارة",
+          "كزبرة",
+          "ثوم"
+        ]
+      },
+      "calories": 410,
+      "image": "hot-batata-harra",
+      "background": "paper",
+      "vegetarian": true,
+      "spicy": true
+    },
+    {
+      "id": "hot-wedges",
+      "category": "hot",
+      "name": {
+        "en": "Wedges Potato",
+        "ar": "بطاطا ويدجز"
+      },
+      "subtitle": {
+        "en": "Thick-cut and crackling",
+        "ar": "قطع سميكة ومقرمشة"
+      },
+      "description": {
+        "en": "crispy wedges potato",
+        "ar": "بطاطا ويدجز مقلية"
+      },
+      "ingredients": {
+        "en": [
+          "Potato wedges",
+          "Sea salt",
+          "Seasoning"
+        ],
+        "ar": [
+          "بطاطا ويدجز",
+          "ملح",
+          "تتبيلة"
+        ]
+      },
+      "calories": 410,
+      "image": "hot-wedges",
+      "background": "mist",
+      "vegetarian": true
+    },
+    {
+      "id": "hot-fries",
+      "category": "hot",
+      "name": {
+        "en": "Fries",
+        "ar": "بطاطا فرايز"
+      },
+      "subtitle": {
+        "en": "Golden, seasoned, disappearing",
+        "ar": "ذهبية ومتبّلة وتخلص بسرعة"
+      },
+      "description": {
+        "en": "crispy French fries, mixed with kristo pepper",
+        "ar": "بطاطا فرايز ببهارات كريستو"
+      },
+      "ingredients": {
+        "en": [
+          "French fries",
+          "Kristo pepper",
+          "Sea salt"
+        ],
+        "ar": [
+          "بطاطا فرايز",
+          "بهارات كريستو",
+          "ملح"
+        ]
+      },
+      "calories": 390,
+      "image": "hot-fries",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "hot-fries-kristo",
+      "category": "hot",
+      "name": {
+        "en": "Fries Kristo",
+        "ar": "بطاطا فرايز كريستو"
+      },
+      "subtitle": {
+        "en": "Three cheeses, loaded shamelessly",
+        "ar": "ثلاث أجبان وتحميل بلا خجل"
+      },
+      "description": {
+        "en": "French fries, topped with cheddar cheese, mozzarella cheese, parmesan cheese, served with kristo sauce",
+        "ar": "بطاطا فرايز مغطاة بخليط من جبنة الشيدير والموزاريلا والبرميزان مع الحر وصلصة كريستو"
+      },
+      "ingredients": {
+        "en": [
+          "French fries",
+          "Cheddar",
+          "Mozzarella",
+          "Parmesan",
+          "Kristo sauce"
+        ],
+        "ar": [
+          "بطاطا فرايز",
+          "شيدر",
+          "موزاريلا",
+          "برميزان",
+          "صلصة كريستو"
+        ]
+      },
+      "calories": 430,
+      "image": "hot-fries-kristo",
+      "background": "mist",
+      "vegetarian": true
+    },
+    {
+      "id": "appetizer-labneh",
+      "category": "appetizers",
+      "name": {
+        "en": "Labneh",
+        "ar": "صحن لبنة"
+      },
+      "subtitle": {
+        "en": "Thick, tangy, drizzled gold",
+        "ar": "كثيفة وحامضية بخيط ذهبي"
+      },
+      "description": {
+        "en": "traditional Lebanese labna served with olive oil",
+        "ar": "صحن لبنة بلدية مع زيت الزيتون وصحن خضرة"
+      },
+      "ingredients": {
+        "en": [
+          "Labneh",
+          "Olive oil",
+          "Fresh vegetables"
+        ],
+        "ar": [
+          "لبنة بلدية",
+          "زيت زيتون",
+          "صحن خضرة"
+        ]
+      },
+      "calories": 210,
+      "image": "appetizer-labneh",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "appetizer-labneh-makdous",
+      "category": "appetizers",
+      "name": {
+        "en": "Labneh W Makdous",
+        "ar": "صحن لبنة ومكدوس"
+      },
+      "subtitle": {
+        "en": "Oil-cured eggplant on labneh",
+        "ar": "مكدوس معتّق على لبنة"
+      },
+      "description": {
+        "en": "traditional Lebanese labna mixed with makdous served with olive oil",
+        "ar": "صحن لبنة بلدية ومكدوس مع زيت الزيتون وصحن خضرة"
+      },
+      "ingredients": {
+        "en": [
+          "Labneh",
+          "Makdous",
+          "Olive oil",
+          "Fresh vegetables"
+        ],
+        "ar": [
+          "لبنة بلدية",
+          "مكدوس",
+          "زيت زيتون",
+          "صحن خضرة"
+        ]
+      },
+      "calories": 235,
+      "image": "appetizer-labneh-makdous",
+      "background": "mist",
+      "vegetarian": true
+    },
+    {
+      "id": "appetizer-labneh-toum",
+      "category": "appetizers",
+      "name": {
+        "en": "Labneh B Toum",
+        "ar": "صحن لبنة بالثوم"
+      },
+      "subtitle": {
+        "en": "Garlic-charged and unapologetic",
+        "ar": "لبنة بلدية بلمسة الثوم"
+      },
+      "description": {
+        "en": "traditional Lebanese labna mixed with garlic paste and dry mint served with olive oil",
+        "ar": "صحن لبنة بلدية بالثوم مع زيت الزيتون وصحن خضرة"
+      },
+      "ingredients": {
+        "en": [
+          "Labneh",
+          "Garlic paste",
+          "Dry mint",
+          "Olive oil"
+        ],
+        "ar": [
+          "لبنة بلدية",
+          "ثوم",
+          "نعناع يابس",
+          "زيت زيتون"
+        ]
+      },
+      "calories": 215,
+      "image": "appetizer-labneh-toum",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "appetizer-cheese-kristo",
+      "category": "appetizers",
+      "name": {
+        "en": "Cheese Kristo",
+        "ar": "صحن جبنة كريستو"
+      },
+      "subtitle": {
+        "en": "Signature feta of the house",
+        "ar": "فيتا على طريقة البيت"
+      },
+      "description": {
+        "en": "traditional Lebanese feta cheese mixed with tomato and green onions",
+        "ar": "صحن جبنة فيتا، طماطم، بصل اخضر ممزوجة بزيت الزيتون وصحن خضرة"
+      },
+      "ingredients": {
+        "en": [
+          "Feta cheese",
+          "Tomato",
+          "Green onions",
+          "Olive oil"
+        ],
+        "ar": [
+          "جبنة فيتا",
+          "طماطم",
+          "بصل أخضر",
+          "زيت زيتون"
+        ]
+      },
+      "calories": 255,
+      "image": "appetizer-cheese-kristo",
+      "background": "mist",
+      "vegetarian": true
+    },
+    {
+      "id": "appetizer-homos",
+      "category": "appetizers",
+      "name": {
+        "en": "Homos",
+        "ar": "صحن حمص"
+      },
+      "subtitle": {
+        "en": "Silk-smooth chickpeas, tahini",
+        "ar": "حمص وطحينة بنعومة الحرير"
+      },
+      "description": {
+        "en": "traditional Lebanese homos bel tahina served with olive oil",
+        "ar": "صحن حمص بالطحينة مع زيت الزيتون وصحن خضرة"
+      },
+      "ingredients": {
+        "en": [
+          "Chickpeas",
+          "Tahini",
+          "Olive oil",
+          "Fresh vegetables"
+        ],
+        "ar": [
+          "حمص",
+          "طحينة",
+          "زيت زيتون",
+          "صحن خضرة"
+        ]
+      },
+      "calories": 265,
+      "image": "appetizer-homos",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "appetizer-homos-pesto",
+      "category": "appetizers",
+      "name": {
+        "en": "Homos Pesto",
+        "ar": "صحن حمص بالبيستو"
+      },
+      "subtitle": {
+        "en": "Basil swirled into the classic",
+        "ar": "ريحان يدور في الكلاسيكية"
+      },
+      "description": {
+        "en": "traditional Lebanese homos bel tahina mixed with pesto sauce served with olive oil",
+        "ar": "صحن حمص بالطحينة بصلصة البيستو مع زيت الزيتون وصحن خضرة"
+      },
+      "ingredients": {
+        "en": [
+          "Chickpeas",
+          "Pesto sauce",
+          "Tahini",
+          "Olive oil"
+        ],
+        "ar": [
+          "حمص",
+          "صلصة بيستو",
+          "طحينة",
+          "زيت زيتون"
+        ]
+      },
+      "calories": 275,
+      "image": "appetizer-homos-pesto",
+      "background": "mist",
+      "vegetarian": true
+    },
+    {
+      "id": "appetizer-moutabal",
+      "category": "appetizers",
+      "name": {
+        "en": "Moutabal",
+        "ar": "صحن متبل باذنجان"
+      },
+      "subtitle": {
+        "en": "Smoky eggplant, cool tahini",
+        "ar": "باذنجان مدخّن وطحينة باردة"
+      },
+      "description": {
+        "en": "traditional Lebanese eggplant moutabal bel tahina served with olive oil",
+        "ar": "صحن متبل بذنجان بالطحينة وصحن خضرة"
+      },
+      "ingredients": {
+        "en": [
+          "Eggplant",
+          "Tahini",
+          "Olive oil",
+          "Fresh vegetables"
+        ],
+        "ar": [
+          "باذنجان",
+          "طحينة",
+          "زيت زيتون",
+          "صحن خضرة"
+        ]
+      },
+      "calories": 275,
+      "image": "appetizer-moutabal",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "appetizer-moutabal-beetroot",
+      "category": "appetizers",
+      "name": {
+        "en": "Moutabal Beetroot",
+        "ar": "صحن متبل باذنجان بالشمندر"
+      },
+      "subtitle": {
+        "en": "A ruby-pink surprise",
+        "ar": "مفاجأة وردية ياقوتية"
+      },
+      "description": {
+        "en": "traditional Lebanese eggplant moutabal bel tahina mixed with beetroot served with olive oil",
+        "ar": "صحن متبل بذنجان مع الشمندر بالطحينة وصحن خضرة"
+      },
+      "ingredients": {
+        "en": [
+          "Eggplant",
+          "Beetroot",
+          "Tahini",
+          "Olive oil"
+        ],
+        "ar": [
+          "باذنجان",
+          "شمندر",
+          "طحينة",
+          "زيت زيتون"
+        ]
+      },
+      "calories": 285,
+      "image": "appetizer-moutabal-beetroot",
+      "background": "mist",
+      "vegetarian": true
+    },
+    {
+      "id": "appetizer-waraa-inab",
+      "category": "appetizers",
+      "name": {
+        "en": "Waraa Inab",
+        "ar": "صحن ورق عنب"
+      },
+      "subtitle": {
+        "en": "Vine leaves, patiently rolled",
+        "ar": "ورق عنب ملفوف بصبر"
+      },
+      "description": {
+        "en": "traditional Lebanese waraa inab stuffed with rice and vegetables topped with debs el remman",
+        "ar": "صحن ورق عنب بالزيت مع دبس الرمان"
+      },
+      "ingredients": {
+        "en": [
+          "Vine leaves",
+          "Rice",
+          "Vegetables",
+          "Pomegranate molasses"
+        ],
+        "ar": [
+          "ورق عنب",
+          "أرز",
+          "خضار",
+          "دبس رمان"
+        ]
+      },
+      "calories": 245,
+      "image": "appetizer-waraa-inab",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "burger-Lebanese",
+      "category": "burgers",
+      "name": {
+        "en": "Lebanese",
+        "ar": "برغر لبناني"
+      },
+      "subtitle": {
+        "en": "A burger with Beirut manners",
+        "ar": "برغر بأخلاق بيروتية"
+      },
+      "description": {
+        "en": "beef patty, tomato, onions, fries, coleslaw served with mustard and ketchup",
+        "ar": "120 غرام لحمة برغر بلدي، طماطم، ملفوف، بصل، بطاطا مع كاتشاب وخردل بخبزتنا السمسم الشهيرة"
+      },
+      "ingredients": {
+        "en": [
+          "Beef patty",
+          "Tomato",
+          "Onions",
+          "Fries",
+          "Coleslaw"
+        ],
+        "ar": [
+          "لحمة برغر",
+          "طماطم",
+          "بصل",
+          "بطاطا",
+          "ملفوف"
+        ]
+      },
+      "calories": 550,
+      "image": "burger-Lebanese",
+      "background": "ember"
+    },
+    {
+      "id": "burger-classic-beef",
+      "category": "burgers",
+      "name": {
+        "en": "Classic Beef",
+        "ar": "برغر كلاسيك"
+      },
+      "subtitle": {
+        "en": "Char, cheddar, no shortcuts",
+        "ar": "شواء وشيدر وبلا اختصارات"
+      },
+      "description": {
+        "en": "beef patty, tomato, onions, iceberg served with cocktail sauce",
+        "ar": "120 غرام لحمة برغر بلدي، جبنة الشيدير، طماطم، خس، بصل مع صلصة الكوكتيل بخبزتنا الشهيرة"
+      },
+      "ingredients": {
+        "en": [
+          "Beef patty",
+          "Cheddar cheese",
+          "Tomato",
+          "Iceberg",
+          "Cocktail sauce"
+        ],
+        "ar": [
+          "لحمة برغر",
+          "جبنة شيدر",
+          "طماطم",
+          "خس",
+          "صلصة كوكتيل"
+        ]
+      },
+      "calories": 560,
+      "image": "burger-classic-beef",
+      "background": "ink"
+    },
+    {
+      "id": "burger-grilled-chicken",
+      "category": "burgers",
+      "name": {
+        "en": "Grilled Chicken",
+        "ar": "برغر الدجاج المشوي"
+      },
+      "subtitle": {
+        "en": "Grilled, light, dependable",
+        "ar": "مشوي وخفيف وما يخذلك"
+      },
+      "description": {
+        "en": "grilled chicken breast, tomato, lettuce served with garlic cocktail sauce",
+        "ar": "صدر دجاج مشوي، طماطم، خس مع صلصة الكوكتيل بخبزتنا الشهيرة"
+      },
+      "ingredients": {
+        "en": [
+          "Grilled chicken breast",
+          "Tomato",
+          "Lettuce",
+          "Garlic cocktail sauce"
+        ],
+        "ar": [
+          "صدر دجاج مشوي",
+          "طماطم",
+          "خس",
+          "صلصة كوكتيل بالثوم"
+        ]
+      },
+      "calories": 570,
+      "image": "burger-grilled-chicken",
+      "background": "ember"
+    },
+    {
+      "id": "burger-fried-chicken",
+      "category": "burgers",
+      "name": {
+        "en": "Fried Chicken",
+        "ar": "برغر الدجاج المقلي"
+      },
+      "subtitle": {
+        "en": "Crunch first, questions later",
+        "ar": "القرمشة أولاً والأسئلة بعدين"
+      },
+      "description": {
+        "en": "fried chicken breast, cheddar cheese, lettuce, tomato served with garlic cocktail sauce",
+        "ar": "صدر دجاج مقلي، جبنة الشيدير، طماطم، خس مع صلصة الكوكتيل بخبزتنا الشهيرة"
+      },
+      "ingredients": {
+        "en": [
+          "Fried chicken breast",
+          "Cheddar cheese",
+          "Lettuce",
+          "Tomato"
+        ],
+        "ar": [
+          "صدر دجاج مقلي",
+          "جبنة شيدر",
+          "خس",
+          "طماطم"
+        ]
+      },
+      "calories": 655,
+      "image": "burger-fried-chicken",
+      "background": "ink"
+    },
+    {
+      "id": "burger-kristo-chicken",
+      "category": "burgers",
+      "name": {
+        "en": "Kristo Chicken Burger",
+        "ar": "برغر دجاج كريستو"
+      },
+      "subtitle": {
+        "en": "The house chicken, crowned",
+        "ar": "دجاج البيت متوّج"
+      },
+      "description": {
+        "en": "crispy chicken breast, dipped in our signature kristo sauce, served with fries",
+        "ar": "صدر دجاج مقرمش مغطس بصلصة كريستو المميزة مع البطاطا"
+      },
+      "ingredients": {
+        "en": [
+          "Crispy chicken breast",
+          "Kristo sauce",
+          "Fries"
+        ],
+        "ar": [
+          "صدر دجاج مقرمش",
+          "صلصة كريستو",
+          "بطاطا"
+        ]
+      },
+      "calories": 755,
+      "image": "burger-kristo-chicken",
+      "background": "ember"
+    },
+    {
+      "id": "burger-kristo-beef",
+      "category": "burgers",
+      "name": {
+        "en": "Kristo Beef Burger",
+        "ar": "كريستو برغر لحم"
+      },
+      "subtitle": {
+        "en": "Drowned in mushroom sauce",
+        "ar": "غارق بصلصة الفطر"
+      },
+      "description": {
+        "en": "fresh 120 g beef patty, dipped in home made mushroom sauce, served with fries",
+        "ar": "120 غرام من لحم العجل البلدي مغطس بصلصة الفطر المميزة مع البطاطا"
+      },
+      "ingredients": {
+        "en": [
+          "Beef patty",
+          "Mushroom sauce",
+          "Fries"
+        ],
+        "ar": [
+          "لحمة برغر بلدي",
+          "صلصة الفطر",
+          "بطاطا"
+        ]
+      },
+      "calories": 855,
+      "image": "burger-kristo-beef",
+      "background": "ink",
+      "chefChoice": true
+    },
+    {
+      "id": "salad-tabbouleh",
+      "category": "salads",
+      "name": {
+        "en": "Tabouleh",
+        "ar": "تبولة"
+      },
+      "subtitle": {
+        "en": "Parsley first, everything after",
+        "ar": "البقدونس أولاً وكل شيء بعده"
+      },
+      "description": {
+        "en": "traditional Lebanese tabbouleh, served with olive oil sauce",
+        "ar": "بقدونس، طماطم، بصل، زيت زيتون وليمون"
+      },
+      "ingredients": {
+        "en": [
+          "Parsley",
+          "Tomato",
+          "Onions",
+          "Olive oil",
+          "Lemon"
+        ],
+        "ar": [
+          "بقدونس",
+          "طماطم",
+          "بصل",
+          "زيت زيتون",
+          "ليمون"
+        ]
+      },
+      "calories": 185,
+      "image": "salad-tabbouleh",
+      "background": "mist",
+      "vegetarian": true
+    },
+    {
+      "id": "salad-fattoush",
+      "category": "salads",
+      "name": {
+        "en": "Fatouch",
+        "ar": "فتوش"
+      },
+      "subtitle": {
+        "en": "Sumac, crunch, garden pride",
+        "ar": "سمّاق وقرمشة وفخر البستان"
+      },
+      "description": {
+        "en": "traditional Lebanese fatouch, served with olive oil and debs el remman sauce",
+        "ar": "طماطم، خيار، بقلة، بصل، فلفل اخضر حلو، نعنع، خس، سماق مع زيت الزيتون والليمون"
+      },
+      "ingredients": {
+        "en": [
+          "Tomato",
+          "Cucumber",
+          "Purslane",
+          "Sumac",
+          "Pomegranate molasses"
+        ],
+        "ar": [
+          "طماطم",
+          "خيار",
+          "بقلة",
+          "سماق",
+          "دبس رمان"
+        ]
+      },
+      "calories": 215,
+      "image": "salad-fattoush",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "salad-rocca-beetroot",
+      "category": "salads",
+      "name": {
+        "en": "Rocca Beetroot Mushroom",
+        "ar": "روكا بالشمندر"
+      },
+      "subtitle": {
+        "en": "Peppery leaves, earthy mushrooms",
+        "ar": "أوراق حارّة وفطر بنكهة الأرض"
+      },
+      "description": {
+        "en": "rocca leaves mixed with beetroot and fresh mushrooms topped with parmesan cheese, served with balsamic sauce",
+        "ar": "روكا، شمندر، فطر، جبنة البرمزان، صلصة البلسمك"
+      },
+      "ingredients": {
+        "en": [
+          "Rocca leaves",
+          "Beetroot",
+          "Fresh mushrooms",
+          "Parmesan cheese",
+          "Balsamic sauce"
+        ],
+        "ar": [
+          "روكا",
+          "شمندر",
+          "فطر",
+          "جبنة برمزان",
+          "صلصة بلسمك"
+        ]
+      },
+      "calories": 235,
+      "image": "salad-rocca-beetroot",
+      "background": "mist",
+      "vegetarian": true
+    },
+    {
+      "id": "salad-chicken-caesar",
+      "category": "salads",
+      "name": {
+        "en": "Chicken Caesar",
+        "ar": "سيزر بالدجاج"
+      },
+      "subtitle": {
+        "en": "Grilled chicken, parmesan snow",
+        "ar": "دجاج مشوي وثلج البارميزان"
+      },
+      "description": {
+        "en": "mix lettuce topped with grilled chicken breast with parmesan cheese",
+        "ar": "خس مشكل، جبنة البرمزان، صدر دجاج مشوي"
+      },
+      "ingredients": {
+        "en": [
+          "Mix lettuce",
+          "Grilled chicken breast",
+          "Parmesan cheese"
+        ],
+        "ar": [
+          "خس مشكل",
+          "صدر دجاج مشوي",
+          "جبنة برمزان"
+        ]
+      },
+      "calories": 275,
+      "image": "salad-chicken-caesar",
+      "background": "paper"
+    },
+    {
+      "id": "salad-kristo",
+      "category": "salads",
+      "name": {
+        "en": "Salad Kristo",
+        "ar": "سلطة كريستو"
+      },
+      "subtitle": {
+        "en": "Watermelon meets feta, surprisingly",
+        "ar": "البطيخ يقابل الفيتا بمفاجأة"
+      },
+      "description": {
+        "en": "mix lettuce, cucumber, olives, mint, watermelon served with feta mix cheese and an olive oil dressing",
+        "ar": "خس مشكل، خيار، زيتون، نعنع، بطيخ مع جبنة الفيتا وصلصة زيت الزيتون"
+      },
+      "ingredients": {
+        "en": [
+          "Mix lettuce",
+          "Watermelon",
+          "Feta cheese",
+          "Mint",
+          "Olives"
+        ],
+        "ar": [
+          "خس مشكل",
+          "بطيخ",
+          "جبنة فيتا",
+          "نعنع",
+          "زيتون"
+        ]
+      },
+      "calories": 310,
+      "image": "salad-kristo",
+      "background": "mist",
+      "vegetarian": true
+    },
+    {
+      "id": "salad-crab",
+      "category": "salads",
+      "name": {
+        "en": "Crab",
+        "ar": "سلطة كراب"
+      },
+      "subtitle": {
+        "en": "Cool, creamy, seaside-fresh",
+        "ar": "باردة وكريمية بنسمة بحر"
+      },
+      "description": {
+        "en": "crab sticks, iceberg, avocado, mango, cucumber, cherry tomato, corn, carrots served with lemon mustard sauce",
+        "ar": "كراب اصابع، خس ايسبيرغ، مانغا، خيار، طماطم كرزية، ذرة، جزر مع صلصة الخردل"
+      },
+      "ingredients": {
+        "en": [
+          "Crab sticks",
+          "Avocado",
+          "Mango",
+          "Cherry tomato",
+          "Lemon mustard"
+        ],
+        "ar": [
+          "كراب",
+          "أفوكادو",
+          "مانغا",
+          "طماطم كرزية",
+          "صلصة الخردل"
+        ]
+      },
+      "calories": 310,
+      "image": "salad-crab",
+      "background": "paper"
+    },
+    {
+      "id": "salad-pasta-tuna",
+      "category": "salads",
+      "name": {
+        "en": "Pasta Tuna",
+        "ar": "سلطة باستا"
+      },
+      "subtitle": {
+        "en": "Hearty fusilli, briny tuna",
+        "ar": "فوزيلي مشبعة وتونة منعشة"
+      },
+      "description": {
+        "en": "fusilli pasta, tuna, iceberg, cucumber, cherry tomato, corn, carrots, served with lemon mustard sauce",
+        "ar": "باستا، تونة، خس ايسبيرغ، طماطم كرزية، ذرة، جزر مع صلصة الخردل"
+      },
+      "ingredients": {
+        "en": [
+          "Fusilli pasta",
+          "Tuna",
+          "Iceberg",
+          "Cherry tomato",
+          "Corn",
+          "Lemon mustard"
+        ],
+        "ar": [
+          "باستا",
+          "تونة",
+          "خس",
+          "طماطم كرزية",
+          "ذرة",
+          "صلصة الخردل"
+        ]
+      },
+      "calories": 310,
+      "image": "salad-pasta-tuna",
+      "background": "mist"
+    },
+    {
+      "id": "salad-greek",
+      "category": "salads",
+      "name": {
+        "en": "Greek Salad",
+        "ar": "سلطة يونانية"
+      },
+      "subtitle": {
+        "en": "Feta, olives, Mediterranean sunshine",
+        "ar": "فيتا وزيتون وشمس المتوسط"
+      },
+      "description": {
+        "en": "tomato, cucumber, olives and green pepper topped with feta cheese and oregano, served with olive oil sauce",
+        "ar": "طماطم، خيار، زيتون، فلفل اخضر مع جبنة الفيتا والاوريغانو وزيت الزيتون"
+      },
+      "ingredients": {
+        "en": [
+          "Feta cheese",
+          "Tomato",
+          "Cucumber",
+          "Olives",
+          "Oregano"
+        ],
+        "ar": [
+          "جبنة فيتا",
+          "طماطم",
+          "خيار",
+          "زيتون",
+          "أوريغانو"
+        ]
+      },
+      "calories": 310,
+      "image": "salad-greek",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "salad-chicken-avocado",
+      "category": "salads",
+      "name": {
+        "en": "Chicken Avocado",
+        "ar": "سلطة دجاج بالأفوكادو"
+      },
+      "subtitle": {
+        "en": "Creamy avocado, charcoal chicken",
+        "ar": "أفوكادو كريمي ودجاج على الفحم"
+      },
+      "description": {
+        "en": "grilled chicken breast, avocado, mix lettuce, cherry tomato, corn, served with lemon mustard sauce",
+        "ar": "صدر دجاج مشوي، افوكا، خس مشكل، طماطم كرزية، ذرة مع صلصة الخردل"
+      },
+      "ingredients": {
+        "en": [
+          "Grilled chicken",
+          "Avocado",
+          "Mix lettuce",
+          "Cherry tomato",
+          "Corn"
+        ],
+        "ar": [
+          "دجاج مشوي",
+          "أفوكادو",
+          "خس مشكل",
+          "طماطم كرزية",
+          "ذرة"
+        ]
+      },
+      "calories": 330,
+      "image": "salad-chicken-avocado",
+      "background": "mist"
+    },
+    {
+      "id": "salad-quinoa",
+      "category": "salads",
+      "name": {
+        "en": "Quinoa",
+        "ar": "سلطة كينوا"
+      },
+      "subtitle": {
+        "en": "Light grains, garden herbs",
+        "ar": "حبوب خفيفة وأعشاب البستان"
+      },
+      "description": {
+        "en": "quinoa, cucumber, cherry tomato, parsley, mint, served with olive oil and lemon sauce",
+        "ar": "كينوا، خيار، طماطم كرزية، بقدونس، نعنع مع زيت الزيتون والليمون"
+      },
+      "ingredients": {
+        "en": [
+          "Quinoa",
+          "Cucumber",
+          "Cherry tomato",
+          "Mint",
+          "Lemon"
+        ],
+        "ar": [
+          "كينوا",
+          "خيار",
+          "طماطم كرزية",
+          "نعنع",
+          "ليمون"
+        ]
+      },
+      "calories": 290,
+      "image": "salad-quinoa",
+      "background": "paper",
+      "vegetarian": true
+    },
+    {
+      "id": "bbq-taouk",
+      "category": "bbq",
+      "name": {
+        "en": "Taouk",
+        "ar": "ساندويش طاووق"
+      },
+      "subtitle": {
+        "en": "Charcoal taouk, garlic comfort",
+        "ar": "طاووق على الفحم وثومية"
+      },
+      "description": {
+        "en": "taouk, garlic, fries, pickles, coleslaw, kristo sauce",
+        "ar": "شيش طاووق مشوي عالفحم، ثوم، بطاطا مقلية، مخلل، ملفوف، صلصة الكريستو بالخبزة العربية اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Taouk",
+          "Garlic",
+          "Fries",
+          "Pickles",
+          "Kristo sauce"
+        ],
+        "ar": [
+          "شيش طاووق",
+          "ثوم",
+          "بطاطا",
+          "مخلل",
+          "صلصة كريستو"
+        ]
+      },
+      "calories": 455,
+      "image": "bbq-taouk",
+      "background": "ember"
+    },
+    {
+      "id": "bbq-awsal",
+      "category": "bbq",
+      "name": {
+        "en": "Awsal",
+        "ar": "ساندويش اوصال"
+      },
+      "subtitle": {
+        "en": "Slow charcoal, honest salt",
+        "ar": "فحم هادي ورشة ملح صادقة"
+      },
+      "description": {
+        "en": "awsal, homos, grilled vegetables, biwaz, salt",
+        "ar": "لحم مشوي عالفحم، حمص، خضار مشوية، بيواز ورشة ملح بالخبزة العربية اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Awsal",
+          "Homos",
+          "Grilled vegetables",
+          "Biwaz"
+        ],
+        "ar": [
+          "لحم مشوي",
+          "حمص",
+          "خضار مشوية",
+          "بيواز"
+        ]
+      },
+      "calories": 475,
+      "image": "bbq-awsal",
+      "background": "ink"
+    },
+    {
+      "id": "bbq-kafta-kristo",
+      "category": "bbq",
+      "name": {
+        "en": "Kafta Kristo",
+        "ar": "ساندويش كفتة كريستو"
+      },
+      "subtitle": {
+        "en": "Kafta, stretched and seared",
+        "ar": "كفتة ممدودة ومحمّرة"
+      },
+      "description": {
+        "en": "kafta, mayonnaise, tomato, pickles",
+        "ar": "كفتة ممدودة مشوية، مايونيز، طماطم، مخلل بالخبزة العربية اللبنانية"
+      },
+      "ingredients": {
+        "en": [
+          "Kafta",
+          "Mayonnaise",
+          "Tomato",
+          "Pickles"
+        ],
+        "ar": [
+          "كفتة مشوية",
+          "مايونيز",
+          "طماطم",
+          "مخلل"
+        ]
+      },
+      "calories": 520,
+      "image": "bbq-kafta-kristo",
+      "background": "ember"
+    },
+    {
+      "id": "bbq-kabab-meat",
+      "category": "bbq",
+      "name": {
+        "en": "Kabab Meat",
+        "ar": "ساندويش كباب لحم"
+      },
+      "subtitle": {
+        "en": "Skewer-smoke in every bite",
+        "ar": "دخان السيخ في كل قضمة"
+      },
+      "description": {
+        "en": "kabab beef, homos, grilled vegetables, biwaz",
+        "ar": "كباب لحم مشوي، حمص، خضار مشوية، بيواز بالخبزة العربية"
+      },
+      "ingredients": {
+        "en": [
+          "Beef kabab",
+          "Homos",
+          "Grilled vegetables",
+          "Biwaz"
+        ],
+        "ar": [
+          "كباب لحم",
+          "حمص",
+          "خضار مشوية",
+          "بيواز"
+        ]
+      },
+      "calories": 520,
+      "image": "bbq-kabab-meat",
+      "background": "ink"
+    },
+    {
+      "id": "bbq-kabab-chicken",
+      "category": "bbq",
+      "name": {
+        "en": "Kabab Chicken",
+        "ar": "ساندويش كباب دجاج"
+      },
+      "subtitle": {
+        "en": "Tender skewers, gentle chili",
+        "ar": "أسياخ طرية وحر هادي"
+      },
+      "description": {
+        "en": "kabab chicken, garlic chili, fries",
+        "ar": "كباب بالدجاج، بطاطا، ثوم بالخبزة العربية"
+      },
+      "ingredients": {
+        "en": [
+          "Chicken kabab",
+          "Garlic chili",
+          "Fries"
+        ],
+        "ar": [
+          "كباب دجاج",
+          "ثوم بالحر",
+          "بطاطا"
+        ]
+      },
+      "calories": 485,
+      "image": "bbq-kabab-chicken",
+      "background": "ember"
+    },
+    {
+      "id": "bbq-djeij-kristo",
+      "category": "bbq",
+      "name": {
+        "en": "Djeij Kristo",
+        "ar": "ساندويش دجاج كريستو"
+      },
+      "subtitle": {
+        "en": "The house chicken, wrapped",
+        "ar": "دجاج البيت ملفوف"
+      },
+      "description": {
+        "en": "chicken, garlic, pickles",
+        "ar": "شرحات من الدجاج مسحب، مخلل، ثوم بالخبزة العربية"
+      },
+      "ingredients": {
+        "en": [
+          "Chicken",
+          "Garlic",
+          "Pickles"
+        ],
+        "ar": [
+          "دجاج مسحب",
+          "ثوم",
+          "مخلل"
+        ]
+      },
+      "calories": 455,
+      "image": "bbq-djeij-kristo",
+      "background": "ink"
+    },
+    {
+      "id": "bbq-batata",
+      "category": "bbq",
+      "name": {
+        "en": "Batata",
+        "ar": "ساندويش بطاطا"
+      },
+      "subtitle": {
+        "en": "The vegetarian that belongs",
+        "ar": "النباتي اللي فرض نفسه"
+      },
+      "description": {
+        "en": "fries, pickles, coleslaw, kristo sauce, garlic",
+        "ar": "بطاطا، ملفوف، مخلل، ثوم، صلصة كريستو بالخبزة العربية"
+      },
+      "ingredients": {
+        "en": [
+          "Fries",
+          "Coleslaw",
+          "Pickles",
+          "Garlic",
+          "Kristo sauce"
+        ],
+        "ar": [
+          "بطاطا",
+          "ملفوف",
+          "مخلل",
+          "ثوم",
+          "صلصة كريستو"
+        ]
+      },
+      "calories": 425,
+      "image": "bbq-batata",
+      "background": "ember",
+      "vegetarian": true
+    },
+    {
+      "id": "bbq-asbet-djeij",
+      "category": "bbq",
+      "name": {
+        "en": "Asbet Djeij",
+        "ar": "ساندويش قصبة دجاج"
+      },
+      "subtitle": {
+        "en": "An old-school delicacy",
+        "ar": "أكلة زمان الأصيلة"
+      },
+      "description": {
+        "en": "chicken liver, garlic, tomato, pickles.",
+        "ar": "قصبة دجاج، ثوم، طماطم، مخلل بالخبزة العربية"
+      },
+      "ingredients": {
+        "en": [
+          "Chicken liver",
+          "Garlic",
+          "Tomato",
+          "Pickles"
+        ],
+        "ar": [
+          "قصبة دجاج",
+          "ثوم",
+          "طماطم",
+          "مخلل"
+        ]
+      },
+      "calories": 415,
+      "image": "bbq-asbet-djeij",
+      "background": "ink"
+    },
+    {
+      "id": "platter-mix-grill",
+      "category": "platters",
+      "name": {
+        "en": "Mix Grill",
+        "ar": "صحن مشاوي مشكلة"
+      },
+      "subtitle": {
+        "en": "The full charcoal ceremony",
+        "ar": "احتفال الفحم الكامل"
+      },
+      "description": {
+        "en": "charcoal-grilled awsal, taouk, kafta, kabab chicken, biwaz, tomato, onions, green chili, fries, garlic sauce cup, homos cup, spicy bread",
+        "ar": "مشاوي مشكلة، شيش لحم، شيش طاووق، شيش كباب لحم، شيش كباب دجاج، بطاطا، خضار مشوية، حمص، مخلل، خبزة حرة"
+      },
+      "ingredients": {
+        "en": [
+          "Awsal",
+          "Taouk",
+          "Kafta",
+          "Kabab chicken",
+          "Garlic sauce"
+        ],
+        "ar": [
+          "أوصال",
+          "طاووق",
+          "كفتة",
+          "كباب دجاج",
+          "ثومية"
+        ]
+      },
+      "calories": 385,
+      "image": "platter-mix-grill",
+      "background": "teal-deep",
+      "presentation": "card",
+      "signature": true,
+      "chefChoice": true,
+      "texture": "KRISTO"
+    },
+    {
+      "id": "platter-taouk",
+      "category": "platters",
+      "name": {
+        "en": "Taouk",
+        "ar": "صحن طاووق"
+      },
+      "subtitle": {
+        "en": "Two skewers, unhurried fire",
+        "ar": "شيشان على نار هادية"
+      },
+      "description": {
+        "en": "charcoal-grilled 2 skewers taouk, tomato grilled, green chili grilled, fries, garlic sauce cup, potato bread",
+        "ar": "شيشين طاووق مع بطاطا، خضار مشوية، ثوم، خبزة البطاطا"
+      },
+      "ingredients": {
+        "en": [
+          "Taouk skewers",
+          "Grilled vegetables",
+          "Fries",
+          "Garlic sauce"
+        ],
+        "ar": [
+          "شيش طاووق",
+          "خضار مشوية",
+          "بطاطا",
+          "ثومية"
+        ]
+      },
+      "calories": 375,
+      "image": "platter-taouk",
+      "background": "ink",
+      "presentation": "card"
+    },
+    {
+      "id": "platter-awsal",
+      "category": "platters",
+      "name": {
+        "en": "Awsal",
+        "ar": "صحن اوصال"
+      },
+      "subtitle": {
+        "en": "Charcoal beef, generously plated",
+        "ar": "لحم على الفحم بصحن سخي"
+      },
+      "description": {
+        "en": "charcoal-grilled 2 skewers awsal, biwaz, tomato, onions, green chili, fries, homos cup, spicy potato bread",
+        "ar": "شيشين اوصال مع بطاطا، خضار مشوية، حمص، خبزة حارة"
+      },
+      "ingredients": {
+        "en": [
+          "Awsal skewers",
+          "Biwaz",
+          "Fries",
+          "Homos"
+        ],
+        "ar": [
+          "أوصال",
+          "بيواز",
+          "بطاطا",
+          "حمص"
+        ]
+      },
+      "calories": 365,
+      "image": "platter-awsal",
+      "background": "ember",
+      "presentation": "card"
+    },
+    {
+      "id": "platter-kafta",
+      "category": "platters",
+      "name": {
+        "en": "Kafta",
+        "ar": "صحن كفتة"
+      },
+      "subtitle": {
+        "en": "Three skewers, hand-mixed",
+        "ar": "ثلاث أسياخ مدقوقة باليد"
+      },
+      "description": {
+        "en": "charcoal-grilled 3 skewers kafta, biwaz, tomato, onions, green chili, fries, homos cup, spicy potato bread",
+        "ar": "ثلاث اشياش كفتة مع بطاطا، خضار مشوية، حمص، خبزة حارة"
+      },
+      "ingredients": {
+        "en": [
+          "Kafta skewers",
+          "Biwaz",
+          "Fries",
+          "Homos"
+        ],
+        "ar": [
+          "كفتة",
+          "بيواز",
+          "بطاطا",
+          "حمص"
+        ]
+      },
+      "calories": 375,
+      "image": "platter-kafta",
+      "background": "teal-deep",
+      "presentation": "card"
+    },
+    {
+      "id": "platter-kabab-meat",
+      "category": "platters",
+      "name": {
+        "en": "Kabab Meat",
+        "ar": "صحن كباب لحم"
+      },
+      "subtitle": {
+        "en": "Skewers with spicy bread",
+        "ar": "أسياخ مع الخبزة الحارة"
+      },
+      "description": {
+        "en": "charcoal-grilled 3 skewers kabab, biwaz, tomato, onions, green chili, fries, homos cup, spicy potato bread",
+        "ar": "ثلاث اشياش كباب لحم مع بطاطا، خضار مشوية، حمص، خبزة حارة"
+      },
+      "ingredients": {
+        "en": [
+          "Kabab skewers",
+          "Biwaz",
+          "Fries",
+          "Homos"
+        ],
+        "ar": [
+          "كباب لحم",
+          "بيواز",
+          "بطاطا",
+          "حمص"
+        ]
+      },
+      "calories": 375,
+      "image": "platter-kabab-meat",
+      "background": "ink",
+      "presentation": "card"
+    },
+    {
+      "id": "platter-kabab-chicken",
+      "category": "platters",
+      "name": {
+        "en": "Kabab Chicken",
+        "ar": "صحن كباب دجاج"
+      },
+      "subtitle": {
+        "en": "Tender skewers, gentle spice",
+        "ar": "أسياخ طرية وبهار هادي"
+      },
+      "description": {
+        "en": "charcoal-grilled 3 skewers kabab chicken, tomato, onions, green chili, fries, garlic chili sauce cup, potato bread",
+        "ar": "ثلاث اشياش كباب دجاج مع بطاطا، خضار مشوية، ثوم، خبزة حارة"
+      },
+      "ingredients": {
+        "en": [
+          "Chicken kabab skewers",
+          "Grilled vegetables",
+          "Fries",
+          "Garlic chili sauce"
+        ],
+        "ar": [
+          "كباب دجاج",
+          "خضار مشوية",
+          "بطاطا",
+          "ثوم بالحر"
+        ]
+      },
+      "calories": 365,
+      "image": "platter-kabab-chicken",
+      "background": "ember",
+      "presentation": "card"
+    },
+    {
+      "id": "platter-nos-farrouj",
+      "category": "platters",
+      "name": {
+        "en": "Nos Farrouj",
+        "ar": "نصف فروج"
+      },
+      "subtitle": {
+        "en": "Half a farrouj, wholehearted",
+        "ar": "نص فروج بقلب كامل"
+      },
+      "description": {
+        "en": "charcoal-grilled nos farouj, fries, garlic sauce cup, pickles, potato bread or rice",
+        "ar": "نصف فروج مشوي مع بطاطا، ثوم، مخلل، خبزة البطاطا"
+      },
+      "ingredients": {
+        "en": [
+          "Half chicken",
+          "Fries",
+          "Garlic sauce",
+          "Pickles"
+        ],
+        "ar": [
+          "نص فروج",
+          "بطاطا",
+          "ثومية",
+          "مخلل"
+        ]
+      },
+      "calories": 320,
+      "image": "platter-nos-farrouj",
+      "background": "teal-deep",
+      "presentation": "card"
+    },
+    {
+      "id": "platter-farrouj",
+      "category": "platters",
+      "name": {
+        "en": "Farrouj",
+        "ar": "فروج كامل"
+      },
+      "subtitle": {
+        "en": "A whole farrouj, slow-fired",
+        "ar": "فروج كامل على نار هادية"
+      },
+      "description": {
+        "en": "charcoal-grilled farouj, fries, garlic sauce cup, pickles, potato bread or rice",
+        "ar": "فروج مشوي مع بطاطا، ثوم، مخلل، خبزة البطاطا"
+      },
+      "ingredients": {
+        "en": [
+          "Whole chicken",
+          "Fries",
+          "Garlic sauce",
+          "Pickles"
+        ],
+        "ar": [
+          "فروج كامل",
+          "بطاطا",
+          "ثومية",
+          "مخلل"
+        ]
+      },
+      "calories": 620,
+      "image": "platter-farrouj",
+      "background": "ink",
+      "presentation": "card"
+    },
+    {
+      "id": "dessert-baklawa",
+      "category": "desserts",
+      "name": {
+        "en": "Baklawa",
+        "ar": "بقلاوة"
+      },
+      "subtitle": {
+        "en": "Layers of honeyed pistachio",
+        "ar": "طبقات فستق بالقطر"
+      },
+      "description": {
+        "en": "Paper-thin pastry layered with pistachio and syrup — the sweetest habit of the Levant.",
+        "ar": "رقائق عجين بطبقات فستق وقطر — أحلى عادات بلاد الشام."
+      },
+      "ingredients": {
+        "en": [
+          "Filo pastry",
+          "Pistachio",
+          "Syrup",
+          "Butter"
+        ],
+        "ar": [
+          "رقائق عجين",
+          "فستق حلبي",
+          "قطر",
+          "زبدة"
+        ]
+      },
+      "calories": 420,
+      "image": "dessert-baklawa",
+      "background": "ink",
+      "vegetarian": true
+    },
+    {
+      "id": "dessert-mafroukeh",
+      "category": "desserts",
+      "name": {
+        "en": "Mafroukeh",
+        "ar": "مفروكة"
+      },
+      "subtitle": {
+        "en": "Semolina, cream and pistachio",
+        "ar": "سميد وقشطة وفستق"
+      },
+      "description": {
+        "en": "Golden semolina under clouds of cream and crushed pistachio — Beirut's quiet masterpiece.",
+        "ar": "سميد ذهبي تحت غيمة قشطة وفستق مجروش — تحفة بيروت الهادية."
+      },
+      "ingredients": {
+        "en": [
+          "Semolina",
+          "Cream",
+          "Pistachio",
+          "Syrup"
+        ],
+        "ar": [
+          "سميد",
+          "قشطة",
+          "فستق",
+          "قطر"
+        ]
+      },
+      "calories": 450,
+      "image": "dessert-mafroukeh",
+      "background": "ember",
+      "vegetarian": true
+    },
+    {
+      "id": "dessert-fruit-salad",
+      "category": "desserts",
+      "name": {
+        "en": "Fruit Salad",
+        "ar": "سلطة فواكه"
+      },
+      "subtitle": {
+        "en": "Orchard freshness, cut daily",
+        "ar": "تُقطّع طازجة على مدار اليوم"
+      },
+      "description": {
+        "en": "Seasonal fruit cut fresh through the day — the light way to end a generous meal.",
+        "ar": "فواكه موسمية تُقطّع طازجة على مدار اليوم — خاتمة خفيفة بعد وجبة سخية."
+      },
+      "ingredients": {
+        "en": [
+          "Seasonal fruit",
+          "Fresh mint"
+        ],
+        "ar": [
+          "فواكه موسمية",
+          "نعناع طازج"
+        ]
+      },
+      "calories": 180,
+      "image": "dessert-fruit-salad",
+      "background": "ink",
+      "vegetarian": true
+    }
+  ],
+  "drinks": [
+    {
+      "id": "drink-pepsi",
+      "name": {
+        "en": "Pepsi",
+        "ar": "بيبسي"
+      },
+      "image": "drink-pepsi"
+    },
+    {
+      "id": "drink-diet-pepsi",
+      "name": {
+        "en": "Diet Pepsi",
+        "ar": "بيبسي دايت"
+      },
+      "image": "drink-diet-pepsi"
+    },
+    {
+      "id": "drink-seven-up",
+      "name": {
+        "en": "Seven Up",
+        "ar": "سفن اب"
+      },
+      "image": "drink-seven-up"
+    },
+    {
+      "id": "drink-diet-seven-up",
+      "name": {
+        "en": "Diet Seven Up",
+        "ar": "سفن اب دايت"
+      },
+      "image": "drink-diet-seven-up"
+    },
+    {
+      "id": "drink-mirinda-orange",
+      "name": {
+        "en": "Mirinda Orange",
+        "ar": "ميرندا برتقال"
+      },
+      "image": "drink-mirinda-orange"
+    },
+    {
+      "id": "drink-mirinda-lemon",
+      "name": {
+        "en": "Mirinda Lemon",
+        "ar": "ميرندا حمضيات"
+      },
+      "image": "drink-mirinda-lemon"
+    },
+    {
+      "id": "drink-mountain-dew",
+      "name": {
+        "en": "Mountain Dew",
+        "ar": "ماونتن ديو"
+      },
+      "image": "drink-mountain-dew"
+    },
+    {
+      "id": "drink-water-nova",
+      "name": {
+        "en": "Small Water Nova",
+        "ar": "مياه صغير نوفا"
+      },
+      "image": "drink-water-nova"
+    },
+    {
+      "id": "drink-sparkling",
+      "name": {
+        "en": "Sparkling Water",
+        "ar": "مياه غازية"
+      },
+      "image": "drink-sparkling"
+    },
+    {
+      "id": "drink-kinza-cola",
+      "name": {
+        "en": "Kinza Cola",
+        "ar": "كينزا كولا"
+      },
+      "image": "drink-kinza-cola"
+    },
+    {
+      "id": "drink-kinza-cola-light",
+      "name": {
+        "en": "Kinza Cola Light",
+        "ar": "كينزا كولا لايت"
+      },
+      "image": "drink-kinza-cola-light"
+    },
+    {
+      "id": "drink-kinza-lemon",
+      "name": {
+        "en": "Kinza Lemon",
+        "ar": "كينزا ليمون"
+      },
+      "image": "drink-kinza-lemon"
+    },
+    {
+      "id": "drink-kinza-lemon-light",
+      "name": {
+        "en": "Kinza Lemon Light",
+        "ar": "كينزا ليمون لايت"
+      },
+      "image": "drink-kinza-lemon-light"
+    },
+    {
+      "id": "drink-kinza-orange",
+      "name": {
+        "en": "Kinza Orange",
+        "ar": "كينزا برتقال"
+      },
+      "image": "drink-kinza-orange"
+    },
+    {
+      "id": "drink-kinza-lemon-mix",
+      "name": {
+        "en": "Kinza Lemon Mix",
+        "ar": "كينزا حمضيات"
+      },
+      "image": "drink-kinza-lemon-mix"
+    },
+    {
+      "id": "drink-fresh-orange",
+      "name": {
+        "en": "Fresh Orange",
+        "ar": "عصير برتقال طبيعي"
+      },
+      "image": "drink-fresh-orange"
+    },
+    {
+      "id": "drink-fresh-lemonade",
+      "name": {
+        "en": "Fresh Lemonade",
+        "ar": "عصير ليمون طبيعي"
+      },
+      "image": "drink-fresh-lemonade"
+    },
+    {
+      "id": "drink-fresh-minted-lemonade",
+      "name": {
+        "en": "Fresh Minted Lemonade",
+        "ar": "عصير ليمون بالنعناع طبيعي"
+      },
+      "image": "drink-fresh-minted-lemonade"
+    }
+  ]
+}
