@@ -109,6 +109,7 @@
   --s5: 2rem; --s6: 3rem; --s7: 4rem; --s8: 6rem; --s9: 8rem;
   --radius: 1.25rem;
   --nav-h: 4.25rem;
+  --catbar-h: 2.9rem;   
   --ease-out: cubic-bezier(.22, 1, .36, 1);
   --ease-std: cubic-bezier(.4, 0, .2, 1);
   --font-display: "Aref Ruqaa", "Tajawal", serif;
@@ -242,14 +243,60 @@ html[dir="rtl"] #loader-line { transform-origin: 100% 50%; }
   position: fixed;
   inset-block-start: 0; inset-inline: 0;
   z-index: 40;
-  display: flex; align-items: center; justify-content: center;
-  block-size: calc(var(--nav-h) + env(safe-area-inset-top));
+  display: grid; justify-items: center;
+  gap: var(--s2);
   padding-block-start: calc(env(safe-area-inset-top) + var(--s2));
   padding-inline: var(--s4);
   transition: transform .3s var(--ease-std), opacity .3s var(--ease-std);
   pointer-events: none;               
 }
 .nav[data-hidden="true"] { transform: translateY(-115%); opacity: 0; }
+.catbar {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+  inline-size: 100%;
+  max-inline-size: 44rem;
+  block-size: var(--catbar-h);
+  padding-inline: var(--s1);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  opacity: 1;
+  transition: opacity .35s var(--ease-std), transform .35s var(--ease-std);
+}
+.catbar::-webkit-scrollbar { display: none; }
+.catbar[data-visible="false"] {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+}
+.catbar__chip {
+  flex: 0 0 auto;
+  min-block-size: 38px;
+  padding-inline: var(--s3);
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+  background: color-mix(in srgb, var(--paper) 62%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: .8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--ink-soft);
+  transition: color .25s, border-color .25s, background .25s, transform .2s var(--ease-out);
+}
+.catbar__chip:hover { color: var(--ink); border-color: var(--line); }
+.catbar__chip:active { transform: scale(.94); transition-duration: .08s; }
+.catbar__chip[aria-current="true"] {
+  background: var(--red);
+  border-color: var(--red);
+  color: #FFF7F2;
+  box-shadow: 0 8px 18px -10px rgba(216, 53, 44, .6);
+}
+.catbar__chip--daily[aria-current="false"] { color: var(--red-deep); border-color: color-mix(in srgb, var(--red) 45%, transparent); }
 .nav__pill {
   pointer-events: auto;
   display: flex; align-items: center; justify-content: space-between;
@@ -354,7 +401,7 @@ html[lang="ar"] .hero__tagline { font-style: italic; }
 }
 .dish {
   justify-content: flex-start;
-  padding-block-start: calc(var(--nav-h) + env(safe-area-inset-top) + var(--s2));
+  padding-block-start: calc(var(--nav-h) + var(--catbar-h) + env(safe-area-inset-top));
   padding-block-end: calc(var(--s4) + env(safe-area-inset-bottom));
   padding-inline: max(var(--s5), env(safe-area-inset-left), env(safe-area-inset-right));
   gap: var(--s3);
@@ -825,7 +872,7 @@ html[lang="ar"] .narrative__lead { font-style: normal; }
   background: var(--surface);
 }
 .welcome__content { z-index: 2; }
-.cat-intro { justify-content: center; text-align: center; }
+.cat-intro { justify-content: center; text-align: center; padding-block-start: calc(var(--nav-h) + var(--catbar-h)); }
 .cat-intro__floats { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
 .cat-intro__float-a { inset-inline-start: 8%; inset-block-start: 16%; inline-size: 58px; block-size: 58px; }
 .cat-intro__float-b { inset-inline-end: 10%; inset-block-end: 20%; inline-size: 48px; block-size: 48px; }
@@ -1041,7 +1088,7 @@ html.js-motion .hero .swipe-hint { opacity: 0; }
   .dish__name { font-size: 1.7rem; }
 }
 @media (max-height: 700px) and (orientation: portrait) {
-  .dish { gap: var(--s2); padding-block-start: calc(var(--nav-h) + var(--s1)); }
+  .dish { gap: var(--s2); padding-block-start: calc(var(--nav-h) + var(--catbar-h)); }
   .dish__figure { inline-size: min(56vw, 30dvh); }
   .dish__content { gap: .45rem; }
   .dish__desc { -webkit-line-clamp: 2; }

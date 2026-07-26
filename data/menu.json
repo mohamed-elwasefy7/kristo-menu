@@ -1856,27 +1856,27 @@
         "ar": "سلطة كريستو"
       },
       "subtitle": {
-        "en": "Watermelon meets feta, surprisingly",
-        "ar": "البطيخ يقابل الفيتا بمفاجأة"
+        "en": "Grilled chicken, avocado, sunshine corn",
+        "ar": "دجاج مشوي وأفوكادو وذرة ذهبية"
       },
       "description": {
-        "en": "mix lettuce, cucumber, olives, mint, watermelon served with feta mix cheese and an olive oil dressing",
-        "ar": "خس مشكل، خيار، زيتون، نعنع، بطيخ مع جبنة الفيتا وصلصة زيت الزيتون"
+        "en": "grilled chicken breast, avocado, mix lettuce, cherry tomato, corn, served with lemon mustard sauce",
+        "ar": "صدر دجاج مشوي، أفوكادو، خس مشكل، طماطم كرزية، ذرة مع صلصة الخردل"
       },
       "ingredients": {
         "en": [
+          "Grilled chicken",
+          "Avocado",
           "Mix lettuce",
-          "Watermelon",
-          "Feta cheese",
-          "Mint",
-          "Olives"
+          "Cherry tomato",
+          "Corn"
         ],
         "ar": [
+          "دجاج مشوي",
+          "أفوكادو",
           "خس مشكل",
-          "بطيخ",
-          "جبنة فيتا",
-          "نعنع",
-          "زيتون"
+          "طماطم كرزية",
+          "ذرة"
         ]
       },
       "calories": 310,
@@ -1993,41 +1993,6 @@
       "vegetarian": true
     },
     {
-      "id": "salad-chicken-avocado",
-      "category": "salads",
-      "name": {
-        "en": "Chicken Avocado",
-        "ar": "سلطة دجاج بالأفوكادو"
-      },
-      "subtitle": {
-        "en": "Creamy avocado, charcoal chicken",
-        "ar": "أفوكادو كريمي ودجاج على الفحم"
-      },
-      "description": {
-        "en": "grilled chicken breast, avocado, mix lettuce, cherry tomato, corn, served with lemon mustard sauce",
-        "ar": "صدر دجاج مشوي، افوكا، خس مشكل، طماطم كرزية، ذرة مع صلصة الخردل"
-      },
-      "ingredients": {
-        "en": [
-          "Grilled chicken",
-          "Avocado",
-          "Mix lettuce",
-          "Cherry tomato",
-          "Corn"
-        ],
-        "ar": [
-          "دجاج مشوي",
-          "أفوكادو",
-          "خس مشكل",
-          "طماطم كرزية",
-          "ذرة"
-        ]
-      },
-      "calories": 330,
-      "image": "salad-chicken-avocado",
-      "background": "mist"
-    },
-    {
       "id": "salad-quinoa",
       "category": "salads",
       "name": {
@@ -2060,7 +2025,7 @@
       },
       "calories": 290,
       "image": "salad-quinoa",
-      "background": "paper",
+      "background": "mist",
       "vegetarian": true
     },
     {

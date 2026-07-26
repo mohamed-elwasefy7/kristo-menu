@@ -38,7 +38,7 @@
 
 /* Short viewports (phones with toolbars, iPhone SE) — compress, never overlap */
 @media (max-height: 700px) and (orientation: portrait) {
-  .dish { gap: var(--s2); padding-block-start: calc(var(--nav-h) + var(--s1)); }
+  .dish { gap: var(--s2); padding-block-start: calc(var(--nav-h) + var(--catbar-h)); }
   .dish__figure { inline-size: min(56vw, 30dvh); }
   .dish__content { gap: .45rem; }
   .dish__desc { -webkit-line-clamp: 2; }

@@ -160,6 +160,31 @@ function renderHeroCategories() {
     tile.textContent = t("drinksTitle");
     wrap.append(tile);
   }
+  renderCatBar();
+}
+
+/* ---------- sticky section switcher (same sections, always reachable) ---------- */
+function renderCatBar() {
+  const bar = $("#catbar");
+  if (!bar) return;
+  bar.innerHTML = "";
+  const chip = (label, target, extra = "") => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = `catbar__chip${extra}`;
+    b.dataset.goto = target;
+    b.dataset.rail = target;          // matches the section's data-rail group
+    b.setAttribute("aria-current", "false");
+    b.textContent = label;
+    bar.append(b);
+  };
+
+  (data.categories || []).forEach((cat) => {
+    const has = data.dishes.some((d) => d.category === cat.id);
+    if (!has && !cat.alwaysShow) return;
+    chip(t(cat.label), `cat-${cat.id}`, cat.alwaysShow ? " catbar__chip--daily" : "");
+  });
+  if (data.drinks.length) chip(t("drinksTitle"), "drinks");
 }
 
 /* ---------- dish v2 ---------- */

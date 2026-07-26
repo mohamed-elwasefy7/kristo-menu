@@ -117,7 +117,7 @@ html[lang="ar"] .narrative__lead { font-style: normal; }   /* no fake italics in
 .welcome__content { z-index: 2; }
 
 /* ---------- category intro — one poster screen per category ---------- */
-.cat-intro { justify-content: center; text-align: center; }
+.cat-intro { justify-content: center; text-align: center; padding-block-start: calc(var(--nav-h) + var(--catbar-h)); }
 .cat-intro__floats { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
 .cat-intro__float-a { inset-inline-start: 8%; inset-block-start: 16%; inline-size: 58px; block-size: 58px; }
 .cat-intro__float-b { inset-inline-end: 10%; inset-block-end: 20%; inline-size: 48px; block-size: 48px; }

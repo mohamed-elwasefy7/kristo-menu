@@ -34,6 +34,7 @@
 
   --radius: 1.25rem;
   --nav-h: 4.25rem;
+  --catbar-h: 2.9rem;   /* sticky section switcher under the nav pill */
 
   --ease-out: cubic-bezier(.22, 1, .36, 1);
   --ease-std: cubic-bezier(.4, 0, .2, 1);
@@ -184,19 +185,68 @@ html[dir="rtl"] #loader-line { transform-origin: 100% 50%; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* ---------- Nav — floating rounded glass pill ---------- */
+/* ---------- Nav — floating rounded glass pill + section switcher ---------- */
 .nav {
   position: fixed;
   inset-block-start: 0; inset-inline: 0;
   z-index: 40;
-  display: flex; align-items: center; justify-content: center;
-  block-size: calc(var(--nav-h) + env(safe-area-inset-top));
+  display: grid; justify-items: center;
+  gap: var(--s2);
   padding-block-start: calc(env(safe-area-inset-top) + var(--s2));
   padding-inline: var(--s4);
   transition: transform .3s var(--ease-std), opacity .3s var(--ease-std);
-  pointer-events: none;               /* the pill takes the hits, not the bar */
+  pointer-events: none;               /* the pill + chips take the hits, not the bar */
 }
 .nav[data-hidden="true"] { transform: translateY(-115%); opacity: 0; }
+
+/* the switcher is the primary navigation once the guest leaves the hero */
+.catbar {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+  inline-size: 100%;
+  max-inline-size: 44rem;
+  block-size: var(--catbar-h);
+  padding-inline: var(--s1);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  opacity: 1;
+  transition: opacity .35s var(--ease-std), transform .35s var(--ease-std);
+}
+.catbar::-webkit-scrollbar { display: none; }
+/* on the hero the big tiles already do this job — fade it out there */
+.catbar[data-visible="false"] {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+}
+.catbar__chip {
+  flex: 0 0 auto;
+  min-block-size: 38px;
+  padding-inline: var(--s3);
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+  background: color-mix(in srgb, var(--paper) 62%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: .8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--ink-soft);
+  transition: color .25s, border-color .25s, background .25s, transform .2s var(--ease-out);
+}
+.catbar__chip:hover { color: var(--ink); border-color: var(--line); }
+.catbar__chip:active { transform: scale(.94); transition-duration: .08s; }
+.catbar__chip[aria-current="true"] {
+  background: var(--red);
+  border-color: var(--red);
+  color: #FFF7F2;
+  box-shadow: 0 8px 18px -10px rgba(216, 53, 44, .6);
+}
+.catbar__chip--daily[aria-current="false"] { color: var(--red-deep); border-color: color-mix(in srgb, var(--red) 45%, transparent); }
 .nav__pill {
   pointer-events: auto;
   display: flex; align-items: center; justify-content: space-between;
@@ -316,7 +366,8 @@ html[lang="ar"] .hero__tagline { font-style: italic; }
    layout in responsive.css. */
 .dish {
   justify-content: flex-start;
-  padding-block-start: calc(var(--nav-h) + env(safe-area-inset-top) + var(--s2));
+  /* clears the nav pill AND the sticky section switcher */
+  padding-block-start: calc(var(--nav-h) + var(--catbar-h) + env(safe-area-inset-top));
   padding-block-end: calc(var(--s4) + env(safe-area-inset-bottom));
   /* safe areas: notch/Dynamic Island landscape edges + rounded corners */
   padding-inline: max(var(--s5), env(safe-area-inset-left), env(safe-area-inset-right));

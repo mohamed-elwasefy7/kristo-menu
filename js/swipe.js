@@ -70,6 +70,7 @@ function setActive(index) {
   const section = screens[index];
   const dishId = section.classList.contains("dish") ? section.id : null;
   updateRail(index);
+  updateCatBar(section, index);
   updateHash(section);
   announceScreen(section, index);
   emit("dish:active", { index, section, dishId, mood: section.dataset.mood || "paper" });
@@ -212,6 +213,26 @@ function updateRail(index) {
   });
 }
 
+/* ---------- sticky section switcher: highlight + keep the chip in view ---------- */
+function updateCatBar(section, index) {
+  const bar = $("#catbar");
+  if (!bar) return;
+  // the hero already shows the full section grid — the bar starts below it
+  bar.dataset.visible = index === 0 ? "false" : "true";
+
+  const group = section.dataset.rail || "";
+  let active = null;
+  $$(".catbar__chip", bar).forEach((chip) => {
+    const on = chip.dataset.rail === group;
+    chip.setAttribute("aria-current", String(on));
+    if (on) active = chip;
+  });
+  if (!active) return;
+  // centre the active chip inside the bar (scrollIntoView would move the page)
+  const target = active.offsetLeft - (bar.clientWidth - active.offsetWidth) / 2;
+  bar.scrollTo({ left: target, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+}
+
 /* ---------- hash deep-links ---------- */
 let hashTimer;
 
@@ -245,36 +266,9 @@ function initGotoButtons() {
   });
 }
 
-/* ---------- nav auto-hide (container scroll, rAF-throttled) ---------- */
+/* The nav used to auto-hide on scroll-down. It no longer does: the section
+   switcher lives inside it and must stay reachable at every moment, which is
+   the whole point of a menu a guest scrolls through while seated. */
 export function initNavAutoHide() {
-  const nav = $("#nav");
-  let lastTop = 0;
-  let ticking = false;
-
-  container.addEventListener("scroll", () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      const top = container.scrollTop;
-      const delta = top - lastTop;
-      const onEdges = top < container.clientHeight * 0.5 ||
-        top > container.scrollHeight - container.clientHeight * 1.5;
-      if (onEdges || delta < -4) nav.dataset.hidden = "false";
-      else if (delta > 24) nav.dataset.hidden = "true";
-      lastTop = top;
-      ticking = false;
-    });
-  }, { passive: true });
-
-  // always reveal after a snap settles
-  const settle = () => { nav.dataset.hidden = "false"; };
-  if ("onscrollend" in container) {
-    container.addEventListener("scrollend", settle);
-  } else {
-    let t2;
-    container.addEventListener("scroll", () => {
-      clearTimeout(t2);
-      t2 = setTimeout(settle, 180);
-    }, { passive: true });
-  }
+  $("#nav").dataset.hidden = "false";
 }
