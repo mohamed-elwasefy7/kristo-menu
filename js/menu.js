@@ -202,6 +202,52 @@ function renderCatBar() {
     chip(t(cat.label), `cat-${cat.id}`, cat.alwaysShow ? " catbar__chip--daily" : "");
   });
   if (data.drinks.length) chip(t("drinksTitle"), "drinks");
+  renderSectionsSheet();
+}
+
+/* ---------- phone: the same sections inside a thumb-reach sheet ---------- */
+function renderSectionsSheet() {
+  const list = $("#sections-list");
+  if (!list) return;
+  list.innerHTML = "";
+  const row = (label, target, extra = "") => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = `sections-sheet__item${extra}`;
+    b.dataset.goto = target;
+    b.dataset.rail = target;
+    b.textContent = label;
+    list.append(b);
+  };
+  (data.categories || []).forEach((cat) => {
+    const has = data.dishes.some((d) => d.category === cat.id);
+    if (!has && !cat.alwaysShow) return;
+    row(t(cat.label), `cat-${cat.id}`, cat.alwaysShow ? " sections-sheet__item--daily" : "");
+  });
+  if (data.drinks.length) row(t("drinksTitle"), "drinks");
+}
+
+/* the sheet is wired once; data-goto clicks are handled globally by swipe.js */
+export function initSectionsSheet() {
+  const fab = $("#sections-fab");
+  const sheet = $("#sections-sheet");
+  if (!fab || !sheet) return;
+  const close = () => {
+    if (!sheet.open) return;
+    const done = () => sheet.close();
+    if (window.gsap) gsap.to(sheet, { y: "100%", duration: 0.24, ease: "power2.in", onComplete: done });
+    else done();
+  };
+  fab.addEventListener("click", () => {
+    sheet.showModal();
+    if (window.gsap) gsap.fromTo(sheet, { y: "100%" }, { y: 0, duration: 0.34, ease: "power3.out" });
+  });
+  // any section pick closes the sheet; swipe.js performs the jump
+  sheet.addEventListener("click", (e) => {
+    if (e.target.closest("[data-goto]")) close();
+  });
+  $(".sheet__close", sheet).addEventListener("click", close);
+  sheet.addEventListener("cancel", (e) => { e.preventDefault(); close(); });
 }
 
 /* ---------- dish v2 ---------- */

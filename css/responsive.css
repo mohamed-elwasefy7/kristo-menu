@@ -28,6 +28,12 @@
 
   /* thumb-friendly primary action */
   .dish__order { min-block-size: 52px; }
+
+  /* keep the last row clear of the floating sections button */
+  .dish, .drinks, .daily, .cat-intro, .order, .closing, .welcome {
+    padding-block-end: calc(var(--s8) + env(safe-area-inset-bottom));
+  }
+  .swipe-hint { inset-block-end: calc(var(--s7) + env(safe-area-inset-bottom)); }
 }
 
 /* Small phones (<= 360px) — tighten */
@@ -102,7 +108,7 @@
     inline-size: min(38vw, 62dvh);
     flex: 0 0 auto;
   }
-  .dish[data-presentation="card"] .dish__figure { inline-size: min(46vw, 74dvh); }
+  .dish[data-presentation="card"] .dish__figure { inline-size: min(38vw, 62dvh); }
   .dish__content {
     max-inline-size: 26rem;
     align-content: center;

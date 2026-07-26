@@ -384,7 +384,9 @@ html[lang="ar"] .hero__tagline { font-style: italic; }
   inline-size: 100%; block-size: 100%;
   object-fit: cover;
   object-position: var(--obj-pos, 50% 50%);   /* per-dish art direction from JSON */
-  border-radius: 50%;
+  /* square frame: the pipeline already squares every photo by extending its
+     own backdrop, so nothing of the dish is ever cut off */
+  border-radius: var(--radius);
   /* two-layer shadow: tight contact + soft ambient falloff */
   box-shadow:
     0 12px 28px -14px rgba(16, 24, 22, .5),
@@ -392,11 +394,8 @@ html[lang="ar"] .hero__tagline { font-style: italic; }
   filter: saturate(1.05) contrast(1.03);
   background: var(--surface);
 }
-/* wide frame for long food (wraps, sandwiches, burgers, platters): the
-   photos are native 3:2, so matching that ratio shows the whole dish with
-   nothing clipped — the circular plate stays for round, centred food */
-.dish[data-presentation="card"] .dish__img { border-radius: var(--radius); }
-.dish[data-presentation="card"] .dish__figure { aspect-ratio: 3 / 2; inline-size: min(90vw, 52dvh); }
+/* every dish uses the same square frame now — presentation only nudges size */
+.dish[data-presentation="card"] .dish__figure { inline-size: min(78vw, 42dvh); }
 
 .dish__content {
   position: relative; z-index: 2;
@@ -677,6 +676,61 @@ body[data-mood="ink"] .dish__fav[aria-pressed="true"] { color: var(--mist); bord
   border-radius: 999px;
   border: 1px solid rgba(23, 21, 18, .2);
   font-weight: 700;
+}
+
+/* ---------- Phone section switcher: fab + sheet ---------- */
+.sections-fab {
+  position: fixed;
+  /* bottom-end corner: the order button owns the start side, so the two
+     never fight for the same thumb */
+  inset-block-end: calc(var(--s3) + env(safe-area-inset-bottom));
+  inset-inline-end: var(--s3);
+  z-index: 45;
+  display: none;                      /* phones only — desktop has the top bar */
+  align-items: center;
+  gap: .5rem;
+  min-block-size: 46px;
+  padding-inline: var(--s4);
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 14px 30px -14px rgba(16, 24, 22, .5);
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--ink-black);
+  opacity: 1;
+  transition: opacity .3s var(--ease-std), transform .3s var(--ease-std);
+}
+.sections-fab svg { inline-size: 17px; block-size: 17px; }
+.sections-fab[data-visible="false"] { opacity: 0; pointer-events: none; }
+.sections-fab:active { filter: brightness(.96); }
+
+.sections-sheet__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s2);
+  margin-block: var(--s2);
+  max-block-size: 52dvh;
+  overflow-y: auto;
+}
+.sections-sheet__item {
+  min-block-size: 50px;
+  padding-inline: var(--s2);
+  border: 1px solid rgba(23, 21, 18, .15);
+  border-radius: 999px;
+  font-size: .86rem;
+  font-weight: 700;
+  color: var(--ink-black);
+  transition: border-color .2s, background .2s, transform .15s var(--ease-out);
+}
+.sections-sheet__item:active { transform: scale(.96); }
+.sections-sheet__item--daily { grid-column: 1 / -1; border-color: var(--red); color: var(--red-deep); }
+.sections-sheet__item[aria-current="true"] { background: var(--red); border-color: var(--red); color: #FFF7F2; }
+
+@media (max-width: 1023.98px) {
+  .sections-fab { display: inline-flex; }
 }
 
 /* ---------- Toast ---------- */

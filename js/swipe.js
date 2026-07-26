@@ -216,11 +216,16 @@ function updateRail(index) {
 /* ---------- sticky section switcher: highlight + keep the chip in view ---------- */
 function updateCatBar(section, index) {
   const bar = $("#catbar");
-  if (!bar) return;
-  // the hero already shows the full section grid — the bar starts below it
-  bar.dataset.visible = index === 0 ? "false" : "true";
-
   const group = section.dataset.rail || "";
+  // the hero already shows the full section grid — both switchers start below it
+  const away = index !== 0;
+  $("#sections-fab")?.setAttribute("data-visible", String(away));
+  $$("#sections-list [data-rail]").forEach((row) => {
+    row.setAttribute("aria-current", String(row.dataset.rail === group));
+  });
+  if (!bar) return;
+  bar.dataset.visible = String(away);
+
   let active = null;
   $$(".catbar__chip", bar).forEach((chip) => {
     const on = chip.dataset.rail === group;

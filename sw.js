@@ -67,8 +67,12 @@ self.addEventListener("fetch", (e) => {
     return;
   }
 
-  // data: network-first + revalidate so JSON edits show up immediately
-  if (url.pathname.includes("/data/")) {
+  // data AND app code: network-first + revalidate.
+  // The shell used to be cache-first, which let a phone keep running an old
+  // build for days — a menu that gains dishes and sections every week cannot
+  // ship that way. Assets below stay cache-first: they are content-named.
+  const isShell = /\.(?:css|js|html)$/.test(url.pathname);
+  if (url.pathname.includes("/data/") || isShell) {
     e.respondWith(
       fetch(req.url, { cache: "no-cache" })
         .then((res) => {
@@ -81,7 +85,7 @@ self.addEventListener("fetch", (e) => {
     return;
   }
 
-  // everything else (assets, css, js): cache-first
+  // everything else (images, fonts): cache-first
   e.respondWith(
     caches.match(req).then((hit) => {
       if (hit) return hit;

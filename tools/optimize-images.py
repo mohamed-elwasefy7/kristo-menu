@@ -18,7 +18,7 @@ import json
 import sys
 from pathlib import Path
 
-from PIL import Image, features
+from PIL import Image, ImageFilter, features
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCES = ROOT / "tools" / "sources.json"
@@ -113,6 +113,38 @@ def crop_subject(im: Image.Image, pad: float = 0.06) -> Image.Image:
     return canvas
 
 
+def pad_square(im: Image.Image) -> Image.Image:
+    """Grow a landscape photo into a square by extending its own backdrop.
+
+    The dish frames are square, and the food is shot wide. Cropping to square
+    would cut the ends off wraps and sandwiches, so the surface the dish sits
+    on is continued above and below instead — nothing is lost and the card
+    still reads as one photograph.
+    """
+    rgb = im.convert("RGB")
+    w, h = rgb.size
+    if w == h:
+        return rgb
+    side = max(w, h)
+    px = rgb.load()
+    step = max(1, min(w, h) // 60)
+    edge = [px[x, 0] for x in range(0, w, step)] + [px[x, h - 1] for x in range(0, w, step)] \
+        + [px[0, y] for y in range(0, h, step)] + [px[w - 1, y] for y in range(0, h, step)]
+    bg = tuple(sum(c[i] for c in edge) // len(edge) for i in range(3))
+
+    canvas = Image.new("RGB", (side, side), bg)
+    # blur-stretch the top and bottom rows so the fill keeps the floor's tone
+    if h < side:
+        slice_h = max(4, h // 6)
+        blur = max(24, side // 40)
+        top = rgb.crop((0, 0, w, slice_h)).resize((side, (side - h) // 2 + 4), Image.BILINEAR)
+        bot = rgb.crop((0, h - slice_h, w, h)).resize((side, side - h - (side - h) // 2 + 4), Image.BILINEAR)
+        canvas.paste(top.filter(ImageFilter.GaussianBlur(blur)), (0, 0))
+        canvas.paste(bot.filter(ImageFilter.GaussianBlur(blur)), (0, h + (side - h) // 2 - 4))
+    canvas.paste(rgb, ((side - w) // 2, (side - h) // 2))
+    return canvas
+
+
 def save_variants(im: Image.Image, out_dir: Path, slug: str, sizes, jpeg=True, avif=True):
     out_dir.mkdir(parents=True, exist_ok=True)
     written = []
@@ -162,8 +194,7 @@ def main():
             skipped += 1
             continue
         im = load_rgb(src, max_t)
-        if sid.startswith("drink-"):
-            im = crop_subject(im)
+        im = crop_subject(im) if sid.startswith("drink-") else pad_square(im)
         files = save_variants(im, out_dir, sid, sizes)
         total += len(files)
         print(f"  {sid} ({len(files)} files)")

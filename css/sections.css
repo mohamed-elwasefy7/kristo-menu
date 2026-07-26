@@ -107,7 +107,7 @@ html[lang="ar"] .narrative__lead { font-style: normal; }   /* no fake italics in
 .welcome__img {
   inline-size: 100%; block-size: 100%;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: var(--radius);
   box-shadow:
     0 12px 28px -14px rgba(16, 24, 22, .5),
     0 44px 90px -30px rgba(16, 24, 22, .4);

@@ -42,6 +42,7 @@ async function boot() {
 
   menu.render();
   menu.initSheet();
+  menu.initSectionsSheet();
   injectMenuSchema();
 
   // engines (dish DOM exists now)

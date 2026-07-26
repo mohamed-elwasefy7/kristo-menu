@@ -102,6 +102,19 @@ def minify_html(html: str) -> str:
     return html.strip()
 
 
+def version_assets(html: str, stamp: str) -> str:
+    """Stamp the CSS + module URLs with the build hash.
+
+    Phones hold on to a cached bundle for days otherwise, so a guest can be
+    reading last week's menu on a site that shipped hours ago. A changing
+    query string makes every deploy a fresh URL.
+    """
+    html = html.replace('href="css/bundle.min.css"', f'href="css/bundle.min.css?v={stamp}"')
+    for name in JS_FILES:
+        html = html.replace(f'"js/{name}.js"', f'"js/{name}.js?v={stamp}"')
+    return html.replace('"js/vendor/gsap-bundle.min.js"', f'"js/vendor/gsap-bundle.min.js?v={stamp}"')
+
+
 def build_html(base_url: str) -> int:
     html = (ROOT / "index.html").read_text(encoding="utf-8")
     # absolute canonical (search engines want the deployed URL, not "./")
@@ -118,6 +131,11 @@ def build_html(base_url: str) -> int:
         f'<meta property="og:image" content="{base_url}/assets/logo/og-image.jpg">\n'
         f'  <meta property="og:url" content="{base_url}/">',
     )
+    stamp = hashlib.sha1(
+        (ROOT / "css" / "bundle.min.css").read_bytes()
+        + b"".join((ROOT / "js" / f"{n}.js").read_bytes() for n in JS_FILES)
+    ).hexdigest()[:8]
+    html = version_assets(html, stamp)
     mini = minify_html(html)
     (DIST / "index.html").write_text(mini, encoding="utf-8")
     return len(mini.encode("utf-8"))

@@ -41,7 +41,9 @@
     "dailyKicker": "Changes every day",
     "dailyAllFor": "Every plate at",
     "todayLabel": "today",
-    "screenDaily": "Today's plates"
+    "screenDaily": "Today's plates",
+    "sectionsLabel": "Sections",
+    "sectionsTitle": "Jump to a section"
   },
   "ar": {
     "heroIntro": "أهلاً بكم في كريستو — مأكولات لبنانية تُحضّر يومياً بحب، من قلب المصيف بالرياض.",
@@ -85,6 +87,8 @@
     "dailyKicker": "يتغيّر كل يوم",
     "dailyAllFor": "كل طبق بـ",
     "todayLabel": "اليوم",
-    "screenDaily": "أطباق اليوم"
+    "screenDaily": "أطباق اليوم",
+    "sectionsLabel": "الأقسام",
+    "sectionsTitle": "اختر القسم"
   }
 }

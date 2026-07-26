@@ -163,6 +163,22 @@
   <!-- Progress dot rail (one dot per category group) -->
   <nav class="rail" id="rail" aria-label="Menu progress"></nav>
 
+  <!-- Thumb-reach section switcher (phones): never scroll back up to navigate -->
+  <button id="sections-fab" class="sections-fab" type="button" data-visible="false"
+          aria-haspopup="dialog" aria-controls="sections-sheet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+      <path d="M4 7h16M4 12h16M4 17h10"/>
+    </svg>
+    <span data-i18n="sectionsLabel">الأقسام</span>
+  </button>
+
+  <dialog id="sections-sheet" class="sheet sections-sheet" aria-labelledby="sections-title">
+    <div class="sheet__handle" aria-hidden="true"></div>
+    <h3 class="sheet__title" id="sections-title" data-i18n="sectionsTitle">اختر القسم</h3>
+    <div class="sections-sheet__list" id="sections-list"></div>
+    <button class="sheet__close" type="button" data-i18n="close"></button>
+  </dialog>
+
   <!-- Order bottom sheet -->
   <dialog id="order-sheet" class="sheet" aria-labelledby="sheet-title">
     <div class="sheet__handle" aria-hidden="true"></div>
