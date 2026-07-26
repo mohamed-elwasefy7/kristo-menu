@@ -337,6 +337,44 @@
       "background": "turquoise"
     },
     {
+      "id": "manakish-minikish",
+      "category": "manakish",
+      "name": {
+        "en": "Minikish Platter",
+        "ar": "منيكيش"
+      },
+      "subtitle": {
+        "en": "The whole bakery, miniature",
+        "ar": "الفرن كله بحجم صغير"
+      },
+      "description": {
+        "en": "A wooden board of mini manakish and pastries — cheese, zaatar, lahme b ajin, sambousik and cheese rolls, straight from the oven for the table to share.",
+        "ar": "لوح خشب من المناقيش والفطاير الصغيرة — جبنة وزعتر ولحم بعجين وسمبوسك ورقاقات، طالعة من الفرن للسفرة تتقاسموها."
+      },
+      "ingredients": {
+        "en": [
+          "Mini manakish",
+          "Cheese",
+          "Zaatar",
+          "Lahme b ajin",
+          "Sambousik"
+        ],
+        "ar": [
+          "مناقيش صغيرة",
+          "جبنة",
+          "زعتر",
+          "لحم بعجين",
+          "سمبوسك"
+        ]
+      },
+      "image": "manakish-minikish",
+      "background": "paper",
+      "presentation": "card",
+      "calories": 1450,
+      "chefChoice": true,
+      "vegetarian": false
+    },
+    {
       "id": "pizza-marguerita",
       "category": "pizza",
       "name": {

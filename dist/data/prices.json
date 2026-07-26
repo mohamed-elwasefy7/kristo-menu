@@ -96,5 +96,21 @@
   "drink-kinza-lemon-mix": 3,
   "drink-fresh-orange": 9,
   "drink-fresh-lemonade": 9,
-  "drink-fresh-minted-lemonade": 9
+  "drink-fresh-minted-lemonade": 9,
+  "manakish-minikish": [
+    {
+      "label": {
+        "ar": "١٢ حبة",
+        "en": "12 pieces"
+      },
+      "price": 34
+    },
+    {
+      "label": {
+        "ar": "٢٤ حبة",
+        "en": "24 pieces"
+      },
+      "price": 64
+    }
+  ]
 }

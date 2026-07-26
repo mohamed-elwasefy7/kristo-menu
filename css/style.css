@@ -541,7 +541,11 @@ body[data-mood="ink"] .dish__fav[aria-pressed="true"] { color: var(--mist); bord
 .dish__fav[aria-pressed="true"] svg { fill: currentColor; }
 
 /* ---------- Drinks screen ---------- */
-.drinks { justify-content: center; gap: var(--s4); }
+.drinks {
+  justify-content: center;
+  gap: var(--s4);
+  padding-block-start: calc(var(--nav-h) + var(--catbar-h));
+}
 .drinks__head { text-align: center; display: grid; gap: var(--s1); }
 .drinks__kicker { font-size: .72rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; color: var(--accent); }
 .drinks__title { font-family: var(--font-display); font-size: clamp(1.8rem, 7vw, 2.6rem); font-weight: 700; line-height: 1.5; }

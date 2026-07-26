@@ -49,6 +49,70 @@ def load_rgb(path: Path, max_target: int) -> Image.Image:
     return im.convert("RGB")
 
 
+def crop_subject(im: Image.Image, pad: float = 0.06) -> Image.Image:
+    """Trim the empty floor/backdrop around a bottle or can.
+
+    The drink shots frame the product small inside a uniform surface, which
+    renders as a speck in an 80px card. Sample the border colour, keep every
+    pixel that differs from it, then crop that box to a square so the strip
+    stays a tidy row of same-sized cards.
+    """
+    rgb = im.convert("RGB")
+    w, h = rgb.size
+    small = rgb.resize((min(w, 400), min(h, 400)), Image.BILINEAR)
+    sw, sh = small.size
+    px = small.load()
+
+    edge = [px[x, 0] for x in range(0, sw, 4)] + [px[x, sh - 1] for x in range(0, sw, 4)] \
+        + [px[0, y] for y in range(0, sh, 4)] + [px[sw - 1, y] for y in range(0, sh, 4)]
+    bg = tuple(sum(c[i] for c in edge) // len(edge) for i in range(3))
+
+    # Per-pixel distance from the backdrop, then column/row energy profiles.
+    # Profiles beat a raw bounding box here: tile grout and the product's own
+    # shadow trip a min/max box, but they never build the dense ridge the
+    # bottle does.
+    cols = [0.0] * sw
+    rows = [0.0] * sh
+    for y in range(sh):
+        for x in range(sw):
+            r, g, b = px[x, y]
+            dist = abs(r - bg[0]) + abs(g - bg[1]) + abs(b - bg[2])
+            if dist > 34:
+                cols[x] += dist
+                rows[y] += dist
+
+    def dense_span(profile):
+        peak = max(profile)
+        if peak <= 0:
+            return None
+        cut = peak * 0.18
+        i = profile.index(peak)
+        lo = i
+        while lo > 0 and profile[lo - 1] >= cut:
+            lo -= 1
+        hi = i
+        while hi < len(profile) - 1 and profile[hi + 1] >= cut:
+            hi += 1
+        return lo, hi + 1
+
+    span_x = dense_span(cols)
+    span_y = dense_span(rows)
+    if not span_x or not span_y:
+        return rgb                      # nothing stands out — leave it alone
+
+    fx, fy = w / sw, h / sh
+    x0, x1 = span_x[0] * fx, span_x[1] * fx
+    y0, y1 = span_y[0] * fy, span_y[1] * fy
+    side = max(x1 - x0, y1 - y0) * (1 + pad * 2)
+    cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+    box = (round(cx - side / 2), round(cy - side / 2), round(cx + side / 2), round(cy + side / 2))
+
+    canvas = Image.new("RGB", (box[2] - box[0], box[3] - box[1]), bg)
+    src_box = (max(0, box[0]), max(0, box[1]), min(w, box[2]), min(h, box[3]))
+    canvas.paste(rgb.crop(src_box), (src_box[0] - box[0], src_box[1] - box[1]))
+    return canvas
+
+
 def save_variants(im: Image.Image, out_dir: Path, slug: str, sizes, jpeg=True, avif=True):
     out_dir.mkdir(parents=True, exist_ok=True)
     written = []
@@ -97,7 +161,10 @@ def main():
         if fresh(src, out_dir, sid):
             skipped += 1
             continue
-        files = save_variants(load_rgb(src, max_t), out_dir, sid, sizes)
+        im = load_rgb(src, max_t)
+        if sid.startswith("drink-"):
+            im = crop_subject(im)
+        files = save_variants(im, out_dir, sid, sizes)
         total += len(files)
         print(f"  {sid} ({len(files)} files)")
 

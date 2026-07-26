@@ -79,7 +79,14 @@ function injectMenuSchema() {
       .filter((d) => d.category === cat.id)
       .map((d) => {
         const item = { "@type": "MenuItem", name: d.name?.ar || d.id, description: d.description?.ar || "" };
-        if (d.price != null) {
+        if (d.priceOptions?.length) {
+          item.offers = d.priceOptions.map((o) => ({
+            "@type": "Offer",
+            name: o.label?.ar || o.label?.en || "",
+            price: String(o.price),
+            priceCurrency: "SAR",
+          }));
+        } else if (d.price != null) {
           item.offers = { "@type": "Offer", price: String(d.price), priceCurrency: "SAR" };
         }
         return item;

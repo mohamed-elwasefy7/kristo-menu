@@ -109,7 +109,16 @@
   }
   .hero__figure { inline-size: min(30vw, 40dvh); }
   .rail { inset-inline-end: var(--s4); }
-  .drinks__strip { justify-content: center; flex-wrap: wrap; overflow-x: visible; max-inline-size: 56rem; }
+  /* the full drinks list wraps on desktop; keep it inside one screen and let
+     the tray itself scroll instead of pushing the page past the fold */
+  .drinks__strip {
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-x: visible;
+    overflow-y: auto;
+    max-inline-size: 56rem;
+    max-block-size: calc(100dvh - var(--nav-h) - var(--catbar-h) - 11rem);
+  }
 
   /* welcome: editorial side-by-side */
   .welcome {

@@ -57,18 +57,29 @@ export async function loadData() {
     orderLinks: settings?.orderLinks || {},
   };
   data.categories = (categories || []).slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  /* a price is either a number, or a list of sized options:
+     [{ label: {ar,en}, price: 34 }, …] — used for share platters */
   const priceOf = (id) => {
     const p = prices?.[id];
-    return typeof p === "number" && p > 0 ? p : null;
+    if (Array.isArray(p)) {
+      const options = p.filter((o) => typeof o?.price === "number" && o.price > 0);
+      return options.length ? { options } : null;
+    }
+    return typeof p === "number" && p > 0 ? { value: p } : null;
+  };
+  const applyPrice = (d) => {
+    const p = priceOf(d.id);
+    d.price = p?.value ?? null;
+    d.priceOptions = p?.options ?? null;
   };
   data.dishes = (data.dishes || []).filter((d) => {
     const ok = REQUIRED.every((k) => d[k] !== undefined && d[k] !== "");
     if (!ok) console.warn("[kristo] dish skipped (missing keys):", d.id || d);
     return ok && d.available !== false;
   });
-  data.dishes.forEach((d) => { d.price = priceOf(d.id); });
+  data.dishes.forEach(applyPrice);
   data.drinks = (data.drinks || []).filter((d) => d.available !== false);
-  data.drinks.forEach((d) => { d.price = priceOf(d.id); });
+  data.drinks.forEach(applyPrice);
   return data;
 }
 
@@ -248,12 +259,25 @@ function buildDish(dish, tpl, catLabel, favs) {
     ul.append(li);
   });
 
-  // no price yet (prices.json still null) → drop the whole price line
-  if (dish.price != null) {
+  // one price, a set of sized options, or none at all (price stays hidden)
+  const priceEl = $(".dish__price", node);
+  if (dish.priceOptions) {
+    const list = document.createElement("ul");
+    list.className = "dish__sizes";
+    list.setAttribute("role", "list");
+    dish.priceOptions.forEach((opt) => {
+      const li = document.createElement("li");
+      li.innerHTML =
+        `<span class="dish__size-label">${t(opt.label)}</span>` +
+        `<span class="dish__size-price">${opt.price} <span class="dish__price-cur">${t("sar")}</span></span>`;
+      list.append(li);
+    });
+    priceEl.replaceWith(list);
+  } else if (dish.price != null) {
     $(".dish__price-num", node).textContent = dish.price;
     $(".dish__price-cur", node).textContent = t("sar");
   } else {
-    $(".dish__price", node).remove();
+    priceEl.remove();
   }
 
   const cal = $(".dish__cal", node);

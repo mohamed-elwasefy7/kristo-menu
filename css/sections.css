@@ -198,6 +198,16 @@ body[data-mood="ink"] .dish__texture { opacity: .08; }
 html[lang="ar"] .dish__inspiration { font-style: normal; letter-spacing: 0; }
 
 .dish__foot { display: grid; gap: var(--s2); }
+/* sized share platters: one pill per size, price in the body face */
+.dish__sizes { display: flex; flex-wrap: wrap; gap: var(--s2); }
+.dish__sizes li {
+  display: inline-flex; align-items: baseline; gap: var(--s2);
+  padding: .4rem var(--s3);
+  border: 1px solid color-mix(in srgb, var(--line) 45%, transparent);
+  border-radius: 999px;
+}
+.dish__size-label { font-size: .78rem; font-weight: 700; color: var(--ink-soft); }
+.dish__size-price { font-family: var(--font-body); font-weight: 700; font-size: 1.15rem; color: var(--ink); }
 .dish__price { display: inline-flex; align-items: center; gap: var(--s2); }
 .dish__price .reveal { display: inline-block; }
 .dish__price-rule {

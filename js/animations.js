@@ -135,6 +135,8 @@ function buildDishTimeline(section) {
   add(".dish__ingredients li", { y: 14 * DIST, opacity: 0 },
     { y: 0, opacity: 1, duration: 0.45, stagger: 0.05, ease: "power3.out" }, 0.32);
   add(".dish__price .reveal__inner", { yPercent: 125, opacity: 1 }, { yPercent: 0, duration: 0.55 }, 0.4);
+  add(".dish__sizes li", { y: 12 * DIST, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.45, stagger: 0.08, ease: "back.out(1.2)" }, 0.42);
   add(".dish__price-rule", { scaleX: 0, opacity: 1 }, { scaleX: 1, duration: 0.4, ease: "power2.out" }, 0.5);
   add(".dish__cal, .dish__time", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 0.48);
   add(".dish__badges .badge", { opacity: 0, y: 8 },

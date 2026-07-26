@@ -561,7 +561,11 @@ body[data-mood="teal-deep"] .dish__fav[aria-pressed="true"],
 body[data-mood="ember"] .dish__fav[aria-pressed="true"],
 body[data-mood="ink"] .dish__fav[aria-pressed="true"] { color: var(--mist); border-color: var(--mist); }
 .dish__fav[aria-pressed="true"] svg { fill: currentColor; }
-.drinks { justify-content: center; gap: var(--s4); }
+.drinks {
+  justify-content: center;
+  gap: var(--s4);
+  padding-block-start: calc(var(--nav-h) + var(--catbar-h));
+}
 .drinks__head { text-align: center; display: grid; gap: var(--s1); }
 .drinks__kicker { font-size: .72rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; color: var(--accent); }
 .drinks__title { font-family: var(--font-display); font-size: clamp(1.8rem, 7vw, 2.6rem); font-weight: 700; line-height: 1.5; }
@@ -732,6 +736,7 @@ html[dir="rtl"] .toast { transform: translate(50%, 20px); }
 .anim-ready .dish__desc,
 .anim-ready .dish__ingredients li,
 .anim-ready .dish__price .reveal__inner,
+.anim-ready .dish__sizes li,
 .anim-ready .dish__price-rule,
 .anim-ready .dish__cal,
 .anim-ready .dish__time,
@@ -761,6 +766,7 @@ html[dir="rtl"] .toast.is-visible { transform: translate(50%, 0); }
   .anim-ready .dish__desc,
   .anim-ready .dish__ingredients li,
   .anim-ready .dish__price .reveal__inner,
+  .anim-ready .dish__sizes li,
   .anim-ready .dish__price-rule,
   .anim-ready .dish__cal,
   .anim-ready .dish__time,
@@ -946,6 +952,15 @@ body[data-mood="ink"] .dish__texture { opacity: .08; }
 }
 html[lang="ar"] .dish__inspiration { font-style: normal; letter-spacing: 0; }
 .dish__foot { display: grid; gap: var(--s2); }
+.dish__sizes { display: flex; flex-wrap: wrap; gap: var(--s2); }
+.dish__sizes li {
+  display: inline-flex; align-items: baseline; gap: var(--s2);
+  padding: .4rem var(--s3);
+  border: 1px solid color-mix(in srgb, var(--line) 45%, transparent);
+  border-radius: 999px;
+}
+.dish__size-label { font-size: .78rem; font-weight: 700; color: var(--ink-soft); }
+.dish__size-price { font-family: var(--font-body); font-weight: 700; font-size: 1.15rem; color: var(--ink); }
 .dish__price { display: inline-flex; align-items: center; gap: var(--s2); }
 .dish__price .reveal { display: inline-block; }
 .dish__price-rule {
@@ -1146,7 +1161,14 @@ html.js-motion .hero .swipe-hint { opacity: 0; }
   }
   .hero__figure { inline-size: min(30vw, 40dvh); }
   .rail { inset-inline-end: var(--s4); }
-  .drinks__strip { justify-content: center; flex-wrap: wrap; overflow-x: visible; max-inline-size: 56rem; }
+  .drinks__strip {
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-x: visible;
+    overflow-y: auto;
+    max-inline-size: 56rem;
+    max-block-size: calc(100dvh - var(--nav-h) - var(--catbar-h) - 11rem);
+  }
   .welcome {
     flex-direction: row;
     justify-content: center;
