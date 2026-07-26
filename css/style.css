@@ -393,6 +393,10 @@ html[lang="ar"] .hero__tagline { font-style: italic; }
     0 44px 90px -30px rgba(16, 24, 22, .4);
   filter: saturate(1.05) contrast(1.03);
   background: var(--surface);
+  /* alt text stays for screen readers but never paints over the frame during
+     a failed load — the JS fallback swaps in the branded placeholder */
+  font-size: 0;
+  color: transparent;
 }
 /* every dish uses the same square frame now — presentation only nudges size */
 .dish[data-presentation="card"] .dish__figure { inline-size: min(78vw, 42dvh); }

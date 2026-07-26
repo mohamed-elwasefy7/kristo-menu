@@ -104,8 +104,46 @@ export function applyStaticI18n(root = document) {
    JSON stores a basename only. We probe extensions best-first;
    dropping a better format file into the folder wins automatically
    on the next load. Cache is in-memory on purpose.               */
-const EXT_CHAIN = ["avif", "webp", "jpg", "jpeg", "png", "svg"];
+const EXT_ALL = ["avif", "webp", "jpg", "jpeg", "png", "svg"];
 const extCache = new Map();
+
+/* A file existing on the server does not mean this browser can DECODE it.
+   Serving AVIF to a phone that cannot read it paints a broken-image icon
+   over the plate, so each modern format is decode-tested once per session
+   and dropped from the chain when it fails. */
+const DECODE_TESTS = {
+  avif: "data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAEAAAABAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQ0MAAAAABNjb2xybmNseAACAAIABoAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAACVtZGF0EgAKCBgABogQEDQgMgkQAAAAB8dSLfI=",
+  webp: "data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",
+};
+const decodeCache = new Map();
+
+function canDecode(ext) {
+  if (!(ext in DECODE_TESTS)) return Promise.resolve(true);
+  if (decodeCache.has(ext)) return decodeCache.get(ext);
+  // dev/QA switch: ?noavif=1 makes a modern browser behave like an old phone
+  if (new URLSearchParams(location.search).get("no" + ext) === "1") {
+    const off = Promise.resolve(false);
+    decodeCache.set(ext, off);
+    return off;
+  }
+  const test = new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(img.width > 0);
+    img.onerror = () => resolve(false);
+    img.src = DECODE_TESTS[ext];
+  });
+  decodeCache.set(ext, test);
+  return test;
+}
+
+let extChainPromise = null;
+function extChain() {
+  if (!extChainPromise) {
+    extChainPromise = Promise.all(EXT_ALL.map(canDecode))
+      .then((ok) => EXT_ALL.filter((_, i) => ok[i]));
+  }
+  return extChainPromise;
+}
 
 /* Existence check must not download the file — a HEAD request costs only
    headers, while new Image() waits for the full body. Falls back to an
@@ -138,7 +176,7 @@ async function probe(url) {
 export async function resolveImage(basename, dir = "assets/images/dishes/") {
   const key = dir + basename;
   if (extCache.has(key)) return extCache.get(key);
-  for (const ext of EXT_CHAIN) {
+  for (const ext of await extChain()) {
     try {
       const url = await probe(`${dir}${basename}.${ext}`);
       const result = { url, ext, dir, basename };
@@ -179,6 +217,16 @@ export async function applyImage(img, basename, dir, sizes = "(min-width:1024px)
     return resolved;
   }
   const sm = await resolveSmallVariant(resolved);
+  // last line of defence: a decode-capable format can still fail on a corrupt
+  // file or a dropped connection, and a broken-image icon on a menu is worse
+  // than a plain branded square
+  img.onerror = () => {
+    img.onerror = null;
+    img.removeAttribute("srcset");
+    img.removeAttribute("sizes");
+    extCache.delete(dir + basename);
+    img.src = placeholderDataURI(basename);
+  };
   img.src = resolved.url;
   if (sm) {
     img.srcset = `${sm} 750w, ${resolved.url} 1400w`;
@@ -187,17 +235,23 @@ export async function applyImage(img, basename, dir, sizes = "(min-width:1024px)
   return resolved;
 }
 
-/* branded inline-SVG placeholder when no file exists at all */
-export function placeholderDataURI(name = "") {
-  const initial = (name[0] || "ك").toUpperCase();
+/* branded inline-SVG placeholder when no file exists at all.
+   The gradient is referenced with a plain "#g": encodeURIComponent below is
+   what escapes it, so pre-escaping would double-encode and silently drop the
+   fill. */
+export function placeholderDataURI() {
+  // the logo's crossed fork and knife on a soft brand wash — a slug initial
+  // would read as a random Latin letter on an Arabic menu
   const svg =
     `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'>` +
     `<defs><radialGradient id='g' cx='35%' cy='25%'><stop offset='0%' stop-color='#F4EFE6'/><stop offset='100%' stop-color='#B6C9C6'/></radialGradient></defs>` +
-    `<rect width='400' height='400' fill='url(%23g)'/>` +
-    `<circle cx='200' cy='200' r='130' fill='none' stroke='#4C837F' stroke-width='2' opacity='.55'/>` +
-    `<text x='200' y='228' text-anchor='middle' font-family='Aref Ruqaa,Amiri,Georgia,serif' font-size='96' fill='#171512' opacity='.7'>${initial}</text>` +
-    `</svg>`;
-  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg).replace(/%23/g, "%23")}`;
+    `<rect width='400' height='400' fill='url(#g)'/>` +
+    `<circle cx='200' cy='200' r='104' fill='#D8352C' opacity='.9'/>` +
+    `<g stroke='#FFF7F2' stroke-width='9' stroke-linecap='round' stroke-linejoin='round' fill='none'>` +
+    `<path d='M158 150 L242 250'/><path d='M158 150c-6 18-2 31 7 40l12 10'/><path d='M175 142c6 18 6 31-4 43'/>` +
+    `<path d='M242 150 L158 250'/><path d='M242 150c10 16 9 34-4 46l-12 12'/>` +
+    `</g></svg>`;
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
 
 /* ---------- delivery app display names ---------- */

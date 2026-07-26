@@ -423,6 +423,8 @@ html[lang="ar"] .hero__tagline { font-style: italic; }
     0 44px 90px -30px rgba(16, 24, 22, .4);
   filter: saturate(1.05) contrast(1.03);
   background: var(--surface);
+  font-size: 0;
+  color: transparent;
 }
 .dish[data-presentation="card"] .dish__figure { inline-size: min(78vw, 42dvh); }
 .dish__content {
