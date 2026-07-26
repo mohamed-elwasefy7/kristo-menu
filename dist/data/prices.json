@@ -1,6 +1,5 @@
 {
   "_README": "ملف الأسعار (ريال سعودي) — عدّل الرقم أمام كل صنف. null = السعر مخفي في الموقع. مثال: \"manakish-zaatar\": 9",
-
   "manakish-zaatar": 9,
   "manakish-old-school-zaatar": 10,
   "manakish-cocktail": 11,
@@ -11,7 +10,6 @@
   "manakish-spinach": 12,
   "manakish-lahme-b-ajin": 16,
   "manakish-kafta": 19,
-
   "pizza-marguerita": 22,
   "pizza-peperoni": 26,
   "pizza-vegetarian": 24,
@@ -19,7 +17,6 @@
   "pizza-kristo": 29,
   "pizza-chicken": 28,
   "pizza-ranch": 26,
-
   "sandwich-halloum": 17,
   "sandwich-halloum-pesto": 19,
   "sandwich-labneh": 16,
@@ -30,7 +27,6 @@
   "sandwich-turkey": 22,
   "sandwich-tuna": 22,
   "sandwich-crab": 22,
-
   "hot-cheese-rolls": 16,
   "hot-vegetables-rolls": 16,
   "hot-kebbe-orass": 22,
@@ -40,7 +36,6 @@
   "hot-wedges": 12,
   "hot-fries": 8,
   "hot-fries-kristo": 14,
-
   "appetizer-labneh": 16,
   "appetizer-labneh-makdous": 19,
   "appetizer-labneh-toum": 17,
@@ -50,14 +45,12 @@
   "appetizer-moutabal": 19,
   "appetizer-moutabal-beetroot": 21,
   "appetizer-waraa-inab": 16,
-
   "burger-lebanese": 24,
   "burger-classic-beef": 22,
   "burger-grilled-chicken": 22,
   "burger-fried-chicken": 24,
   "burger-kristo-chicken": 29,
   "burger-kristo-beef": 31,
-
   "salad-tabbouleh": 20,
   "salad-fattoush": 20,
   "salad-rocca-beetroot": 20,
@@ -66,9 +59,7 @@
   "salad-crab": 29,
   "salad-pasta-tuna": 29,
   "salad-greek": 24,
-  "salad-chicken-avocado": null,
   "salad-quinoa": 27,
-
   "bbq-taouk": 19,
   "bbq-awsal": 23,
   "bbq-kafta-kristo": 22,
@@ -77,7 +68,6 @@
   "bbq-djeij-kristo": 19,
   "bbq-batata": 16,
   "bbq-asbet-djeij": 19,
-
   "platter-mix-grill": 39,
   "platter-taouk": 29,
   "platter-awsal": 36,
@@ -86,11 +76,9 @@
   "platter-kabab-chicken": 29,
   "platter-nos-farrouj": 29,
   "platter-farrouj": 39,
-
   "dessert-baklawa": null,
   "dessert-mafroukeh": null,
   "dessert-fruit-salad": null,
-
   "drink-pepsi": 4,
   "drink-diet-pepsi": 4,
   "drink-seven-up": 4,
