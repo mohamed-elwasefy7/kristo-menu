@@ -37,7 +37,11 @@
     "railAria": "Menu progress",
     "roleDelivery": "Delivery",
     "roleChat": "Chat with us",
-    "roleFollow": "Follow Kristo"
+    "roleFollow": "Follow Kristo",
+    "dailyKicker": "Changes every day",
+    "dailyAllFor": "Every plate at",
+    "todayLabel": "today",
+    "screenDaily": "Today's plates"
   },
   "ar": {
     "heroIntro": "أهلاً بكم في كريستو — مأكولات لبنانية تُحضّر يومياً بحب، من قلب المصيف بالرياض.",
@@ -77,6 +81,10 @@
     "railAria": "تقدّم المنيو",
     "roleDelivery": "توصيل",
     "roleChat": "راسلنا",
-    "roleFollow": "تابع كريستو"
+    "roleFollow": "تابع كريستو",
+    "dailyKicker": "يتغيّر كل يوم",
+    "dailyAllFor": "كل طبق بـ",
+    "todayLabel": "اليوم",
+    "screenDaily": "أطباق اليوم"
   }
 }

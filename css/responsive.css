@@ -102,7 +102,7 @@
     inline-size: min(38vw, 62dvh);
     flex: 0 0 auto;
   }
-  .dish[data-presentation="card"] .dish__figure { inline-size: min(44vw, 70dvh); }
+  .dish[data-presentation="card"] .dish__figure { inline-size: min(46vw, 74dvh); }
   .dish__content {
     max-inline-size: 26rem;
     align-content: center;

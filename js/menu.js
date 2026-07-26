@@ -42,13 +42,14 @@ async function fetchJSON(path, optional = false) {
 }
 
 export async function loadData() {
-  const [brand, social, settings, categories, menuData, prices] = await Promise.all([
+  const [brand, social, settings, categories, menuData, prices, daily] = await Promise.all([
     fetchJSON("data/brand.json", true),
     fetchJSON("data/social.json", true),
     fetchJSON("data/settings.json", true),
     fetchJSON("data/categories.json", true),
     fetchJSON("data/menu.json"),
     fetchJSON("data/prices.json", true),
+    fetchJSON("data/daily.json", true),
   ]);
   data = menuData;
   data.restaurant = {
@@ -57,6 +58,7 @@ export async function loadData() {
     orderLinks: settings?.orderLinks || {},
   };
   data.categories = (categories || []).slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  data.daily = daily || null;
   /* a price is either a number, or a list of sized options:
      [{ label: {ar,en}, price: 34 }, …] — used for share platters */
   const priceOf = (id) => {
@@ -125,6 +127,10 @@ export function render() {
     // intro screen even while empty — the intro carries the "changes weekly" note
     if (!dishes.length && !cat.alwaysShow) return;
     append(story.buildCategoryIntro(cat), `cat-${cat.id}`);
+    // the daily board lives right behind its intro — same rail group
+    if (cat.id === "daily" && data.daily) {
+      append(story.buildDailyBoard(data.daily), `cat-${cat.id}`);
+    }
     dishes.forEach((dish) => {
       seen.add(dish.id);
       append(buildDish(dish, tpl, catLabel, favs), `cat-${cat.id}`);

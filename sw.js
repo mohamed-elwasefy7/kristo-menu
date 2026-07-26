@@ -28,6 +28,7 @@ const SHELL = [
   "data/categories.json",
   "data/menu.json",
   "data/prices.json",
+  "data/daily.json",
   "data/story.json",
   "data/i18n.json",
   "assets/fonts/ArefRuqaa-700-arabic.woff2",

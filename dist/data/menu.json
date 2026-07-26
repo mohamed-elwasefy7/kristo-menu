@@ -636,7 +636,8 @@
       "calories": 285,
       "image": "sandwich-halloum",
       "background": "mist",
-      "vegetarian": true
+      "vegetarian": true,
+      "presentation": "card"
     },
     {
       "id": "sandwich-halloum-pesto",
@@ -670,7 +671,8 @@
       "calories": 295,
       "image": "sandwich-halloum-pesto",
       "background": "paper",
-      "vegetarian": true
+      "vegetarian": true,
+      "presentation": "card"
     },
     {
       "id": "sandwich-labneh",
@@ -706,7 +708,8 @@
       "calories": 290,
       "image": "sandwich-labneh",
       "background": "mist",
-      "vegetarian": true
+      "vegetarian": true,
+      "presentation": "card"
     },
     {
       "id": "sandwich-labneh-makdous",
@@ -742,7 +745,8 @@
       "calories": 290,
       "image": "sandwich-labneh-makdous",
       "background": "paper",
-      "vegetarian": true
+      "vegetarian": true,
+      "presentation": "card"
     },
     {
       "id": "sandwich-cheese-kristo",
@@ -776,7 +780,8 @@
       "calories": 290,
       "image": "sandwich-cheese-kristo",
       "background": "mist",
-      "vegetarian": true
+      "vegetarian": true,
+      "presentation": "card"
     },
     {
       "id": "sandwich-chicken-caesar",
@@ -809,7 +814,8 @@
       },
       "calories": 320,
       "image": "sandwich-chicken-caesar",
-      "background": "paper"
+      "background": "paper",
+      "presentation": "card"
     },
     {
       "id": "sandwich-chicken-kristo",
@@ -842,7 +848,8 @@
       },
       "calories": 320,
       "image": "sandwich-chicken-kristo",
-      "background": "mist"
+      "background": "mist",
+      "presentation": "card"
     },
     {
       "id": "sandwich-turkey",
@@ -877,7 +884,8 @@
       },
       "calories": 290,
       "image": "sandwich-turkey",
-      "background": "paper"
+      "background": "paper",
+      "presentation": "card"
     },
     {
       "id": "sandwich-tuna",
@@ -912,7 +920,8 @@
       },
       "calories": 300,
       "image": "sandwich-tuna",
-      "background": "mist"
+      "background": "mist",
+      "presentation": "card"
     },
     {
       "id": "sandwich-crab",
@@ -947,7 +956,8 @@
       },
       "calories": 280,
       "image": "sandwich-crab",
-      "background": "paper"
+      "background": "paper",
+      "presentation": "card"
     },
     {
       "id": "hot-cheese-rolls",
@@ -1549,7 +1559,7 @@
       "vegetarian": true
     },
     {
-      "id": "burger-Lebanese",
+      "id": "burger-lebanese",
       "category": "burgers",
       "name": {
         "en": "Lebanese",
@@ -1580,8 +1590,9 @@
         ]
       },
       "calories": 550,
-      "image": "burger-Lebanese",
-      "background": "ember"
+      "image": "burger-lebanese",
+      "background": "ember",
+      "presentation": "card"
     },
     {
       "id": "burger-classic-beef",
@@ -1616,7 +1627,8 @@
       },
       "calories": 560,
       "image": "burger-classic-beef",
-      "background": "ink"
+      "background": "ink",
+      "presentation": "card"
     },
     {
       "id": "burger-grilled-chicken",
@@ -1649,7 +1661,8 @@
       },
       "calories": 570,
       "image": "burger-grilled-chicken",
-      "background": "ember"
+      "background": "ember",
+      "presentation": "card"
     },
     {
       "id": "burger-fried-chicken",
@@ -1682,7 +1695,8 @@
       },
       "calories": 655,
       "image": "burger-fried-chicken",
-      "background": "ink"
+      "background": "ink",
+      "presentation": "card"
     },
     {
       "id": "burger-kristo-chicken",
@@ -1713,7 +1727,8 @@
       },
       "calories": 755,
       "image": "burger-kristo-chicken",
-      "background": "ember"
+      "background": "ember",
+      "presentation": "card"
     },
     {
       "id": "burger-kristo-beef",
@@ -1745,7 +1760,8 @@
       "calories": 855,
       "image": "burger-kristo-beef",
       "background": "ink",
-      "chefChoice": true
+      "chefChoice": true,
+      "presentation": "card"
     },
     {
       "id": "salad-tabbouleh",
@@ -2099,7 +2115,8 @@
       },
       "calories": 455,
       "image": "bbq-taouk",
-      "background": "ember"
+      "background": "ember",
+      "presentation": "card"
     },
     {
       "id": "bbq-awsal",
@@ -2132,7 +2149,8 @@
       },
       "calories": 475,
       "image": "bbq-awsal",
-      "background": "ink"
+      "background": "ink",
+      "presentation": "card"
     },
     {
       "id": "bbq-kafta-kristo",
@@ -2165,7 +2183,8 @@
       },
       "calories": 520,
       "image": "bbq-kafta-kristo",
-      "background": "ember"
+      "background": "ember",
+      "presentation": "card"
     },
     {
       "id": "bbq-kabab-meat",
@@ -2198,7 +2217,8 @@
       },
       "calories": 520,
       "image": "bbq-kabab-meat",
-      "background": "ink"
+      "background": "ink",
+      "presentation": "card"
     },
     {
       "id": "bbq-kabab-chicken",
@@ -2229,7 +2249,8 @@
       },
       "calories": 485,
       "image": "bbq-kabab-chicken",
-      "background": "ember"
+      "background": "ember",
+      "presentation": "card"
     },
     {
       "id": "bbq-djeij-kristo",
@@ -2260,7 +2281,8 @@
       },
       "calories": 455,
       "image": "bbq-djeij-kristo",
-      "background": "ink"
+      "background": "ink",
+      "presentation": "card"
     },
     {
       "id": "bbq-batata",
@@ -2296,7 +2318,8 @@
       "calories": 425,
       "image": "bbq-batata",
       "background": "ember",
-      "vegetarian": true
+      "vegetarian": true,
+      "presentation": "card"
     },
     {
       "id": "bbq-asbet-djeij",
@@ -2329,7 +2352,8 @@
       },
       "calories": 415,
       "image": "bbq-asbet-djeij",
-      "background": "ink"
+      "background": "ink",
+      "presentation": "card"
     },
     {
       "id": "platter-mix-grill",

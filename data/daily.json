@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "_README": "لوحة الأطباق اليومية. price = سعر موحّد لكل أطباق اليوم. weekday = رقم اليوم في JS (0=الأحد). عدّل الأسماء أو أضف/احذف أطباق بحرية — الموقع يعرض يوم اليوم تلقائياً.",
+  "price": 38,
+  "days": [
+    {
+      "id": "sunday",
+      "weekday": 0,
+      "label": { "ar": "الأحد", "en": "Sunday" },
+      "dishes": [
+        { "name": { "ar": "كفتة وبطاطا", "en": "Kafta w Batata" } },
+        { "name": { "ar": "دجاج حامض وحلو", "en": "Chicken Sweet and Sour" } },
+        { "name": { "ar": "فاصوليا بالزيت", "en": "Fasolia b Zeit" } }
+      ]
+    },
+    {
+      "id": "monday",
+      "weekday": 1,
+      "label": { "ar": "الإثنين", "en": "Monday" },
+      "dishes": [
+        { "name": { "ar": "لازانيا", "en": "Lasagna" } },
+        { "name": { "ar": "ماندي دجاج", "en": "Mandi Chicken" } },
+        { "name": { "ar": "شاورما سمك", "en": "Fish Shawarma" } }
+      ]
+    },
+    {
+      "id": "tuesday",
+      "weekday": 2,
+      "label": { "ar": "الثلاثاء", "en": "Tuesday" },
+      "dishes": [
+        { "name": { "ar": "برغر بالفطر", "en": "Mushroom Burger" } },
+        { "name": { "ar": "يخنة دجاج", "en": "Yakhne Chicken" } },
+        { "name": { "ar": "نودلز بالخضار", "en": "Vegetable Noodles" } }
+      ]
+    },
+    {
+      "id": "wednesday",
+      "weekday": 3,
+      "label": { "ar": "الأربعاء", "en": "Wednesday" },
+      "dishes": [
+        { "name": { "ar": "كوسى محشي", "en": "Koussa Mehche" } },
+        { "name": { "ar": "دجاج وبطاطا بالفرن", "en": "Chicken with Potatoes" } },
+        { "name": { "ar": "سمكة حرة", "en": "Freestyle Fish" } }
+      ]
+    },
+    {
+      "id": "thursday",
+      "weekday": 4,
+      "label": { "ar": "الخميس", "en": "Thursday" },
+      "dishes": [
+        { "name": { "ar": "كبسة لحم", "en": "Kabsa Beef" } },
+        { "name": { "ar": "دجاج بالكاري", "en": "Chicken Curry" } },
+        { "name": { "ar": "نوي", "en": "Nouy Chicken" } }
+      ]
+    }
+  ]
+}

@@ -392,8 +392,11 @@ html[lang="ar"] .hero__tagline { font-style: italic; }
   filter: saturate(1.05) contrast(1.03);
   background: var(--surface);
 }
+/* wide frame for long food (wraps, sandwiches, burgers, platters): the
+   photos are native 3:2, so matching that ratio shows the whole dish with
+   nothing clipped — the circular plate stays for round, centred food */
 .dish[data-presentation="card"] .dish__img { border-radius: var(--radius); }
-.dish[data-presentation="card"] .dish__figure { aspect-ratio: 4 / 3; inline-size: min(84vw, 48dvh); }
+.dish[data-presentation="card"] .dish__figure { aspect-ratio: 3 / 2; inline-size: min(90vw, 52dvh); }
 
 .dish__content {
   position: relative; z-index: 2;

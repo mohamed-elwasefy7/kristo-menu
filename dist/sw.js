@@ -5,7 +5,7 @@
    - cache-first for assets/ (immutable image/font pipeline output)
    - navigation fallback to the cached shell (the app IS the offline page) */
 
-const CACHE = "kristo-1aa430b830";
+const CACHE = "kristo-c57df23f90";
 
 const SHELL = [
   "./",
@@ -28,6 +28,7 @@ const SHELL = [
   "data/categories.json",
   "data/menu.json",
   "data/prices.json",
+  "data/daily.json",
   "data/story.json",
   "data/i18n.json",
   "assets/fonts/ArefRuqaa-700-arabic.woff2",

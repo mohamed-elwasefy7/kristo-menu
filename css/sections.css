@@ -147,6 +147,90 @@ html[lang="ar"] .narrative__lead { font-style: normal; }   /* no fake italics in
   margin-block-start: var(--s2);
 }
 
+/* ---------- daily board — the week, one day at a time ---------- */
+.daily {
+  justify-content: center;
+  gap: var(--s4);
+  padding-block-start: calc(var(--nav-h) + var(--catbar-h));
+}
+.daily__head { gap: var(--s2); }
+.daily__price {
+  font-size: .95rem;
+  color: var(--ink-soft);
+}
+.daily__price strong {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.daily__days {
+  position: relative; z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s1);
+  inline-size: 100%;
+  max-inline-size: 30rem;
+}
+.daily__day {
+  position: relative;
+  min-block-size: 46px;
+  padding-inline: var(--s3);
+  border: 1px solid var(--ink-faint);
+  border-radius: 999px;
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  transition: color .25s, border-color .25s, background .25s, transform .2s var(--ease-out);
+}
+.daily__day:active { transform: scale(.95); transition-duration: .08s; }
+.daily__day[aria-selected="true"] {
+  background: var(--red);
+  border-color: var(--red);
+  color: #FFF7F2;
+  box-shadow: 0 10px 22px -12px rgba(216, 53, 44, .6);
+}
+.daily__today {
+  display: inline-block;
+  margin-inline-start: .4em;
+  font-size: .62rem;
+  font-style: normal;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .8;
+}
+.daily__list {
+  position: relative; z-index: 1;
+  display: grid;
+  gap: var(--s2);
+  inline-size: 100%;
+  max-inline-size: 26rem;
+}
+.daily__item {
+  display: grid;
+  gap: .15rem;
+  padding: var(--s3) var(--s4);
+  border: 1px solid color-mix(in srgb, var(--line) 32%, transparent);
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-align: start;
+}
+.daily__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 4.6vw, 1.4rem);
+  line-height: 1.6;
+  color: var(--ink);
+}
+.daily__alt {
+  font-family: "Cormorant Garamond", "Aref Ruqaa", serif;
+  font-style: italic;
+  font-size: .9rem;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+}
+.daily__alt[lang="ar"] { font-style: normal; letter-spacing: 0; }
+
 /* ---------- dish layers ---------- */
 .dish__bg {
   position: absolute; inset: 0;
