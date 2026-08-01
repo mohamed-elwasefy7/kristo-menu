@@ -973,41 +973,29 @@ html[lang="ar"] .narrative__lead { font-style: normal; }
   font-weight: 700;
   color: var(--accent);
 }
-.daily__days {
-  position: relative; z-index: 1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--s1);
-  inline-size: 100%;
-  max-inline-size: 30rem;
-}
-.daily__day {
-  position: relative;
-  min-block-size: 46px;
-  padding-inline: var(--s3);
-  border: 1px solid var(--ink-faint);
+.daily__day-line {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  padding: .35rem var(--s4);
   border-radius: 999px;
-  font-size: .85rem;
-  font-weight: 700;
-  color: var(--ink-soft);
-  transition: color .25s, border-color .25s, background .25s, transform .2s var(--ease-out);
-}
-.daily__day:active { transform: scale(.95); transition-duration: .08s; }
-.daily__day[aria-selected="true"] {
   background: var(--red);
-  border-color: var(--red);
   color: #FFF7F2;
-  box-shadow: 0 10px 22px -12px rgba(216, 53, 44, .6);
+  box-shadow: 0 10px 22px -12px rgba(216, 53, 44, .55);
+}
+.daily__day-name { font-size: .92rem; font-weight: 700; }
+.daily__day-line--next {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid color-mix(in srgb, var(--line) 45%, transparent);
+  box-shadow: none;
 }
 .daily__today {
-  display: inline-block;
-  margin-inline-start: .4em;
-  font-size: .62rem;
+  font-size: .64rem;
   font-style: normal;
-  letter-spacing: .12em;
+  letter-spacing: .14em;
   text-transform: uppercase;
-  opacity: .8;
+  opacity: .85;
 }
 .daily__list {
   position: relative; z-index: 1;

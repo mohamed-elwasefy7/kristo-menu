@@ -31,16 +31,23 @@ export function buildCategoryIntro(cat){const intro=cat.intro||{};const s=sectio
       <span class="swipe-hint__label">${t("swipeUp")}</span>
       <span class="swipe-hint__chevron"></span>
     </div>`;$$(".cat-intro__floats .float",s).forEach((el)=>{el.innerHTML=ingredientVisual(el.dataset.ingredient,56).innerHTML;});return s;}
-export function buildDailyBoard(daily){if(!daily?.days?.length)return null;const s=section("daily-board","paper","screenDaily","daily");const today=new Date().getDay();const openIndex=Math.max(0,daily.days.findIndex((d)=>d.weekday===today));s.innerHTML=`
+export function buildDailyBoard(daily){if(!daily?.days?.length)return null;const s=section("daily-board","paper","screenDaily","daily");const today=new Date().getDay();const days=daily.days;let day=days.find((d)=>d.weekday===today&&d.dishes?.length);const isToday=Boolean(day);if(!day){const ahead=[...days].filter((d)=>d.dishes?.length).sort((a,b)=>((a.weekday-today+7)%7)-((b.weekday-today+7)%7));day=ahead[0];}
+if(!day)return null;const rows=day.dishes.map((dish)=>{const accent=getLang()==="ar"?dish.name.en:dish.name.ar;const dir=getLang()==="ar"?'lang="en" dir="ltr"':'lang="ar" dir="rtl"';return`<li class="daily__item">
+      <span class="daily__name">${t(dish.name)}</span>
+      ${accent ? `<span class="daily__alt"${dir}>${accent}</span>` : ""}
+    </li>`;}).join("");s.innerHTML=`
     ${textureHTML("TODAY")}
     <div class="narrative__content narrative__content--center daily__head">
       ${kickerHTML("dailyKicker")}
-      ${maskTitleHTML({ ar: "أطباق اليوم", en: "Today's Plates" })}
-      ${daily.price ? `<p class="daily__price"data-enter="rise"data-enter-at="0.2">${t("dailyAllFor")}<strong>${daily.price}</strong>${t("sar")}</p>` : ""}
+      ${maskTitleHTML(isToday
+        ? { ar: "أطباق اليوم", en: "Today's Plates" }
+        : { ar: `أطباق ${day.label.ar}`, en: `${day.label.en}'s Plates` })}
+      ${isToday
+        ? `<p class="daily__day-line"data-enter="rise"data-enter-at="0.18"><span class="daily__day-name">${t(day.label)}</span><em class="daily__today">${t("todayLabel")}</em></p>`
+        : `<p class="daily__day-line daily__day-line--next"data-enter="rise"data-enter-at="0.18"><span class="daily__day-name">${t({ar:"القائمة القادمة",en:"Serving next"})}</span></p>`}
+      ${daily.price ? `<p class="daily__price"data-enter="rise"data-enter-at="0.24">${t("dailyAllFor")}<strong>${daily.price}</strong>${t("sar")}</p>` : ""}
     </div>
-    <div class="daily__days" role="tablist" data-enter="rise" data-enter-at="0.3"></div>
-    <ul class="daily__list" role="list" data-enter="rise" data-enter-at="0.4"></ul>`;const tabs=$(".daily__days",s);const list=$(".daily__list",s);const paint=(i)=>{$$("button",tabs).forEach((b,bi)=>b.setAttribute("aria-selected",String(bi===i)));list.innerHTML="";daily.days[i].dishes.forEach((dish)=>{const li=document.createElement("li");li.className="daily__item";const accent=getLang()==="ar"?dish.name.en:dish.name.ar;li.innerHTML=`<span class="daily__name">${t(dish.name)}</span>`+
-(accent?`<span class="daily__alt" ${getLang() === "ar" ? 'lang="en" dir="ltr"' : 'lang="ar" dir="rtl"'}>${accent}</span>`:"");list.append(li);});};daily.days.forEach((day,i)=>{const b=document.createElement("button");b.type="button";b.role="tab";b.className="daily__day";b.setAttribute("aria-selected","false");b.innerHTML=`<span>${t(day.label)}</span>${day.weekday === today ? `<em class="daily__today">${t("todayLabel")}</em>` : ""}`;b.addEventListener("click",()=>paint(i));tabs.append(b);});paint(openIndex);return s;}
+    <ul class="daily__list" role="list" data-enter="rise" data-enter-at="0.34">${rows}</ul>`;return s;}
 const usable=(url)=>url&&!url.includes("REPLACE_ME")&&!url.includes("X");export function buildOrder(restaurant){const s=section("order","paper","screenOrder","order");const channels=[];for(const[app,url]of Object.entries(restaurant.orderLinks||{})){if(usable(url))channels.push({name:appLabel(app),role:t("roleDelivery"),url});}
 const wa=restaurant.whatsapp&&!restaurant.whatsapp.includes("X")?`https://wa.me/${restaurant.whatsapp.replace(/[^\d]/g, "")}`:"";if(wa)channels.push({name:"WhatsApp",role:t("roleChat"),url:wa});if(usable(restaurant.instagram))channels.push({name:"Instagram",role:t("roleFollow"),url:restaurant.instagram});const cardsHTML=channels.length?channels.map((c,i)=>`
         <a class="order-card" href="${c.url}" target="_blank" rel="noopener" data-enter="rise" data-enter-at="${0.4 + i * 0.09}">
