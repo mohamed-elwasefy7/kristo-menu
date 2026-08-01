@@ -6,51 +6,123 @@
     {
       "id": "sunday",
       "weekday": 0,
-      "label": { "ar": "الأحد", "en": "Sunday" },
+      "label": {
+        "ar": "الأحد",
+        "en": "Sunday"
+      },
       "dishes": [
-        { "name": { "ar": "كفتة وبطاطا", "en": "Kafta w Batata" } },
-        { "name": { "ar": "دجاج حامض وحلو", "en": "Chicken Sweet and Sour" } },
-        { "name": { "ar": "فاصوليا بالزيت", "en": "Fasolia b Zeit" } }
+        {
+          "name": {
+            "ar": "بازيلا باللحم",
+            "en": "Bazella w Lahme"
+          }
+        },
+        {
+          "name": {
+            "ar": "سمك بالزعفران",
+            "en": "Saffron Fish"
+          }
+        }
       ]
     },
     {
       "id": "monday",
       "weekday": 1,
-      "label": { "ar": "الإثنين", "en": "Monday" },
+      "label": {
+        "ar": "الإثنين",
+        "en": "Monday"
+      },
       "dishes": [
-        { "name": { "ar": "لازانيا", "en": "Lasagna" } },
-        { "name": { "ar": "ماندي دجاج", "en": "Mandi Chicken" } },
-        { "name": { "ar": "شاورما سمك", "en": "Fish Shawarma" } }
+        {
+          "name": {
+            "ar": "داوود باشا",
+            "en": "Daoud Basha"
+          }
+        },
+        {
+          "name": {
+            "ar": "دجاج كايجن",
+            "en": "Cajun Chicken"
+          }
+        },
+        {
+          "name": {
+            "ar": "باستا ألفريدو",
+            "en": "Alfredo Pasta"
+          }
+        }
       ]
     },
     {
       "id": "tuesday",
       "weekday": 2,
-      "label": { "ar": "الثلاثاء", "en": "Tuesday" },
+      "label": {
+        "ar": "الثلاثاء",
+        "en": "Tuesday"
+      },
       "dishes": [
-        { "name": { "ar": "برغر بالفطر", "en": "Mushroom Burger" } },
-        { "name": { "ar": "يخنة دجاج", "en": "Yakhne Chicken" } },
-        { "name": { "ar": "نودلز بالخضار", "en": "Vegetable Noodles" } }
+        {
+          "name": {
+            "ar": "شيخ الكوسى",
+            "en": "Sheikh el Koussa"
+          }
+        },
+        {
+          "name": {
+            "ar": "فاهيتا دجاج",
+            "en": "Chicken Fajita"
+          }
+        },
+        {
+          "name": {
+            "ar": "بايلا سمك",
+            "en": "Seafood Paella"
+          }
+        }
       ]
     },
     {
       "id": "wednesday",
       "weekday": 3,
-      "label": { "ar": "الأربعاء", "en": "Wednesday" },
+      "label": {
+        "ar": "الأربعاء",
+        "en": "Wednesday"
+      },
       "dishes": [
-        { "name": { "ar": "كوسى محشي", "en": "Koussa Mehche" } },
-        { "name": { "ar": "دجاج وبطاطا بالفرن", "en": "Chicken with Potatoes" } },
-        { "name": { "ar": "سمكة حرة", "en": "Freestyle Fish" } }
+        {
+          "name": {
+            "ar": "يخنة لحمة",
+            "en": "Beef Yakhne"
+          }
+        },
+        {
+          "name": {
+            "ar": "باستا بالخضار",
+            "en": "Vegetable Pasta"
+          }
+        }
       ]
     },
     {
       "id": "thursday",
       "weekday": 4,
-      "label": { "ar": "الخميس", "en": "Thursday" },
+      "label": {
+        "ar": "الخميس",
+        "en": "Thursday"
+      },
       "dishes": [
-        { "name": { "ar": "كبسة لحم", "en": "Kabsa Beef" } },
-        { "name": { "ar": "دجاج بالكاري", "en": "Chicken Curry" } },
-        { "name": { "ar": "نوي", "en": "Nouy Chicken" } }
+        {
+          "name": {
+            "ar": "دجاج بيستو",
+            "en": "Pesto Chicken"
+          }
+        },
+        {
+          "name": {
+            "ar": "صيادية",
+            "en": "Sayadieh"
+          }
+        }
       ]
     }
   ]
