@@ -17,6 +17,9 @@ let nearIO = null;
 export function init() {
   if (prefersReducedMotion() || !window.gsap || !window.ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
+  // a phone's toolbar sliding away must not trigger a full refresh: with ~100
+  // snap screens a refresh rewrites scroll position mid-gesture
+  ScrollTrigger.config({ ignoreMobileResize: true });
   spawnParticles(".hero__particles", 12);
   bind();
 }
@@ -40,6 +43,11 @@ const NARRATIVE_LAYERS = [
   [".closing__stack", 2, 1.0],
 ];
 
+/* phones carry the fewest layers: the depth reads on a 27" screen, on a phone
+   it only costs frames during the very gesture it is meant to decorate */
+const isPhone = () => window.matchMedia("(max-width: 1023.98px)").matches;
+const PHONE_LAYERS = new Set([".dish__figure", ".dish__content", ".section-texture", ".narrative__content"]);
+
 export function bind() {
   sectionTriggers.forEach((entries) => entries.forEach(({ st }) => {
     st.animation?.kill();
@@ -51,8 +59,10 @@ export function bind() {
 
   const container = $("#snap");
 
+  const phone = isPhone();
   const makeScrubs = (section) => {
-    const layers = section.classList.contains("dish") ? DISH_LAYERS : NARRATIVE_LAYERS;
+    let layers = section.classList.contains("dish") ? DISH_LAYERS : NARRATIVE_LAYERS;
+    if (phone) layers = layers.filter(([sel]) => PHONE_LAYERS.has(sel));
     const made = [];
     layers.forEach(([sel, amp, lag]) => {
       const el = section.querySelector(sel);
@@ -65,8 +75,12 @@ export function bind() {
           scroller: container,
           start: "top bottom",
           end: "bottom top",
-          scrub: lag,
-          fastScrollEnd: true,
+          // shorter lag so the layers come to rest with the screen; a 1.2s
+          // scrub was still drifting after the snap had finished
+          scrub: Math.min(lag, 0.5),
+          // fastScrollEnd snapped the layers into place at the end of a fling,
+          // which read as the page itself jumping
+          fastScrollEnd: false,
         },
       });
       made.push({ st: tween.scrollTrigger, el });

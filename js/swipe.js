@@ -28,8 +28,18 @@ export function init() {
   container = $("#snap");
   bindScreens();
   initWheelAndKeys();
+  initTouchYield();
   initHash();
   initGotoButtons();
+}
+
+/* a finger on the glass outranks anything the page is animating */
+function initTouchYield() {
+  const yield_ = () => cancelPageTween();
+  container.addEventListener("touchstart", yield_, { passive: true });
+  container.addEventListener("pointerdown", (e) => {
+    if (e.pointerType !== "mouse") yield_();
+  }, { passive: true });
 }
 
 /* re-bind after a language-switch re-render */
@@ -53,27 +63,50 @@ function observeActive() {
   io?.disconnect();
   io = new IntersectionObserver(
     (entries) => {
+      // A fling delivers several crossings in one batch. Acting on each one
+      // ran setActive up to five times per frame and left the state on
+      // whichever record happened to be last — often a screen already gone
+      // past. Only the most-visible screen in the batch counts.
+      let best = null;
       for (const entry of entries) {
         if (!entry.isIntersecting) continue;
-        const index = screens.indexOf(entry.target);
-        if (index === -1 || index === activeIndex && !rebuilding) continue;
-        setActive(index);
+        if (!best || entry.intersectionRatio > best.intersectionRatio) best = entry;
       }
+      if (!best) return;
+      const index = screens.indexOf(best.target);
+      if (index === -1 || (index === activeIndex && !rebuilding)) return;
+      setActive(index);
     },
     { root: container, threshold: 0.6 },
   );
   screens.forEach((s) => io.observe(s));
 }
 
+let settleTimer = null;
+
 function setActive(index) {
   activeIndex = index;
   const section = screens[index];
-  const dishId = section.classList.contains("dish") ? section.id : null;
+  // cheap, must feel instant: which chip is lit, which dot, the URL
   updateRail(index);
   updateCatBar(section, index);
   updateHash(section);
-  announceScreen(section, index);
-  emit("dish:active", { index, section, dishId, mood: section.dataset.mood || "paper" });
+
+  // expensive, must not run mid-fling: the mood crossfade restyles all 97
+  // screens and the preloader fetches images. Wait for the scroll to rest,
+  // then act on wherever the guest actually landed.
+  clearTimeout(settleTimer);
+  settleTimer = setTimeout(() => {
+    const landed = getActiveIndex();
+    const target = screens[landed] || section;
+    announceScreen(target, landed);
+    emit("dish:active", {
+      index: landed,
+      section: target,
+      dishId: target.classList.contains("dish") ? target.id : null,
+      mood: target.dataset.mood || "paper",
+    });
+  }, 140);
 }
 
 function announceScreen(section, index) {
@@ -88,23 +121,55 @@ function announceScreen(section, index) {
 
 /* ---------- programmatic paging ---------- */
 let pageTween = null;
+let cooldown = null;
 
+/* one cooldown timer, always cancelled before a new one is armed — a stray
+   timer from an interrupted tween used to unlock mid-flight and let a second
+   navigation start on top of the first */
 function settleTween() {
   container.classList.remove("is-tweening");
-  // cooldown swallows trailing trackpad inertia
-  setTimeout(() => { locked = false; }, 180);
+  clearTimeout(cooldown);
+  cooldown = setTimeout(() => { locked = false; }, 180);
 }
+
+/* the finger always wins: any touch cancels an in-flight tween instead of
+   fighting it for the scroll position */
+export function cancelPageTween() {
+  if (!pageTween) return;
+  pageTween.kill();
+  pageTween = null;
+  container.classList.remove("is-tweening");
+  clearTimeout(cooldown);
+  locked = false;
+}
+
+const canHover = () => window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
 export function goTo(index, instant = false) {
   index = clamp(index, 0, screens.length - 1);
-  const top = index * container.clientHeight;
+  // measure the real element: index * clientHeight drifts by a pixel per
+  // screen and lands ~50px off at the end of a 97-screen menu
+  const top = screens[index]?.offsetTop ?? index * container.clientHeight;
 
   // hidden documents get no animation frames — jump instantly
   if (instant || prefersReducedMotion() || !window.gsap || document.visibilityState === "hidden") {
-    pageTween?.kill();
+    cancelPageTween();
     container.scrollTo({ top, behavior: "auto" });
     return;
   }
+
+  // Touch devices use the browser's own smooth scroll: it yields the moment
+  // a finger lands, where a GSAP tween would keep writing scrollTop and tear
+  // the gesture apart.
+  if (!canHover()) {
+    cancelPageTween();
+    locked = true;
+    container.scrollTo({ top, behavior: "smooth" });
+    clearTimeout(cooldown);
+    cooldown = setTimeout(() => { locked = false; }, 420);
+    return;
+  }
+
   pageTween?.kill();
   locked = true;
   container.classList.add("is-tweening");
@@ -112,8 +177,8 @@ export function goTo(index, instant = false) {
   const proxy = { v: container.scrollTop };
   pageTween = gsap.to(proxy, {
     v: top,
-    duration: 0.8,
-    ease: "power3.inOut",
+    duration: 0.62,
+    ease: "power2.inOut",
     onUpdate: () => { container.scrollTop = proxy.v; },
     onComplete: settleTween,
     onInterrupt: settleTween,
@@ -214,6 +279,8 @@ function updateRail(index) {
 }
 
 /* ---------- sticky section switcher: highlight + keep the chip in view ---------- */
+let chipTimer = null;
+
 function updateCatBar(section, index) {
   const bar = $("#catbar");
   const group = section.dataset.rail || "";
@@ -233,9 +300,15 @@ function updateCatBar(section, index) {
     if (on) active = chip;
   });
   if (!active) return;
-  // centre the active chip inside the bar (scrollIntoView would move the page)
-  const target = active.offsetLeft - (bar.clientWidth - active.offsetWidth) / 2;
-  bar.scrollTo({ left: target, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+  // centre the active chip inside the bar (scrollIntoView would move the page).
+  // Deferred + instant: a smooth scroll started on every crossing competed
+  // with the page's own snap animation, and the layout reads it needs are
+  // measured off the critical path.
+  clearTimeout(chipTimer);
+  chipTimer = setTimeout(() => {
+    const target = active.offsetLeft - (bar.clientWidth - active.offsetWidth) / 2;
+    bar.scrollTo({ left: target, behavior: "auto" });
+  }, 160);
 }
 
 /* ---------- hash deep-links ---------- */
@@ -264,6 +337,7 @@ function initGotoButtons() {
     const el = e.target.closest("[data-goto]");
     if (!el) return;
     e.preventDefault();
+    if (locked) return;            // a jump is already under way
     const v = el.dataset.goto;
     const n = Number(v);
     const index = Number.isNaN(n) ? screens.findIndex((s) => s.id === v) : n;

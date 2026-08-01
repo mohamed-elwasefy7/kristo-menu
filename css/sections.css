@@ -100,7 +100,7 @@ html[lang="ar"] .narrative__lead { font-style: normal; }   /* no fake italics in
 .welcome { justify-content: center; gap: var(--s4); }
 .welcome__figure {
   position: relative; z-index: 1;
-  inline-size: min(58vw, 30dvh);
+  inline-size: min(58vw, 30svh);
   aspect-ratio: 1;
   flex: 0 0 auto;
 }
@@ -264,7 +264,7 @@ body[data-mood="ink"] .dish__texture { opacity: .08; }
 .dish__floats {
   position: absolute;
   inset-block-start: 0; inset-inline: 0;
-  block-size: 46dvh;
+  block-size: 46svh;
   pointer-events: none;
   z-index: 0;
 }
@@ -390,7 +390,7 @@ html.js-motion .hero .swipe-hint { opacity: 0; }
   padding-block-start: calc(var(--nav-h) * .55);
 }
 .hero__logo {
-  inline-size: min(62vw, 30dvh);
+  inline-size: min(62vw, 30svh);
   aspect-ratio: 1;
 }
 .hero__logo img {

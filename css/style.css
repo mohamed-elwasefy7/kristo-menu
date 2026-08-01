@@ -229,9 +229,9 @@ html[dir="rtl"] #loader-line { transform-origin: 100% 50%; }
   padding-inline: var(--s3);
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
-  background: color-mix(in srgb, var(--paper) 62%, transparent);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  /* opaque instead of blurred: a dozen backdrop-filter chips over a
+     97-screen scroller cost a viewport readback on every frame */
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
   font-size: .8rem;
   font-weight: 700;
   white-space: nowrap;
@@ -278,7 +278,7 @@ html[dir="rtl"] #loader-line { transform-origin: 100% 50%; }
 /* ---------- Snap container ---------- */
 .snap-container {
   height: 100vh;
-  height: 100dvh;
+  height: 100svh;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   overscroll-behavior-y: contain;
@@ -291,7 +291,11 @@ html[dir="rtl"] #loader-line { transform-origin: 100% 50%; }
 .screen {
   position: relative;
   height: 100vh;
-  height: 100dvh;
+  height: 100svh;
+  /* ~100 screens: let the browser skip layout and paint for the ones far
+     off-screen. The intrinsic size keeps the scrollbar geometry exact. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 100svh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   display: flex;
@@ -313,7 +317,7 @@ html[dir="rtl"] #loader-line { transform-origin: 100% 50%; }
   opacity: .18;
 }
 .hero__figure {
-  inline-size: min(58vw, 34dvh);
+  inline-size: min(58vw, 34svh);
   aspect-ratio: 1;
   margin-block-start: calc(var(--nav-h) * .6);
 }
@@ -376,7 +380,7 @@ html[lang="ar"] .hero__tagline { font-style: italic; }
 .dish__figure {
   position: static;
   flex: 0 0 auto;
-  inline-size: min(72vw, 36dvh);
+  inline-size: min(72vw, 36svh);
   aspect-ratio: 1;
   margin-inline: auto;
 }
@@ -399,7 +403,7 @@ html[lang="ar"] .hero__tagline { font-style: italic; }
   color: transparent;
 }
 /* every dish uses the same square frame now — presentation only nudges size */
-.dish[data-presentation="card"] .dish__figure { inline-size: min(78vw, 42dvh); }
+.dish[data-presentation="card"] .dish__figure { inline-size: min(78vw, 42svh); }
 
 .dish__content {
   position: relative; z-index: 2;
@@ -716,7 +720,7 @@ body[data-mood="ink"] .dish__fav[aria-pressed="true"] { color: var(--mist); bord
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--s2);
   margin-block: var(--s2);
-  max-block-size: 52dvh;
+  max-block-size: 52svh;
   overflow-y: auto;
 }
 .sections-sheet__item {

@@ -24,7 +24,7 @@
   .dish[data-m-align="center"] .dish__meta { justify-content: center; }
 
   /* oversized signature photography */
-  .dish[data-m-size="large"] .dish__figure { inline-size: min(80vw, 42dvh); }
+  .dish[data-m-size="large"] .dish__figure { inline-size: min(80vw, 42svh); }
 
   /* thumb-friendly primary action */
   .dish__order { min-block-size: 52px; }
@@ -38,33 +38,33 @@
 
 /* Small phones (<= 360px) — tighten */
 @media (max-width: 360px) {
-  .dish__figure { inline-size: min(64vw, 32dvh); }
+  .dish__figure { inline-size: min(64vw, 32svh); }
   .dish__name { font-size: 1.7rem; }
 }
 
 /* Short viewports (phones with toolbars, iPhone SE) — compress, never overlap */
 @media (max-height: 700px) and (orientation: portrait) {
   .dish { gap: var(--s2); padding-block-start: calc(var(--nav-h) + var(--catbar-h)); }
-  .dish__figure { inline-size: min(56vw, 30dvh); }
+  .dish__figure { inline-size: min(56vw, 30svh); }
   .dish__content { gap: .45rem; }
   .dish__desc { -webkit-line-clamp: 2; }
   .dish__ingredients { max-block-size: 2.2rem; }   /* single chip row */
   .dish__inspiration { display: none; }
-  .dish__floats { block-size: 38dvh; }
+  .dish__floats { block-size: 38svh; }
 
-  .hero__logo { inline-size: min(44vw, 21dvh); }
+  .hero__logo { inline-size: min(44vw, 21svh); }
   .hero__cat { min-block-size: 44px; font-size: .82rem; }
   .hero--v2 .hero__content { gap: var(--s3); }
   .hero .swipe-hint { display: none; }   /* tiles already signal interaction */
 
-  .welcome__figure { inline-size: min(46vw, 24dvh); }
+  .welcome__figure { inline-size: min(46vw, 24svh); }
   .section-title--poster { font-size: clamp(2.2rem, 10vw, 3.2rem); }
 }
 
 /* Tablet portrait */
 @media (min-width: 768px) {
   .dish__content { max-inline-size: 34rem; gap: var(--s3); }
-  .dish__figure { inline-size: min(52vw, 46dvh); }
+  .dish__figure { inline-size: min(52vw, 46svh); }
   .hero__intro { font-size: 1.05rem; }
   .drink-card { inline-size: 10rem; }
   .order__cards { max-inline-size: 34rem; grid-template-columns: 1fr 1fr; }
@@ -78,7 +78,7 @@
 /* Desktop / tablet landscape: split layout — image inline-start, content inline-end */
 @media (min-width: 1024px) {
   /* hero: bigger logo, three-column tiles */
-  .hero__logo { inline-size: min(24vw, 34dvh); }
+  .hero__logo { inline-size: min(24vw, 34svh); }
   .hero--v2 .hero__content { max-inline-size: 40rem; }
   .hero__cats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
@@ -105,15 +105,15 @@
   .dish__figure {
     position: static;
     transform: none !important;
-    inline-size: min(38vw, 62dvh);
+    inline-size: min(38vw, 62svh);
     flex: 0 0 auto;
   }
-  .dish[data-presentation="card"] .dish__figure { inline-size: min(38vw, 62dvh); }
+  .dish[data-presentation="card"] .dish__figure { inline-size: min(38vw, 62svh); }
   .dish__content {
     max-inline-size: 26rem;
     align-content: center;
   }
-  .hero__figure { inline-size: min(30vw, 40dvh); }
+  .hero__figure { inline-size: min(30vw, 40svh); }
   .rail { inset-inline-end: var(--s4); }
   /* the full drinks list wraps on desktop; keep it inside one screen and let
      the tray itself scroll instead of pushing the page past the fold */
@@ -123,7 +123,7 @@
     overflow-x: visible;
     overflow-y: auto;
     max-inline-size: 56rem;
-    max-block-size: calc(100dvh - var(--nav-h) - var(--catbar-h) - 11rem);
+    max-block-size: calc(100svh - var(--nav-h) - var(--catbar-h) - 11rem);
   }
 
   /* welcome: editorial side-by-side */
@@ -132,7 +132,7 @@
     justify-content: center;
     gap: var(--s8);
   }
-  .welcome__figure { inline-size: min(28vw, 44dvh); }
+  .welcome__figure { inline-size: min(28vw, 44svh); }
   .welcome__content { max-inline-size: 30rem; }
 }
 
