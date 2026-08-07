@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>KRISTO — Menu</title>
+<style>
+@font-face { font-family:"Aref Ruqaa"; src:url("/assets/fonts/ArefRuqaa-700-arabic.woff2") format("woff2"); font-weight:700; }
+@font-face { font-family:"Aref Ruqaa"; src:url("/assets/fonts/ArefRuqaa-700-latin.woff2") format("woff2"); font-weight:700; unicode-range:U+0000-00FF; }
+@font-face { font-family:"Tajawal"; src:url("/assets/fonts/Tajawal-400-arabic.woff2") format("woff2"); font-weight:400; }
+@font-face { font-family:"Tajawal"; src:url("/assets/fonts/Tajawal-400-latin.woff2") format("woff2"); font-weight:400; unicode-range:U+0000-00FF; }
+@font-face { font-family:"Tajawal"; src:url("/assets/fonts/Tajawal-700-arabic.woff2") format("woff2"); font-weight:700; }
+@font-face { font-family:"Tajawal"; src:url("/assets/fonts/Tajawal-700-latin.woff2") format("woff2"); font-weight:700; unicode-range:U+0000-00FF; }
+@font-face { font-family:"Cormorant"; src:url("/assets/fonts/CormorantGaramond-400i-latin.woff2") format("woff2"); font-style:italic; }
+
+:root { --turq:#6FA29F; --red:#D8352C; --deep:#A32722; --ink:#171512; --soft:#5B5750; --paper:#F4EFE6; --line:#E0D6C6; }
+@page { size:A4; margin:13mm 11mm 14mm; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:"Tajawal",sans-serif; color:var(--ink); background:#fff; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+/* ---------- cover ---------- */
+/* exactly the printable height: any taller and the cover spills a blank page */
+.cover { height:266mm; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:7mm; background:var(--turq); color:#fff; break-after:page; text-align:center; }
+.cover + .cat { margin-block-start:0; }
+.cover img { width:74mm; height:74mm; object-fit:cover;
+  -webkit-mask-image:radial-gradient(closest-side,#000 58%,transparent 98%); mask-image:radial-gradient(closest-side,#000 58%,transparent 98%); }
+.cover h1 { font-family:"Aref Ruqaa",serif; font-size:19mm; line-height:1.5; font-weight:700; }
+.cover p { font-family:"Cormorant",serif; font-style:italic; font-size:5mm; letter-spacing:.1em; opacity:.92; }
+.cover .where { font-family:"Tajawal"; font-style:normal; font-size:3.4mm; letter-spacing:.06em; opacity:.85; }
+
+/* ---------- sections ---------- */
+.cat { break-inside:auto; margin-block-end:6mm; }
+.cat__title { font-family:"Aref Ruqaa",serif; font-size:7.5mm; line-height:1.7; font-weight:700; color:var(--deep);
+  border-block-end:.6mm solid var(--red); padding-block-end:1.5mm; margin-block-end:3.5mm;
+  display:flex; align-items:baseline; justify-content:space-between; break-after:avoid; }
+.cat__title span { font-family:"Cormorant",serif; font-style:italic; font-size:4.2mm; color:var(--soft); letter-spacing:.06em; }
+
+.dishes { list-style:none; columns:2; column-gap:7mm; }
+.dish { break-inside:avoid; display:flex; gap:3mm; align-items:flex-start;
+  padding-block:2.2mm; border-block-end:.2mm solid var(--line); }
+.thumb { flex:0 0 auto; width:19mm; height:19mm; border-radius:2mm; overflow:hidden; background:var(--paper); }
+.thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+.thumb__mark { display:block; width:100%; height:100%;
+  background:radial-gradient(closest-side,var(--paper),#CFDDDA); }
+.copy { flex:1 1 auto; min-width:0; }
+.name { font-weight:700; font-size:3.6mm; line-height:1.35; }
+.alt { font-family:"Cormorant",serif; font-style:italic; font-size:3mm; color:var(--soft); }
+.desc { font-size:2.7mm; line-height:1.45; color:var(--soft); margin-block-start:.6mm;
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+.cost { flex:0 0 auto; text-align:end; display:flex; flex-direction:column; gap:.8mm; align-items:flex-end; }
+.price b, .size b { font-size:4.4mm; color:var(--red); }
+.price, .size { font-size:2.6mm; color:var(--soft); white-space:nowrap; }
+.size { display:flex; align-items:baseline; gap:1mm; }
+.size em { font-style:normal; font-size:2.4mm; }
+
+/* ---------- drinks ---------- */
+/* keep the drinks list whole: split across a page break it left one page
+   nearly empty */
+.cat--drinks { break-inside:avoid; }
+.drinks { list-style:none; columns:3; column-gap:6mm; }
+.drink { break-inside:avoid; display:flex; justify-content:space-between; align-items:baseline; gap:2mm;
+  padding-block:1.5mm; border-block-end:.2mm solid var(--line); font-size:3.2mm; }
+.drink b { font-size:3.6mm; }
+
+.foot { margin-block-start:5mm; padding-block-start:3mm; border-block-start:.3mm solid var(--line);
+  text-align:center; font-size:2.8mm; color:var(--soft); letter-spacing:.04em; }
+</style>
+</head>
+<body>
+  <div class="cover">
+    <img src="/assets/logo/logo-emblem.webp" alt="">
+    <h1>KRISTO</h1>
+    <p>Lebanese Cuisine</p>
+    <p class="where">Al Masif, Riyadh, Saudi Arabia</p>
+  </div>
+  
+    <section class="cat">
+      <h2 class="cat__title">Manakish<span>المناقيش</span></h2>
+      <ul class="dishes">
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/manakish-zaatar-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Zaatar</p>
+          <p class="alt">زعتر</p>
+          <p class="desc">Traditional Lebanese dough topped with zaatar and olive oil</p>
+        </div>
+        <div class="cost"><span class="price"><b>9</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/manakish-old-school-zaatar-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Old School Zaatar</p>
+          <p class="alt">زعتر ايام زمان</p>
+          <p class="desc">Traditional Lebanese dough topped with zaatar mixed with tomato, onions and olive oil</p>
+        </div>
+        <div class="cost"><span class="price"><b>10</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/manakish-cocktail-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Cocktail</p>
+          <p class="alt">كوكتيل</p>
+          <p class="desc">Traditional Lebanese dough topped with cheese mix and zaatar with olive oil</p>
+        </div>
+        <div class="cost"><span class="price"><b>11</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/manakish-labneh-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Labneh</p>
+          <p class="alt">منقوشة لبنة</p>
+          <p class="desc">Traditional Lebanese dough topped with labne and olive oil with mix vegetables</p>
+        </div>
+        <div class="cost"><span class="price"><b>10</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/manakish-akawi-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Akawi Cheese</p>
+          <p class="alt">جبنة عكاوي</p>
+          <p class="desc">Traditional Lebanese dough topped with akawi cheese</p>
+        </div>
+        <div class="cost"><span class="price"><b>12</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/manakish-kristo-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Manouchet Kristo</p>
+          <p class="alt">منقوشة كريستو</p>
+          <p class="desc">Traditional Lebanese dough topped with feta cheese mix, tomato, onions and olive oil</p>
+        </div>
+        <div class="cost"><span class="price"><b>16</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/manakish-halloum-pesto-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Halloum Pesto</p>
+          <p class="alt">منقوشة حلوم بيستو</p>
+          <p class="desc">Traditional Lebanese dough topped with home made pesto sauce, halloumi cheese, tomato cherry and rocca</p>
+        </div>
+        <div class="cost"><span class="price"><b>16</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/manakish-spinach-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Spinach</p>
+          <p class="alt">سبانخ</p>
+          <p class="desc">Traditional Lebanese dough stuffed with spinach mixed with onions and sumac</p>
+        </div>
+        <div class="cost"><span class="price"><b>12</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/manakish-lahme-b-ajin-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Lahme B Ajin</p>
+          <p class="alt">لحم بالعجين</p>
+          <p class="desc">Traditional Lebanese dough topped with meat, tomato and onions</p>
+        </div>
+        <div class="cost"><span class="price"><b>16</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/manakish-kafta-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Kafta</p>
+          <p class="alt">كفتة</p>
+          <p class="desc">Traditional Lebanese dough topped with meat, parsley and onions</p>
+        </div>
+        <div class="cost"><span class="price"><b>19</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/manakish-minikish-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Minikish Platter</p>
+          <p class="alt">منيقيش</p>
+          <p class="desc">A wooden board of mini manakish and pastries — cheese, zaatar, lahme b ajin, sambousik and cheese rolls, straight from the oven for the table to share.</p>
+        </div>
+        <div class="cost"><span class="size"><b>34</b> SAR<em>12 pieces</em></span><span class="size"><b>64</b> SAR<em>24 pieces</em></span></div>
+      </li></ul>
+    </section>
+    <section class="cat">
+      <h2 class="cat__title">Cold Sandwiches<span>الساندويتشات الباردة</span></h2>
+      <ul class="dishes">
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/sandwich-halloum-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Haloum</p>
+          <p class="alt">ساندويش حلوم</p>
+          <p class="desc">halloumi cheese, tomato, cucumber, olives</p>
+        </div>
+        <div class="cost"><span class="price"><b>17</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/sandwich-halloum-pesto-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Haloum Pesto</p>
+          <p class="alt">ساندويش حلوم بيستو</p>
+          <p class="desc">pesto sauce, halloumi cheese, tomato cubes, rocca leaves</p>
+        </div>
+        <div class="cost"><span class="price"><b>19</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/sandwich-labneh-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Labneh</p>
+          <p class="alt">ساندويش لبنة</p>
+          <p class="desc">traditional Lebanese labna, tomato, cucumber, olives, mint, olive oil</p>
+        </div>
+        <div class="cost"><span class="price"><b>16</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/sandwich-labneh-makdous-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Labneh W Makdous</p>
+          <p class="alt">ساندويش لبنة ومكدوس</p>
+          <p class="desc">traditional Lebanese labna mixed with makdous, tomato, cucumber, olives, mint, olive oil</p>
+        </div>
+        <div class="cost"><span class="price"><b>18</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/sandwich-cheese-kristo-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Sandwich Cheese Kristo</p>
+          <p class="alt">ساندويش جبنة كريستو</p>
+          <p class="desc">traditional Lebanese feta cheese mixed with tomato and green onions, rocca leaves</p>
+        </div>
+        <div class="cost"><span class="price"><b>19</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/sandwich-chicken-caesar-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Chicken Caesar</p>
+          <p class="alt">ساندويش دجاج بالسيزر</p>
+          <p class="desc">grilled chicken, parmesan cheese, lettuce, served with caesar sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>22</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/sandwich-chicken-kristo-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Chicken Kristo</p>
+          <p class="alt">ساندويش دجاج كريستو</p>
+          <p class="desc">grilled chicken, kristo sauce, corn, rocca leaves</p>
+        </div>
+        <div class="cost"><span class="price"><b>22</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/sandwich-turkey-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Turkey Cheese</p>
+          <p class="alt">ساندويش حبش وجبنة</p>
+          <p class="desc">turkey slices, iceberg, tomato, corn, pickles served with lemon mustard sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>22</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/sandwich-tuna-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Tuna</p>
+          <p class="alt">ساندويش تونا</p>
+          <p class="desc">mix tuna, iceberg, corn, olives served with lemon mustard sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>22</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/sandwich-crab-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Crab</p>
+          <p class="alt">ساندويش كراب</p>
+          <p class="desc">crab sticks, iceberg, avocado, mango, cucumber, corn, carrots, served with lemon mustard sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>22</b> SAR</span></div>
+      </li></ul>
+    </section>
+    <section class="cat">
+      <h2 class="cat__title">Salads<span>السلطات</span></h2>
+      <ul class="dishes">
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/salad-tabbouleh-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Tabouleh</p>
+          <p class="alt">تبولة</p>
+          <p class="desc">traditional Lebanese tabbouleh, served with olive oil sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>20</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/salad-fattoush-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Fatouch</p>
+          <p class="alt">فتوش</p>
+          <p class="desc">traditional Lebanese fatouch, served with olive oil and debs el remman sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>20</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/salad-rocca-beetroot-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Rocca Beetroot Mushroom</p>
+          <p class="alt">روكا بالشمندر</p>
+          <p class="desc">rocca leaves mixed with beetroot and fresh mushrooms topped with parmesan cheese, served with balsamic sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>20</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/salad-chicken-caesar-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Chicken Caesar</p>
+          <p class="alt">سيزر بالدجاج</p>
+          <p class="desc">mix lettuce topped with grilled chicken breast with parmesan cheese</p>
+        </div>
+        <div class="cost"><span class="price"><b>26</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/salad-kristo-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Salad Kristo</p>
+          <p class="alt">سلطة كريستو</p>
+          <p class="desc">grilled chicken breast, avocado, mix lettuce, cherry tomato, corn, served with lemon mustard sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>29</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/salad-crab-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Crab</p>
+          <p class="alt">سلطة كراب</p>
+          <p class="desc">crab sticks, iceberg, avocado, mango, cucumber, cherry tomato, corn, carrots served with lemon mustard sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>29</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/salad-pasta-tuna-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Pasta Tuna</p>
+          <p class="alt">سلطة باستا</p>
+          <p class="desc">fusilli pasta, tuna, iceberg, cucumber, cherry tomato, corn, carrots, served with lemon mustard sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>29</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/salad-greek-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Greek Salad</p>
+          <p class="alt">سلطة يونانية</p>
+          <p class="desc">tomato, cucumber, olives and green pepper topped with feta cheese and oregano, served with olive oil sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>24</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/salad-quinoa-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Quinoa</p>
+          <p class="alt">سلطة كينوا</p>
+          <p class="desc">quinoa, cucumber, cherry tomato, parsley, mint, served with olive oil and lemon sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>27</b> SAR</span></div>
+      </li></ul>
+    </section>
+    <section class="cat">
+      <h2 class="cat__title">Cold Mezza<span>المقبلات الباردة</span></h2>
+      <ul class="dishes">
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/appetizer-labneh-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Labneh</p>
+          <p class="alt">صحن لبنة</p>
+          <p class="desc">traditional Lebanese labna served with olive oil</p>
+        </div>
+        <div class="cost"><span class="price"><b>16</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/appetizer-labneh-makdous-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Labneh W Makdous</p>
+          <p class="alt">صحن لبنة ومكدوس</p>
+          <p class="desc">traditional Lebanese labna mixed with makdous served with olive oil</p>
+        </div>
+        <div class="cost"><span class="price"><b>19</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/appetizer-labneh-toum-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Labneh B Toum</p>
+          <p class="alt">صحن لبنة بالثوم</p>
+          <p class="desc">traditional Lebanese labna mixed with garlic paste and dry mint served with olive oil</p>
+        </div>
+        <div class="cost"><span class="price"><b>17</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/appetizer-cheese-kristo-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Cheese Kristo</p>
+          <p class="alt">صحن جبنة كريستو</p>
+          <p class="desc">traditional Lebanese feta cheese mixed with tomato and green onions</p>
+        </div>
+        <div class="cost"><span class="price"><b>20</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/appetizer-homos-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Homos</p>
+          <p class="alt">صحن حمص</p>
+          <p class="desc">traditional Lebanese homos bel tahina served with olive oil</p>
+        </div>
+        <div class="cost"><span class="price"><b>19</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/appetizer-homos-pesto-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Homos Pesto</p>
+          <p class="alt">صحن حمص بالبيستو</p>
+          <p class="desc">traditional Lebanese homos bel tahina mixed with pesto sauce served with olive oil</p>
+        </div>
+        <div class="cost"><span class="price"><b>21</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/appetizer-moutabal-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Moutabal</p>
+          <p class="alt">صحن متبل باذنجان</p>
+          <p class="desc">traditional Lebanese eggplant moutabal bel tahina served with olive oil</p>
+        </div>
+        <div class="cost"><span class="price"><b>19</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/appetizer-moutabal-beetroot-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Moutabal Beetroot</p>
+          <p class="alt">صحن متبل باذنجان بالشمندر</p>
+          <p class="desc">traditional Lebanese eggplant moutabal bel tahina mixed with beetroot served with olive oil</p>
+        </div>
+        <div class="cost"><span class="price"><b>21</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/appetizer-waraa-inab-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Waraa Inab</p>
+          <p class="alt">صحن ورق عنب</p>
+          <p class="desc">traditional Lebanese waraa inab stuffed with rice and vegetables topped with debs el remman</p>
+        </div>
+        <div class="cost"><span class="price"><b>16</b> SAR</span></div>
+      </li></ul>
+    </section>
+    <section class="cat">
+      <h2 class="cat__title">BBQ Sandwiches<span>ساندويتشات المشاوي</span></h2>
+      <ul class="dishes">
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/bbq-taouk-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Taouk</p>
+          <p class="alt">ساندويش طاووق</p>
+          <p class="desc">taouk, garlic, fries, pickles, coleslaw, kristo sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>19</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/bbq-awsal-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Awsal</p>
+          <p class="alt">ساندويش اوصال</p>
+          <p class="desc">awsal, homos, grilled vegetables, biwaz, salt</p>
+        </div>
+        <div class="cost"><span class="price"><b>23</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><span class="thumb__mark"></span></div>
+        <div class="copy">
+          <p class="name">Kafta Kristo</p>
+          <p class="alt">ساندويش كفتة كريستو</p>
+          <p class="desc">kafta, mayonnaise, tomato, pickles</p>
+        </div>
+        <div class="cost"><span class="price"><b>22</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/bbq-kabab-meat-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Kabab Meat</p>
+          <p class="alt">ساندويش كباب لحم</p>
+          <p class="desc">kabab beef, homos, grilled vegetables, biwaz</p>
+        </div>
+        <div class="cost"><span class="price"><b>22</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><span class="thumb__mark"></span></div>
+        <div class="copy">
+          <p class="name">Kabab Chicken</p>
+          <p class="alt">ساندويش كباب دجاج</p>
+          <p class="desc">kabab chicken, garlic chili, fries</p>
+        </div>
+        <div class="cost"><span class="price"><b>19</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/bbq-djeij-kristo-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Djeij Kristo</p>
+          <p class="alt">ساندويش دجاج كريستو</p>
+          <p class="desc">chicken, garlic, pickles</p>
+        </div>
+        <div class="cost"><span class="price"><b>19</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/bbq-batata-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Batata</p>
+          <p class="alt">ساندويش بطاطا</p>
+          <p class="desc">fries, pickles, coleslaw, kristo sauce, garlic</p>
+        </div>
+        <div class="cost"><span class="price"><b>16</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><span class="thumb__mark"></span></div>
+        <div class="copy">
+          <p class="name">Asbet Djeij</p>
+          <p class="alt">ساندويش قصبة دجاج</p>
+          <p class="desc">chicken liver, garlic, tomato, pickles.</p>
+        </div>
+        <div class="cost"><span class="price"><b>19</b> SAR</span></div>
+      </li></ul>
+    </section>
+    <section class="cat">
+      <h2 class="cat__title">BBQ Platters<span>صحون المشاوي</span></h2>
+      <ul class="dishes">
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/platter-mix-grill-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Mix Grill</p>
+          <p class="alt">صحن مشاوي مشكلة</p>
+          <p class="desc">charcoal-grilled awsal, taouk, kafta, kabab chicken, biwaz, tomato, onions, green chili, fries, garlic sauce cup, homos cup, spicy bread</p>
+        </div>
+        <div class="cost"><span class="price"><b>39</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/platter-taouk-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Taouk</p>
+          <p class="alt">صحن طاووق</p>
+          <p class="desc">charcoal-grilled 2 skewers taouk, tomato grilled, green chili grilled, fries, garlic sauce cup, potato bread</p>
+        </div>
+        <div class="cost"><span class="price"><b>29</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/platter-awsal-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Awsal</p>
+          <p class="alt">صحن اوصال</p>
+          <p class="desc">charcoal-grilled 2 skewers awsal, biwaz, tomato, onions, green chili, fries, homos cup, spicy potato bread</p>
+        </div>
+        <div class="cost"><span class="price"><b>36</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/platter-kafta-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Kafta</p>
+          <p class="alt">صحن كفتة</p>
+          <p class="desc">charcoal-grilled 3 skewers kafta, biwaz, tomato, onions, green chili, fries, homos cup, spicy potato bread</p>
+        </div>
+        <div class="cost"><span class="price"><b>29</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/platter-kabab-meat-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Kabab Meat</p>
+          <p class="alt">صحن كباب لحم</p>
+          <p class="desc">charcoal-grilled 3 skewers kabab, biwaz, tomato, onions, green chili, fries, homos cup, spicy potato bread</p>
+        </div>
+        <div class="cost"><span class="price"><b>29</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/platter-kabab-chicken-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Kabab Chicken</p>
+          <p class="alt">صحن كباب دجاج</p>
+          <p class="desc">charcoal-grilled 3 skewers kabab chicken, tomato, onions, green chili, fries, garlic chili sauce cup, potato bread</p>
+        </div>
+        <div class="cost"><span class="price"><b>29</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/platter-nos-farrouj-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Nos Farrouj</p>
+          <p class="alt">نصف فروج</p>
+          <p class="desc">charcoal-grilled nos farouj, fries, garlic sauce cup, pickles, potato bread or rice</p>
+        </div>
+        <div class="cost"><span class="price"><b>29</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/platter-farrouj-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Farrouj</p>
+          <p class="alt">فروج كامل</p>
+          <p class="desc">charcoal-grilled farouj, fries, garlic sauce cup, pickles, potato bread or rice</p>
+        </div>
+        <div class="cost"><span class="price"><b>39</b> SAR</span></div>
+      </li></ul>
+    </section>
+    <section class="cat">
+      <h2 class="cat__title">Burgers<span>البرغر</span></h2>
+      <ul class="dishes">
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/burger-lebanese-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Lebanese</p>
+          <p class="alt">برغر لبناني</p>
+          <p class="desc">beef patty, tomato, onions, fries, coleslaw served with mustard and ketchup</p>
+        </div>
+        <div class="cost"><span class="price"><b>24</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/burger-classic-beef-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Classic Beef</p>
+          <p class="alt">برغر كلاسيك</p>
+          <p class="desc">beef patty, tomato, onions, iceberg served with cocktail sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>22</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/burger-grilled-chicken-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Grilled Chicken</p>
+          <p class="alt">برغر الدجاج المشوي</p>
+          <p class="desc">grilled chicken breast, tomato, lettuce served with garlic cocktail sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>22</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/burger-fried-chicken-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Fried Chicken</p>
+          <p class="alt">برغر الدجاج المقلي</p>
+          <p class="desc">fried chicken breast, cheddar cheese, lettuce, tomato served with garlic cocktail sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>24</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/burger-kristo-chicken-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Kristo Chicken Burger</p>
+          <p class="alt">برغر دجاج كريستو</p>
+          <p class="desc">crispy chicken breast, dipped in our signature kristo sauce, served with fries</p>
+        </div>
+        <div class="cost"><span class="price"><b>29</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/burger-kristo-beef-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Kristo Beef Burger</p>
+          <p class="alt">كريستو برغر لحم</p>
+          <p class="desc">fresh 120 g beef patty, dipped in home made mushroom sauce, served with fries</p>
+        </div>
+        <div class="cost"><span class="price"><b>31</b> SAR</span></div>
+      </li></ul>
+    </section>
+    <section class="cat">
+      <h2 class="cat__title">Pizza<span>البيتزا</span></h2>
+      <ul class="dishes">
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/pizza-marguerita-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Marguerita</p>
+          <p class="alt">بيتزا مارغيريتا</p>
+          <p class="desc">Traditional Lebanese dough topped with pizza sauce and mozzarella cheese</p>
+        </div>
+        <div class="cost"><span class="price"><b>22</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/pizza-peperoni-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Peperoni</p>
+          <p class="alt">بيتزا بيبيروني</p>
+          <p class="desc">Traditional Lebanese dough topped with pizza sauce, peperoni slices and mozzarella cheese</p>
+        </div>
+        <div class="cost"><span class="price"><b>26</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/pizza-vegetarian-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Vegetarian</p>
+          <p class="alt">بيتزا خضار</p>
+          <p class="desc">Traditional Lebanese dough topped with pizza sauce, mix color pepper, olives, eggplant, zucchini and mozzarella cheese</p>
+        </div>
+        <div class="cost"><span class="price"><b>24</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/pizza-classic-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Classic</p>
+          <p class="alt">بيتزا كلاسيكية</p>
+          <p class="desc">Traditional Lebanese dough topped with pizza sauce, turkey slices, corn, olives and mozzarella cheese</p>
+        </div>
+        <div class="cost"><span class="price"><b>24</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/pizza-kristo-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Kristo</p>
+          <p class="alt">بيتزا كريستو</p>
+          <p class="desc">Traditional Lebanese dough topped with four kinds of pizza flavors, marguerita, peperoni, vegetarian and classic</p>
+        </div>
+        <div class="cost"><span class="price"><b>29</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/pizza-chicken-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Chicken</p>
+          <p class="alt">بيتزا دجاج</p>
+          <p class="desc">Traditional Lebanese dough topped with pizza sauce, chicken slices, mix color pepper, corn and mozzarella cheese</p>
+        </div>
+        <div class="cost"><span class="price"><b>28</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/pizza-ranch-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Chicken Ranch Sauce</p>
+          <p class="alt">بيتزا بصلصة الرانش</p>
+          <p class="desc">Traditional Lebanese dough topped with ranch sauce, chicken slices and mozzarella cheese</p>
+        </div>
+        <div class="cost"><span class="price"><b>26</b> SAR</span></div>
+      </li></ul>
+    </section>
+    <section class="cat">
+      <h2 class="cat__title">Hot Appetizers<span>المقبلات الساخنة</span></h2>
+      <ul class="dishes">
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/hot-cheese-rolls-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Cheese Rolls</p>
+          <p class="alt">رقاقات بالجبن</p>
+          <p class="desc">four pieces roll stuffed with mix cheese mixed with onions and parsley</p>
+        </div>
+        <div class="cost"><span class="price"><b>16</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/hot-vegetables-rolls-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Vegetables Rolls</p>
+          <p class="alt">رقاقات بالخضار</p>
+          <p class="desc">four pieces roll stuffed with mix vegetables</p>
+        </div>
+        <div class="cost"><span class="price"><b>16</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/hot-kebbe-orass-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Kebbe Orass</p>
+          <p class="alt">كبة اقراص</p>
+          <p class="desc">four pieces kebbe meat stuffed with meat and onions</p>
+        </div>
+        <div class="cost"><span class="price"><b>22</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/hot-sambousik-cheese-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Sambousik Cheese</p>
+          <p class="alt">سمبوسك جبنة</p>
+          <p class="desc">four pieces sambousik dough stuffed with mix cheese</p>
+        </div>
+        <div class="cost"><span class="price"><b>16</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/hot-sambousik-lahme-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Sambousik Lahme</p>
+          <p class="alt">سمبوسك لحمة</p>
+          <p class="desc">four pieces sambousik dough stuffed with minced meat and onions</p>
+        </div>
+        <div class="cost"><span class="price"><b>18</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/hot-batata-harra-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Batata Harra</p>
+          <p class="alt">بطاطا حارة</p>
+          <p class="desc">crispy potato cubes, mixed with pepper paste, coriander and garlic</p>
+        </div>
+        <div class="cost"><span class="price"><b>16</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/hot-wedges-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Wedges Potato</p>
+          <p class="alt">بطاطا ويدجز</p>
+          <p class="desc">crispy wedges potato</p>
+        </div>
+        <div class="cost"><span class="price"><b>12</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/hot-fries-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Fries</p>
+          <p class="alt">بطاطا فرايز</p>
+          <p class="desc">crispy French fries, mixed with kristo pepper</p>
+        </div>
+        <div class="cost"><span class="price"><b>8</b> SAR</span></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/hot-fries-kristo-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Fries Kristo</p>
+          <p class="alt">بطاطا فرايز كريستو</p>
+          <p class="desc">French fries, topped with cheddar cheese, mozzarella cheese, parmesan cheese, served with kristo sauce</p>
+        </div>
+        <div class="cost"><span class="price"><b>14</b> SAR</span></div>
+      </li></ul>
+    </section>
+    <section class="cat">
+      <h2 class="cat__title">Desserts<span>الحلويات</span></h2>
+      <ul class="dishes">
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/dessert-baklawa-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Baklawa</p>
+          <p class="alt">بقلاوة</p>
+          <p class="desc">Paper-thin pastry layered with pistachio and syrup — the sweetest habit of the Levant.</p>
+        </div>
+        <div class="cost"></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/dessert-mafroukeh-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Mafroukeh</p>
+          <p class="alt">مفروكة</p>
+          <p class="desc">Golden semolina under clouds of cream and crushed pistachio — Beirut's quiet masterpiece.</p>
+        </div>
+        <div class="cost"></div>
+      </li>
+      <li class="dish">
+        <div class="thumb"><img src="/assets/images/dishes/dessert-fruit-salad-sm.jpg" alt=""></div>
+        <div class="copy">
+          <p class="name">Fruit Salad</p>
+          <p class="alt">سلطة فواكه</p>
+          <p class="desc">Seasonal fruit cut fresh through the day — the light way to end a generous meal.</p>
+        </div>
+        <div class="cost"></div>
+      </li></ul>
+    </section>
+  
+    <section class="cat cat--drinks">
+      <h2 class="cat__title">Drinks<span>المشروبات</span></h2>
+      <ul class="drinks"><li class="drink"><span>Pepsi</span><span class="price"><b>4</b> SAR</span></li><li class="drink"><span>Diet Pepsi</span><span class="price"><b>4</b> SAR</span></li><li class="drink"><span>Seven Up</span><span class="price"><b>4</b> SAR</span></li><li class="drink"><span>Diet Seven Up</span><span class="price"><b>4</b> SAR</span></li><li class="drink"><span>Mirinda Orange</span><span class="price"><b>4</b> SAR</span></li><li class="drink"><span>Mirinda Lemon</span><span class="price"><b>4</b> SAR</span></li><li class="drink"><span>Mountain Dew</span><span class="price"><b>4</b> SAR</span></li><li class="drink"><span>Small Water Nova</span><span class="price"><b>2</b> SAR</span></li><li class="drink"><span>Sparkling Water</span><span class="price"><b>4</b> SAR</span></li><li class="drink"><span>Kinza Cola</span><span class="price"><b>3</b> SAR</span></li><li class="drink"><span>Kinza Cola Light</span><span class="price"><b>3</b> SAR</span></li><li class="drink"><span>Kinza Lemon</span><span class="price"><b>3</b> SAR</span></li><li class="drink"><span>Kinza Lemon Light</span><span class="price"><b>3</b> SAR</span></li><li class="drink"><span>Kinza Orange</span><span class="price"><b>3</b> SAR</span></li><li class="drink"><span>Kinza Lemon Mix</span><span class="price"><b>3</b> SAR</span></li><li class="drink"><span>Fresh Orange</span><span class="price"><b>9</b> SAR</span></li><li class="drink"><span>Fresh Lemonade</span><span class="price"><b>9</b> SAR</span></li><li class="drink"><span>Fresh Minted Lemonade</span><span class="price"><b>9</b> SAR</span></li></ul>
+    </section>
+  <p class="foot">Prices in SAR · VAT included
+     &nbsp;·&nbsp; menustudio.github.io/kristo</p>
+</body>
+</html>
